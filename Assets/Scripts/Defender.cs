@@ -5,23 +5,33 @@ using UnityEngine;
 public class Defender : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public int hp = 1;
+    public int Atk = 6;
+    public int AtkMod = 0;
+    public int Def = 6;
+    public int DefMod = 0;
     void start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    public int cooldown;
+    public int MoveCooldown;
     void Update()
     {
-        cooldown += 1;
-        if (cooldown > Random.Range(.8f, 2.1f) * 30)
+        MoveCooldown += 1;
+        if (MoveCooldown > Random.Range(.8f, 2.1f) * 30)
         {
-            cooldown = 0;
+            MoveCooldown = 0;
 
             move();
         }
+
     }
+
+
+
+
 
     void move()
     {

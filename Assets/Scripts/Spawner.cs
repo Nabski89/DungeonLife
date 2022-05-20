@@ -6,6 +6,7 @@ public class Spawner : MonoBehaviour
 {
     public int cooldown = 0;
     public int MobCountMax = 3;
+    public int SpawnIntervalSeconds = 5;
 
     public GameObject[] SpawnedMob;
 
@@ -15,17 +16,17 @@ public class Spawner : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
-        cooldown +=1;
-        if (cooldown > 5 * 30)
+        cooldown += 1;
+        if (cooldown > SpawnIntervalSeconds * 30)
         {
-            cooldown = 0;
-            var SpawnCount = GetComponentsInChildren<Defender>();
-            if (SpawnCount.Length < MobCountMax)
+
+            if (transform.childCount < MobCountMax)
             {
-                Instantiate(SpawnedMob[Random.Range(0, SpawnedMob.Length)], new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity, transform);
+                cooldown = 0;
+                Debug.Log(SpawnedMob.Length);
+                Instantiate(SpawnedMob[Random.Range(0, SpawnedMob.Length)], new Vector3(transform.position.x, transform.position.y, -0.1f), Quaternion.identity, transform);
             }
         }
     }

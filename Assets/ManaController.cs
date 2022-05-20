@@ -5,6 +5,7 @@ using UnityEngine;
 public class ManaController : MonoBehaviour
 {
     public static float mana = 100;
+    public float ManaDisplayOnly = 0;
     Vector3 myVector;
 
     // Start is called before the first frame update
@@ -16,7 +17,10 @@ public class ManaController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mana += 1;
+        mana += .01f;
+
+// this is just so I can see how much mana we have
+ ManaDisplayOnly = mana;
 
         transform.localScale = myVector * (1.5f * Mathf.Pow((mana / 100) / (4 * 3.14f), .3333f));
 
