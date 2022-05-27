@@ -10,7 +10,6 @@ public class DelverController : MonoBehaviour
     int path = 8;
     int treasurepath = 8;
     public int MoveIdle = 0;
-    public int MoveDelay = 10;
 
     public float treasure = 0;
     bool treasureFind = false;
@@ -27,11 +26,11 @@ public class DelverController : MonoBehaviour
     {
         {
             MoveIdle += 1;
-            if (MoveIdle <= 15 && MoveIdle >= 0)
+            if (MoveIdle <= 20 && MoveIdle >= 0)
             {
                 move();
             }
-            if (MoveIdle == 15 + MoveDelay && MoveIdle >= 0)
+            if (MoveIdle == 30 && MoveIdle >= 0)
             {
                 MoveIdle = 0;
             }
@@ -160,14 +159,19 @@ public class DelverController : MonoBehaviour
     void move()
     {
         Vector3 position = transform.position;
+        position = transform.TransformPoint(Vector3.down * .04f);
 
         if (MoveIdle <= 5)//move twice early to give a stuttery step? Why? I don't know, because I like it
         {
-            position = transform.TransformPoint(Vector3.down * .02f);
+            position = transform.TransformPoint(Vector3.down * .08f);
             Body.Wiggle();
         }
-        position = transform.TransformPoint(Vector3.down * .02f);
         Body.Wiggle();
+        if (MoveIdle == 20)
+        {
+            position.x = Mathf.RoundToInt(position.x);
+            position.y = Mathf.RoundToInt(position.y);
+        }
 
         transform.position = position;
     }
@@ -187,7 +191,8 @@ public class DelverController : MonoBehaviour
         if (controller != null)
         {
             FindAPath = true;
-            transform.position = controller.transform.position;
+            //we used to do this to keep on path
+            //            transform.position = controller.transform.position;
         }
     }
 
@@ -201,15 +206,15 @@ public class DelverController : MonoBehaviour
 
 
 
-    
-//COMBAT STUFF BELOW
 
-public int MaxHp = 10;
-public int hp = 10;
-public int Atk = 6;
-public int AtkMod = 1;
-public int Def = 6;
-public int DefMod = 1;
+    //COMBAT STUFF BELOW
+
+    public int MaxHp = 10;
+    public int hp = 10;
+    public int Atk = 6;
+    public int AtkMod = 1;
+    public int Def = 6;
+    public int DefMod = 1;
 
 
 
