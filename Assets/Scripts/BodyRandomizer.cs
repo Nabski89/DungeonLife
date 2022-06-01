@@ -27,11 +27,11 @@ public class BodyRandomizer : MonoBehaviour
         {
             m_SpriteRenderer.color = new Color(Random.Range(redmin, redmax), Random.Range(greenmin, greenmax), Random.Range(bluemin, bluemax));
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-
+        DelverController DelverParent = GetComponentInParent<DelverController>();
+        if (DelverParent != null)
+        {
+            m_SpriteRenderer.sprite = spriteList[DelverParent.ClassType];
+        }
     }
 }

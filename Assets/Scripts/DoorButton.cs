@@ -5,26 +5,28 @@ using UnityEngine;
 public class DoorButton : MonoBehaviour
 {
     public GameObject DOOR;
-    // Start is called before the first frame update
-    void Start()
-    {
+    public GameObject SoundEffect1;
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     void OnMouseDown()
     {
-        if (DOOR.active)
+        if (ManaController.mana > 5)
         {
-            DOOR.SetActive(false);
-        }
-        else
-        {
-            DOOR.SetActive(true);
+            if (DOOR.active)
+            {
+                DOOR.SetActive(false);
+                //hoho we can just make the game object of a sound and then destroy it? Big brain or stupid I don't know or care right now I've been at this most of the afternoon.
+                GameObject SoundEffect = (GameObject)Instantiate(SoundEffect1, transform.position, Quaternion.identity);
+                Destroy(SoundEffect, 5);
+            }
+            else
+            {
+                DOOR.SetActive(true);
+                GameObject SoundEffect = (GameObject)Instantiate(SoundEffect1, transform.position, Quaternion.identity);
+                Destroy(SoundEffect, 5);
+                Debug.Log("DOOR");
+            }
+            ManaController.mana -= 5;
+            UIMana.Instance.ManaUIUpdate();
         }
     }
 }

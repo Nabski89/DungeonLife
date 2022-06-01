@@ -4,53 +4,68 @@ using UnityEngine;
 
 public class Defender : MonoBehaviour
 {
-    public Rigidbody2D rb;
-    public int hp = 1;
-    public int Atk = 6;
-    public int AtkMod = 0;
-    public int Def = 6;
-    public int DefMod = 0;
-    void start()
+    public bool InCombat = false;
+    public Vector3 TargetPosition;
+    void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        TargetPosition = transform.parent.position;
     }
-
-    // Update is called once per frame
-    public int MoveCooldown;
-    void Update()
+    public float MoveCooldown = 4;
+    public float MoveCooldownTimer = 4;
+    //raycasts want to be in fixed update. We are using this as our door check.
+    void FixedUpdate()
     {
-        MoveCooldown += 1;
-        if (MoveCooldown > Random.Range(.8f, 2.1f) * 30)
+        //makes it so we only hit layer 7
+        int layerMask = 1 << 7;
+        //these are the debug lines so we can see what we are hitting.
+        Debug.DrawRay(transform.position, transform.TransformDirection(-Vector3.up) * 2, Color.red);
+        //only fire when you're hit a room center
+        //take a break at the new location
+        if (transform.position == TargetPosition && transform.position != transform.parent.position)
         {
-            MoveCooldown = 0;
-
-            move();
+            MoveCooldownTimer = MoveCooldown;
+            Debug.Log("Lets go home");
+            TargetPosition = transform.parent.position;
         }
 
+        if (transform.position == transform.parent.position)
+        {
+            Debug.Log("Look for a route");
+            //forward
+            RaycastHit2D hitDown = Physics2D.Raycast(transform.position, transform.TransformDirection(-Vector3.up), 2, layerMask);
+            // if it doesn't hit anything
+            TurnRight();
+            if (hitDown.collider != null)
+            {
+                Debug.Log("Foward Hits " + hitDown.collider.gameObject.name);
+            }
+            if (hitDown.collider == null)
+            {
+                TargetPosition = transform.position + (3 * transform.TransformDirection(Vector3.right));
+            }
+        }
+
+        //now we actually move
+        if (InCombat == false)
+        {
+            if (MoveCooldownTimer <= 0)
+            {
+                var step = 1 * Time.deltaTime; // calculate distance to move
+                transform.position = Vector3.MoveTowards(transform.position, TargetPosition, step);
+            }
+            else
+            {
+                MoveCooldownTimer -= Time.deltaTime;
+            }
+        }
     }
-
-
-
-
-
-    void move()
+    //this is just so we can call it from the door checker
+    public void TurnRight()
     {
-        int MoveDir = Random.Range(0, 4);
-        if (MoveDir == 0)
-        {
-            rb.velocity = Vector3.right;
-        }
-        if (MoveDir == 1)
-        {
-            rb.velocity = Vector3.left;
-        }
-        if (MoveDir == 2)
-        {
-            rb.velocity = Vector3.up;
-        }
-        if (MoveDir == 3)
-        {
-            rb.velocity = Vector3.down;
-        }
+        transform.Rotate(0, 0, -90, Space.Self);
+    }
+    public void TurnLeft()
+    {
+        transform.Rotate(0, 0, 90, Space.Self);
     }
 }

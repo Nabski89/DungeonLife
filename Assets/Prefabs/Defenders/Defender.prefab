@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6897110993367728458}
   - component: {fileID: 103856979267352823}
   - component: {fileID: 7285540073625003983}
+  - component: {fileID: 1917002641439367840}
   m_Layer: 0
   m_Name: Defender
   m_TagString: Untagged
@@ -97,8 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78b8c661ddfa76d4abf5799805ffa465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 103856979267352823}
-  cooldown: 0
+  InCombat: 0
+  TargetPosition: {x: 0, y: 0, z: 0}
+  MoveCooldown: 4
+  MoveCooldownTimer: 0
 --- !u!50 &103856979267352823
 Rigidbody2D:
   serializedVersion: 4
@@ -107,7 +110,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2910486035716723240}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -117,7 +120,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!61 &7285540073625003983
@@ -137,12 +140,35 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1917002641439367840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2910486035716723240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64c2d164fc4cd8949ad1c9c0de53e074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Faction: 2
+  MaxHp: 1
+  hp: 1
+  Atk: 6
+  AtkMod: 1
+  Def: 6
+  DefMod: 0
+  Damage: 1
+  Splat: {fileID: 3493879478972447153, guid: 2f1eaacaa176ace43b88001c3767f9d0, type: 3}
+  AtkSplatGO: {fileID: 6101530069096244085, guid: 2b53f22a1dca70744917667af0ae3d7e, type: 3}
+  DefSplatGO: {fileID: 3036482323124313622, guid: b791b6ad0e3a74d43b324563bac238ba, type: 3}

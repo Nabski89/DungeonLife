@@ -98,7 +98,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.6, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -416,7 +416,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -427,7 +427,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.0001, y: 1}
+  m_Size: {x: 0.1, y: 1.21}
   m_EdgeRadius: 0
 --- !u!1 &3374175138557587205
 GameObject:
@@ -680,7 +680,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.0001, y: 1}
+  m_Size: {x: 0.1, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &5348287404009854239
 GameObject:
@@ -778,7 +778,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -789,7 +789,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.0001, y: 1}
+  m_Size: {x: 0.1, y: 1.21}
   m_EdgeRadius: 0
 --- !u!1 &5765698072760889496
 GameObject:
@@ -887,7 +887,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -898,7 +898,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.0001, y: 1}
+  m_Size: {x: 0.1, y: 1.21}
   m_EdgeRadius: 0
 --- !u!1 &7413020520363739538
 GameObject:
@@ -998,7 +998,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.6, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1165,6 +1165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DOOR: {fileID: 7413020520363739538}
+  SoundEffect1: {fileID: 4364083987803451304, guid: f7dfe92796c902b4bb95665530ede141, type: 3}
 --- !u!1 &8593187273004950090
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,6 +1237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DOOR: {fileID: 2308736852143936237}
+  SoundEffect1: {fileID: 4364083987803451304, guid: f7dfe92796c902b4bb95665530ede141, type: 3}
 --- !u!1001 &1850143295347728392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1325,29 +1327,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b3efce464743494cb61c933b1461ce4, type: 3}
---- !u!1 &1644813335783785595 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1116482065361167475, guid: 9b3efce464743494cb61c933b1461ce4, type: 3}
-  m_PrefabInstance: {fileID: 1850143295347728392}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6095941989327540833 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5563112633873478249, guid: 9b3efce464743494cb61c933b1461ce4, type: 3}
   m_PrefabInstance: {fileID: 1850143295347728392}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6510155715610520240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1644813335783785595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88305c32bddb19d4195b21e02133f70b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DOOR: {fileID: 2308736852143936237}
 --- !u!1001 &2606358851918423975
 PrefabInstance:
   m_ObjectHideFlags: 0

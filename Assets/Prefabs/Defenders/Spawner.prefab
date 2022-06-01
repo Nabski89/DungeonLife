@@ -95,9 +95,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ed3797bd4fc85498661e8119b50519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 0
-  MobCountMax: 3
-  SpawnIntervalSeconds: 5
+  cooldown: 29
+  MobCountMax: 2
+  SpawnIntervalSeconds: 30
   SpawnedMob:
   - {fileID: 2910486035716723240, guid: 79b29e6b6fedc574fab0133c02953e68, type: 3}
   - {fileID: 3084936306530288511, guid: 047325d77275aec4f9f0fc675c24de7d, type: 3}

@@ -51,10 +51,13 @@ public class CameraController : MonoBehaviour
 //speed
         if (Input.GetKeyDown(KeyCode.Home))
         {
+            
+//Time.timeScale = 2;
 Application.targetFrameRate += 15;
         }
         if (Input.GetKeyDown(KeyCode.End) && Application.targetFrameRate > 0)
         {
+
 Application.targetFrameRate -= 15;
         }
 

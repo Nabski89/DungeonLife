@@ -12,8 +12,12 @@ public class DelverController : MonoBehaviour
     public int MoveIdle = 0;
 
     public float treasure = 0;
+    public float treasureReq = 10;
     bool treasureFind = false;
     public WiggleWalk Body;
+    public bool InCombat = false;
+    //Used by the body to pick your pants
+    public int ClassType;
 
     // Start is called before the first frame update
     void Start()
@@ -158,22 +162,24 @@ public class DelverController : MonoBehaviour
     public Vector3 MoveFoward;
     void move()
     {
-        Vector3 position = transform.position;
-        position = transform.TransformPoint(Vector3.down * .04f);
-
-        if (MoveIdle <= 5)//move twice early to give a stuttery step? Why? I don't know, because I like it
+        if (InCombat == false)
         {
-            position = transform.TransformPoint(Vector3.down * .08f);
+            Vector3 position = transform.position;
+            position = transform.TransformPoint(Vector3.down * .04f);
+
+            if (MoveIdle <= 5)//move twice early to give a stuttery step? Why? I don't know, because I like it
+            {
+                position = transform.TransformPoint(Vector3.down * .08f);
+                Body.Wiggle();
+            }
             Body.Wiggle();
+            if (MoveIdle == 20)
+            {
+                position.x = Mathf.RoundToInt(position.x);
+                position.y = Mathf.RoundToInt(position.y);
+            }
+            transform.position = position;
         }
-        Body.Wiggle();
-        if (MoveIdle == 20)
-        {
-            position.x = Mathf.RoundToInt(position.x);
-            position.y = Mathf.RoundToInt(position.y);
-        }
-
-        transform.position = position;
     }
     //this is just so we can call it from the door checker
     public void TurnRight()
