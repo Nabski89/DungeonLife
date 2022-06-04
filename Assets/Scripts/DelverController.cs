@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//still needs to be moved from frame based to time based
 public class DelverController : MonoBehaviour
 {
     public int Level = 0;
@@ -15,7 +16,7 @@ public class DelverController : MonoBehaviour
     public float treasureReq = 10;
     bool treasureFind = false;
     public WiggleWalk Body;
-    public bool InCombat = false;
+    public bool InCombat;
     //Used by the body to pick your pants
     public int ClassType;
 
@@ -205,7 +206,7 @@ public class DelverController : MonoBehaviour
     void die()
     {
         float ManaValue = Level + ClassXP + JobXP;
-        //      ManaController.mana += ManaValue;
+        //      ManaController.ManaSpend += ManaValue;
         Destroy(gameObject);
     }
 

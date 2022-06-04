@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Defender : MonoBehaviour
 {
-    public bool InCombat = false;
+    public bool InCombat;
     public Vector3 TargetPosition;
     void Start()
     {
