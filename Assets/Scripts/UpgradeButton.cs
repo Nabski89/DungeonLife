@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UpgradeButton : MonoBehaviour
 {
-    int TimeToDie = 30 * 10;
+    float TimeToDie = 10;
     public GameObject Upgrade;
     // Start is called before the first frame update
     void Start()
@@ -15,7 +15,7 @@ public class UpgradeButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TimeToDie -= 1;
+        TimeToDie -= 1*Time.deltaTime;
 
         if (TimeToDie < 0)
         {

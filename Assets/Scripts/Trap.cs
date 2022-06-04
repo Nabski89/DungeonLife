@@ -14,7 +14,7 @@ public class Trap : MonoBehaviour
     SpriteRenderer m_SpriteRenderer;
     public Sprite[] spriteList;
 
-    int ResetTimer = 0;
+    float ResetTimer = 0;
     public int TrapDelay = 8 + 3; //This is long enough to explore a T and come back and get snapped again
 
 
@@ -28,8 +28,8 @@ public class Trap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ResetTimer += 1;
-        if (ResetTimer == TrapDelay * 30)
+        ResetTimer += 1 * Time.deltaTime;
+        if (ResetTimer > TrapDelay)
         {
             m_SpriteRenderer.sprite = spriteList[1];
         }

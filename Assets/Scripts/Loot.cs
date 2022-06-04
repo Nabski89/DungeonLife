@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Loot : MonoBehaviour
 {
-    public float TreasureValue = 60;
-    public float TreasureGrowthRate = 0.001f;
+    public float TreasureValue = 5;
+    public float TreasureGrowthRate = .1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +13,7 @@ public class Loot : MonoBehaviour
     }
     void Update()
     {
-        TreasureValue += TreasureGrowthRate;
+        TreasureValue += TreasureGrowthRate * Time.deltaTime;
     }
     // Update is called once per frame
 
@@ -23,7 +23,7 @@ public class Loot : MonoBehaviour
         if (controller != null)
         {
             controller.treasure += TreasureValue;
-            ManaController.mana += TreasureValue / 2;
+            ManaController.ManaSpend += TreasureValue / 2;
             controller.MoveIdle = Mathf.RoundToInt(-TreasureValue * 2);
 
             //make sure the chest doesn't instantly respawn

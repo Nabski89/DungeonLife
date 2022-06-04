@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour
     {
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 30;
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -38,28 +39,30 @@ public class CameraController : MonoBehaviour
             transform.position = position;
         }
 
-//zoom
+        //zoom
         if (Input.GetKeyDown("page up"))
         {
-            TheCamera.orthographicSize  += 1.5f;
+            TheCamera.orthographicSize += 1.5f;
         }
         if (Input.GetKeyDown("page down") && TheCamera.orthographicSize > 3)
         {
-            TheCamera.orthographicSize  -= 1.5f;
+            TheCamera.orthographicSize -= 1.5f;
         }
 
-//speed
+        //speed
         if (Input.GetKeyDown(KeyCode.Home))
         {
-            
-//Time.timeScale = 2;
-Application.targetFrameRate += 15;
+
+            //Time.timeScale = 2;
+            Time.timeScale += 0.5f;
         }
-        if (Input.GetKeyDown(KeyCode.End) && Application.targetFrameRate > 0)
+        if (Input.GetKeyDown(KeyCode.End) && Time.timeScale > 1)
         {
 
-Application.targetFrameRate -= 15;
+            Time.timeScale -= 0.5f;
+            if (Time.timeScale < 1)
+                Time.timeScale = 1;
         }
 
-    }        
+    }
 }

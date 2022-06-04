@@ -1,0 +1,267 @@
+fileFormatVersion: 2
+guid: 66cb49ba67c95cf40803629c993c3e10
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: 5559403819642204204
+    second: CrystalAction
+  - first:
+      74: -484753156736024855
+    second: Crystal|Base Rotating RingAction.001
+  - first:
+      74: -5581636450081679918
+    second: Crystal|BezierCurveAction
+  - first:
+      74: 124257826532891582
+    second: Crystal|BezierCurveAction.001
+  - first:
+      74: -8584303777434961050
+    second: Crystal|Brass CogAction.001
+  - first:
+      74: -7777294688191985624
+    second: Crystal|BricksCircleAction
+  - first:
+      74: -7445436212393344403
+    second: Crystal|BricksCircleAction.001
+  - first:
+      74: 3157095546190527688
+    second: Crystal|CameraAction
+  - first:
+      74: 5707270221277191675
+    second: Crystal|ClothingAction
+  - first:
+      74: -8512954243448499671
+    second: Crystal|CrystalAction
+  - first:
+      74: 2941480994280397807
+    second: Crystal|CrystalAction.001
+  - first:
+      74: 5257120985979536148
+    second: Crystal|Cube.002Action.001
+  - first:
+      74: -710186728930247479
+    second: Crystal|Cube.007Action.001
+  - first:
+      74: 4384610188878454940
+    second: Crystal|Cube.008Action.001
+  - first:
+      74: 6703624493321566024
+    second: Crystal|Cylinder.001Action
+  - first:
+      74: 5402379476856505543
+    second: Crystal|CylinderAction
+  - first:
+      74: 414084101537643370
+    second: Crystal|Door Arch.003Action.001
+  - first:
+      74: -7599155436513968255
+    second: Crystal|Door Arch.004Action.001
+  - first:
+      74: 4942781220242423824
+    second: Crystal|Door Arch.005Action.001
+  - first:
+      74: 7449460870178211285
+    second: Crystal|Door Arch.006Action.001
+  - first:
+      74: -3206003395776748926
+    second: Crystal|Door Arch.007Action.001
+  - first:
+      74: -3529136392846384313
+    second: Crystal|Door.001Action.001
+  - first:
+      74: 847812163489930178
+    second: Crystal|DoorAction.001
+  - first:
+      74: -4606578431126390110
+    second: Crystal|KeyAction
+  - first:
+      74: -3687946255689228713
+    second: Crystal|Lightning ControlerAction
+  - first:
+      74: 512143234589362384
+    second: Crystal|LightningAction
+  - first:
+      74: 4561709950709832033
+    second: Crystal|Machine-FrontAction
+  - first:
+      74: 3788142356937659269
+    second: Crystal|Machine-LeverAction
+  - first:
+      74: -174725178523106066
+    second: Crystal|Machine-SafetyAction
+  - first:
+      74: -2353828722639011505
+    second: Crystal|MachineAction
+  - first:
+      74: 7391039081695061227
+    second: Crystal|Measure.001Action
+  - first:
+      74: 7640435504306886870
+    second: Crystal|MeasureAction
+  - first:
+      74: -7630293418839750037
+    second: Crystal|metarigAction.002
+  - first:
+      74: -734624958452370553
+    second: Crystal|Plane.006Action.001
+  - first:
+      74: 4322438615467231360
+    second: Crystal|Plane.007Action.001
+  - first:
+      74: 2201776914215382931
+    second: Crystal|Point.001Action
+  - first:
+      74: -6913911759333519339
+    second: Crystal|Point.002Action
+  - first:
+      74: -2748881502259229181
+    second: Crystal|Point.003Action
+  - first:
+      74: 4463662071410864692
+    second: Crystal|Point.007Action
+  - first:
+      74: 1229698106670002681
+    second: Crystal|Point.014Action
+  - first:
+      74: 5737678878785197189
+    second: Crystal|Point.017Action
+  - first:
+      74: 7137126397944466414
+    second: Crystal|Point.018Action
+  - first:
+      74: 2210640863314482932
+    second: Crystal|Point.024Action
+  - first:
+      74: 1122423577212643231
+    second: Crystal|ScrewLeft.002Action.001
+  - first:
+      74: 8514119069009477957
+    second: Crystal|ScrewLeft.003Action.001
+  - first:
+      74: 7270839041625597602
+    second: Crystal|ScrewLeftAction.001
+  - first:
+      74: 5884047355296035240
+    second: Crystal|ScrewRightAction.001
+  - first:
+      74: -1471380621541811412
+    second: Crystal|TextAction.001
+  - first:
+      74: -4759759102271789106
+    second: Crystal|Torus.001Action.001
+  - first:
+      74: 1438652587534176287
+    second: Crystal|Torus.002Action.001
+  - first:
+      74: 1827053791853685927
+    second: Crystal|Torus.003Action.001
+  - first:
+      74: 6306559700489769400
+    second: Crystal|Torus.004Action.001
+  - first:
+      74: -6974571166842852409
+    second: Crystal|Torus.005Action.001
+  - first:
+      74: -5205872004341689828
+    second: Crystal|Torus.006Action.001
+  - first:
+      74: 408452829270565058
+    second: Crystal|Torus.007Action.001
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class ManaController : MonoBehaviour
 {
+    public static ManaController Instance;
     public static float mana = 100;
+    public static float ManaSpend = 0;
+    public static float ManaGain = 0;
     public float ManaDisplayOnly = 0;
     Vector3 myVector;
 
@@ -12,17 +15,33 @@ public class ManaController : MonoBehaviour
     void Awake()
     {
         myVector = new Vector3(1, 1, 1);
+        Instance = this;
     }
 
     // Update is called once per frame
     void Update()
     {
-        mana += 0.16f * Time.deltaTime;
+        mana += .1f * Time.deltaTime;
+        if (ManaSpend > 0)
+        {
+            //square root so that the more you're in debt the faster it goes
+            mana -= (1f + Mathf.Sqrt(ManaSpend)) * Time.deltaTime;
+            ManaSpend -= (1f * Mathf.Sqrt(ManaSpend)) * Time.deltaTime;
 
+            //a game over screen
+            if (mana < 0)
+                SceneBoss.GameOverScene();
+
+        }
+        if (ManaGain > 0)
+        {
+            mana += (1f + Mathf.Sqrt(ManaGain)) * Time.deltaTime;
+            ManaGain -= (1f + Mathf.Sqrt(ManaGain)) * Time.deltaTime;
+        }
         // this is just so I can see how much mana we have
-        transform.localScale = myVector * (1.5f * Mathf.Pow((mana / 100) / (4 * 3.14f), .3333f));
+        transform.localScale = 5 * myVector * (1.5f * Mathf.Pow((mana/*/ 100*/) / (4 * 3.14f), .3333f));
 
-        Vector3 newRotation = new Vector3(0, mana, 0);
+        Vector3 newRotation = new Vector3(-90, mana, 0);
         transform.eulerAngles = newRotation;
 
         if (mana.ToString("0") != ManaDisplayOnly.ToString("0"))
@@ -37,14 +56,11 @@ public class ManaController : MonoBehaviour
         DelverController Delver = other.GetComponent<DelverController>();
         if (Delver != null)
         {
-            if (Delver.treasureReq > Delver.treasure && mana > 10)
+            if (Delver.treasureReq > Delver.treasure)
             {
-                Delver.InCombat = true;
-                mana -= 1 * Time.deltaTime;
-                Delver.treasure += 1 * Time.deltaTime;
+                ManaSpend += Delver.treasureReq - Delver.treasure;
+                Delver.treasure += Delver.treasureReq - Delver.treasure;
             }
-            if (Delver.treasureReq < Delver.treasure && mana > 10)
-                Delver.InCombat = false;
         }
     }
 }

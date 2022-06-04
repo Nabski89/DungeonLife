@@ -10,11 +10,6 @@ public class Spawner : MonoBehaviour
 
     public GameObject[] SpawnedMob;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     void Update()
     {

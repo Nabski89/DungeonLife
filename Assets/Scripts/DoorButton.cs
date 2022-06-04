@@ -11,7 +11,7 @@ public class DoorButton : MonoBehaviour
     {
         if (ManaController.mana > 5)
         {
-            if (DOOR.active)
+            if (DOOR.activeSelf==true)
             {
                 DOOR.SetActive(false);
                 //hoho we can just make the game object of a sound and then destroy it? Big brain or stupid I don't know or care right now I've been at this most of the afternoon.
@@ -25,7 +25,7 @@ public class DoorButton : MonoBehaviour
                 Destroy(SoundEffect, 5);
                 Debug.Log("DOOR");
             }
-            ManaController.mana -= 5;
+            ManaController.ManaSpend += 5;
             UIMana.Instance.ManaUIUpdate();
         }
     }

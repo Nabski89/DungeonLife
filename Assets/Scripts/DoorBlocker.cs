@@ -4,15 +4,5 @@ using UnityEngine;
 
 public class DoorBlocker : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+//haha empty script
 }

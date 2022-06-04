@@ -53,13 +53,12 @@ public class Combat : MonoBehaviour
         {
             if (EnemyScript != null)
             {
-                if (DelverScript != null)
+                if (EnemyScript.Faction != Faction)
                 {
-                    DelverScript.InCombat = false;
-                }
-                if (DefenderScript != null)
-                {
-                    DefenderScript.InCombat = false;
+                    if (DelverScript != null)
+                        DelverScript.InCombat = false;
+                    if (DefenderScript != null)
+                        DefenderScript.InCombat = false;
                 }
             }
         }

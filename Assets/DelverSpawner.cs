@@ -5,6 +5,7 @@ using UnityEngine;
 public class DelverSpawner : MonoBehaviour
 {
     public GameObject DelverPrefab;
+    public GameObject NotEnoughTreasureGun;
 
     // Update is called once per frame
     void Update()
@@ -16,14 +17,14 @@ public class DelverSpawner : MonoBehaviour
 
             var type = Random.Range(0, 3);
 
-            GameObject DelverSpawned = (GameObject)Instantiate(DelverPrefab, transform.position, Quaternion.identity, transform);
+            GameObject DelverSpawned = (GameObject)Instantiate(DelverPrefab, transform.position + Vector3.down, Quaternion.identity, transform);
             DelverSpawned.GetComponent<DelverController>().ClassType = type;
 
             if (type == 0)
             {
 
                 DelverSpawned.GetComponent<Combat>().MaxHp = DelverSpawned.GetComponent<Combat>().MaxHp + DelverSpawned.GetComponent<Combat>().MaxHp / 2;
-                DelverSpawned.GetComponent<Combat>().hp = DelverSpawned.GetComponent<Combat>().hp + DelverSpawned.GetComponent<Combat>().hp/2;
+                DelverSpawned.GetComponent<Combat>().hp = DelverSpawned.GetComponent<Combat>().hp + DelverSpawned.GetComponent<Combat>().hp / 2;
             }
             if (type == 1)
             {
@@ -35,6 +36,26 @@ public class DelverSpawner : MonoBehaviour
             }
         }
     }
+    //congrats it is time to leave the dungeon!
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        DelverController Delver = other.GetComponent<DelverController>();
+        if (Delver != null)
+        {
+            if (Delver.treasureReq > Delver.treasure)
+            {
+                //Spawn the fuck you gun if we didn't get enough treasure
+                GameObject TreasureGun = (GameObject)Instantiate(NotEnoughTreasureGun, transform.position + Vector3.down, Quaternion.identity, transform);
+                TreasureGun.GetComponent<CoreBreaker>().Damage = (Delver.treasureReq - Delver.treasure) * 4;
+                Destroy(other.gameObject);
+            }
+            else
+            {
+                Destroy(other.gameObject);
+            }
+        }
+    }
+
 
 
 

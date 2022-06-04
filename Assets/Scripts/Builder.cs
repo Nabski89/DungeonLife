@@ -5,7 +5,7 @@ using UnityEngine;
 public class Builder : MonoBehaviour
 {
     public GameObject[] BuildingCoreOptions;
-    public int UnGrowTimer = 0;
+    public float UnGrowTimer = 0;
     /* note to self, to prevent gameplay from getting stale maybe have this always give you 2 out of 5 upgrade options, esp at the start
      base upgrades would be
 
@@ -33,27 +33,21 @@ public class Builder : MonoBehaviour
     public GameObject LEFT;
     public GameObject RIGHT;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown("left ctrl"))
         {
             grow();
-            UnGrowTimer = 30 * 5;
+            UnGrowTimer = 5;
         }
         if (Input.GetKey("left ctrl"))
         {
-            UnGrowTimer += 1;
+            UnGrowTimer += 1*Time.deltaTime;
         }
 
-        UnGrowTimer -= 1;
-        if (UnGrowTimer == 0)
+        UnGrowTimer -= 1*Time.deltaTime;
+        if (UnGrowTimer <= 0)
         {
             ungrow();
         }
@@ -74,7 +68,14 @@ public class Builder : MonoBehaviour
         }
         Instantiate(BuildingCoreOptions[rand2], RightPosition, transform.rotation, transform);
     }
+    //if the core is there, you can't build
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        ManaController controller = other.GetComponent<ManaController>();
+        if (controller != null)
+            Destroy(gameObject);
 
+    }
     void grow()
     {
         transform.localScale = new Vector3(1, 1, 1);
