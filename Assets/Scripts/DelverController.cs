@@ -10,48 +10,75 @@ public class DelverController : MonoBehaviour
     public int JobXP = 0;
     int path = 8;
     int treasurepath = 8;
-    public int MoveIdle = 0;
+
+    public float MoveIdle = 0;
+    //use these stat to affect character speed
+    public float MoveDelay = 0.3f;
+    public float Speed = 1;
 
     public float treasure = 0;
     public float treasureReq = 10;
     bool treasureFind = false;
-    public WiggleWalk Body;
+    public Vector3 TargetPosition;
+
+
     public bool InCombat;
     //Used by the body to pick your pants
     public int ClassType;
+    int layerMask = 1 << 7;
+
+    //Wigglewalk stuff
+    public WiggleWalk Body;
+    //    int Wig = 1;
 
     // Start is called before the first frame update
     void Start()
     {
         Body = GetComponentInChildren(typeof(WiggleWalk)) as WiggleWalk;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        {
-            MoveIdle += 1;
-            if (MoveIdle <= 20 && MoveIdle >= 0)
-            {
-                move();
-            }
-            if (MoveIdle == 30 && MoveIdle >= 0)
-            {
-                MoveIdle = 0;
-            }
-        }
-        if (hp <= 0)
-        {
-            die();
-        }
+        TargetPosition = transform.position;
     }
 
     bool FindAPath = false;
     //raycasts want to be in fixed update. We are using this as our door check.
     void FixedUpdate()
     {
+        if (hp <= 0)
+        {
+            die();
+        }
+
+        {
+            if (MoveIdle >= 0)
+                MoveIdle -= 1 * Time.deltaTime;
+            if (MoveIdle <= 0 && InCombat == false)
+            {
+                var step = 1 * Time.deltaTime * Speed; // calculate distance to move
+
+                if (Vector3.Distance(transform.position, TargetPosition) < 0.33f)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, TargetPosition, step);
+                }
+                transform.position = Vector3.MoveTowards(transform.position, TargetPosition, step);
+
+                //now we wiggle or we would if this code worked, don't forget to uncomment Body and Wig when trying to fix it.
+                /*
+                Body.transform.Rotate(0, 0, 30 * Time.deltaTime * Wig, Space.Self);
+                if (Mathf.Round(Mathf.Abs(Body.transform.localEulerAngles.z)) == 13 || Mathf.Round(Mathf.Abs(Body.transform.localEulerAngles.z)) == 348)
+                {
+                    Wig = Wig * -1;
+                }
+                */
+            }
+            if (transform.position == TargetPosition)
+            {
+                if (MoveIdle >= 0)
+                    MoveIdle = MoveDelay;
+                GetTargetPosition();
+            }
+        }
+
         //makes it so we only hit layer 7
-        int layerMask = 1 << 7;
+
         //these are the debug lines so we can see what we are hitting.
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.right) * 2, Color.yellow);
         Debug.DrawRay(transform.position, transform.TransformDirection(-Vector3.up) * 2, Color.red);
@@ -69,73 +96,13 @@ public class DelverController : MonoBehaviour
             path = 0;
 
             //Left (Lowest Priority after turn back)
-            RaycastHit2D hitLeft = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector3.right), 2, layerMask);
-            // if it doesn't hit anything
-            if (hitLeft.collider != null)
-            {
-                // Debug.Log("Left Hits " + hitLeft.collider.gameObject.name);
-            }
-            if (hitLeft.collider == null)
-            {
-                Debug.Log("Left Is Empty");
-                path = 1;
-            }
-
-            //forward
-            RaycastHit2D hitDown = Physics2D.Raycast(transform.position, transform.TransformDirection(-Vector3.up), 2, layerMask);
-            // if it doesn't hit anything
-            if (hitDown.collider != null)
-            {
-                Debug.Log("Foward Hits " + hitDown.collider.gameObject.name);
-            }
-            if (hitDown.collider == null)
-            {
-                //            Debug.Log("Forward Is Empty");
-                path = 2;
-            }
-
-            // Cast a ray straight To the characters right.
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.TransformDirection(-Vector3.right), 2, layerMask);
-            // If it hits something...
-            if (hit.collider != null)
-            {
-                //            Debug.Log("Right(White) Hits " + hit.collider.gameObject.name);
-            }
-            if (hit.collider == null)
-            {
-                Debug.Log("Right(White) Is Empty");
-                path = 3;
-            }
-
-
+            ScanForPath(Vector3.right, 1);
+            ScanForPath(-Vector3.up, 2);
+            ScanForPath(-Vector3.right, 3);
             //Then we look for treasure
-
-
-            RaycastHit2D TreasurehitLeft = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector3.right), 4, layerMask);
-            if (TreasurehitLeft.collider != null && TreasurehitLeft.collider.gameObject.name == "Chest")
-            {
-                Debug.Log("TreasureSearch Hits " + TreasurehitLeft.collider.gameObject.name);
-                treasureFind = true;
-                treasurepath = 1;
-            }
-
-            //forward
-            RaycastHit2D TreasurehitDown = Physics2D.Raycast(transform.position, transform.TransformDirection(-Vector3.up), 4, layerMask);
-            if (TreasurehitDown.collider != null && TreasurehitDown.collider.gameObject.name == "Chest")
-            {
-                Debug.Log("TreasureSearch Hits " + TreasurehitDown.collider.gameObject.name);
-                treasureFind = true;
-                treasurepath = 2;
-            }
-
-            // right.
-            RaycastHit2D Treasurehit = Physics2D.Raycast(transform.position, transform.TransformDirection(-Vector3.right), 4, layerMask);
-            if (Treasurehit.collider != null && Treasurehit.collider.gameObject.name == "Chest")
-            {
-                Debug.Log("TreasureSearch) Hits " + Treasurehit.collider.gameObject.name);
-                treasureFind = true;
-                treasurepath = 3;
-            }
+            ScanForTreasure(Vector3.right, 1);
+            ScanForTreasure(-Vector3.up, 2);
+            ScanForTreasure(-Vector3.right, 3);
 
             // if we didn't find treasure
             if (treasureFind == false)
@@ -143,43 +110,21 @@ public class DelverController : MonoBehaviour
                 if (path == 0) { TurnRight(); TurnRight(); }
                 if (path == 1) { TurnLeft(); }
                 if (path == 3) { TurnRight(); }
+                GetTargetPosition();
             }
 
             // if we did
             if (treasureFind == true)
             {
-                Debug.Log("We turn a second time");
                 if (treasurepath == 0) { TurnRight(); TurnRight(); }
                 if (treasurepath == 1) { TurnLeft(); }
                 if (treasurepath == 3) { TurnRight(); }
+                GetTargetPosition();
             }
 
             // Reset our variables
             treasureFind = false;
             FindAPath = false;
-        }
-    }
-    public Vector3 thePosition;
-    public Vector3 MoveFoward;
-    void move()
-    {
-        if (InCombat == false)
-        {
-            Vector3 position = transform.position;
-            position = transform.TransformPoint(Vector3.down * .04f);
-
-            if (MoveIdle <= 5)//move twice early to give a stuttery step? Why? I don't know, because I like it
-            {
-                position = transform.TransformPoint(Vector3.down * .08f);
-                Body.Wiggle();
-            }
-            Body.Wiggle();
-            if (MoveIdle == 20)
-            {
-                position.x = Mathf.RoundToInt(position.x);
-                position.y = Mathf.RoundToInt(position.y);
-            }
-            transform.position = position;
         }
     }
     //this is just so we can call it from the door checker
@@ -190,7 +135,30 @@ public class DelverController : MonoBehaviour
     public void TurnLeft()
     {
         transform.Rotate(0, 0, 90, Space.Self);
+    }
+    public void GetTargetPosition()
+    {
+        TargetPosition = transform.position + (transform.TransformDirection(Vector3.down));
+        TargetPosition.x = Mathf.RoundToInt(TargetPosition.x);
+        TargetPosition.y = Mathf.RoundToInt(TargetPosition.y);
+    }
+    public void ScanForPath(Vector3 Direction, int PathNum)
+    {
+        RaycastHit2D hitLeft = Physics2D.Raycast(transform.position, transform.TransformDirection(Direction), 2, layerMask);
+        if (hitLeft.collider == null)
+        {
+            path = PathNum;
+        }
+    }
 
+    public void ScanForTreasure(Vector3 Direction, int PathNum)
+    {
+        RaycastHit2D Treasurehit = Physics2D.Raycast(transform.position, transform.TransformDirection(Direction), 4, layerMask);
+        if (Treasurehit.collider != null && Treasurehit.collider.gameObject.name == "Chest")
+        {
+            treasureFind = true;
+            treasurepath = PathNum;
+        }
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
@@ -198,15 +166,13 @@ public class DelverController : MonoBehaviour
         if (controller != null)
         {
             FindAPath = true;
-            //we used to do this to keep on path
-            //            transform.position = controller.transform.position;
         }
     }
 
     void die()
     {
         float ManaValue = Level + ClassXP + JobXP;
-        //      ManaController.ManaSpend += ManaValue;
+        //      ManaController.Spend += ManaValue;
         Destroy(gameObject);
     }
 
