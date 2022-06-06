@@ -23,8 +23,8 @@ public class Loot : MonoBehaviour
         if (controller != null)
         {
             controller.treasure += TreasureValue;
-            ManaController.ManaSpend += TreasureValue / 2;
-            controller.MoveIdle = Mathf.RoundToInt(-TreasureValue * 2);
+            ManaController.Spend(TreasureValue / 2);
+            controller.MoveIdle = Mathf.RoundToInt(TreasureValue * 2);
 
             //make sure the chest doesn't instantly respawn
             Spawner Spawner = gameObject.GetComponentInParent(typeof(Spawner)) as Spawner;

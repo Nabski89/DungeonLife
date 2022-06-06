@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 29
-  MobCountMax: 2
+  MobCountMax: 1
   SpawnIntervalSeconds: 30
   SpawnedMob:
   - {fileID: 2910486035716723240, guid: 79b29e6b6fedc574fab0133c02953e68, type: 3}

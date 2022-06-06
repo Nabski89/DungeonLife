@@ -5,6 +5,7 @@ using UnityEngine;
 public class Builder : MonoBehaviour
 {
     public GameObject[] BuildingCoreOptions;
+    public int Cost = 5;
     public float UnGrowTimer = 0;
     /* note to self, to prevent gameplay from getting stale maybe have this always give you 2 out of 5 upgrade options, esp at the start
      base upgrades would be
@@ -43,10 +44,10 @@ public class Builder : MonoBehaviour
         }
         if (Input.GetKey("left ctrl"))
         {
-            UnGrowTimer += 1*Time.deltaTime;
+            UnGrowTimer += 1 * Time.deltaTime;
         }
 
-        UnGrowTimer -= 1*Time.deltaTime;
+        UnGrowTimer -= 1 * Time.deltaTime;
         if (UnGrowTimer <= 0)
         {
             ungrow();
@@ -55,18 +56,22 @@ public class Builder : MonoBehaviour
 
     void OnMouseDown()
     {
-        UnGrowTimer = 30 * 10;
-        Vector3 LeftPosition = transform.TransformPoint(Vector3.left);
-        Vector3 RightPosition = transform.TransformPoint(Vector3.right);
-
-        int rand1 = Random.Range(0, BuildingCoreOptions.Length);
-        int rand2 = Random.Range(0, BuildingCoreOptions.Length);
-        Instantiate(BuildingCoreOptions[rand1], LeftPosition, transform.rotation, transform);
-        while (rand1 == rand2)
+        if (transform.childCount < 1)
         {
-            rand2 = Random.Range(0, BuildingCoreOptions.Length);
+
+            UnGrowTimer = 10;
+            Vector3 LeftPosition = transform.TransformPoint(Vector3.left);
+            Vector3 RightPosition = transform.TransformPoint(Vector3.right);
+
+            int rand1 = Random.Range(0, BuildingCoreOptions.Length);
+            int rand2 = Random.Range(0, BuildingCoreOptions.Length);
+            Instantiate(BuildingCoreOptions[rand1], LeftPosition, transform.rotation, transform);
+            while (rand1 == rand2)
+            {
+                rand2 = Random.Range(0, BuildingCoreOptions.Length);
+            }
+            Instantiate(BuildingCoreOptions[rand2], RightPosition, transform.rotation, transform);
         }
-        Instantiate(BuildingCoreOptions[rand2], RightPosition, transform.rotation, transform);
     }
     //if the core is there, you can't build
     public void OnTriggerEnter2D(Collider2D other)

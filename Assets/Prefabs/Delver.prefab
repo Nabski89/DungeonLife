@@ -239,9 +239,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8397432116543053861}
   - component: {fileID: 2024172294976946026}
+  - component: {fileID: 7426264747626924197}
   - component: {fileID: 3547294657173812371}
   - component: {fileID: 6555340282578015605}
-  - component: {fileID: 7426264747626924197}
+  - component: {fileID: 6268561963313508598}
   m_Layer: 0
   m_Name: Delver
   m_TagString: Untagged
@@ -280,17 +281,43 @@ MonoBehaviour:
   ClassXP: 0
   JobXP: 0
   MoveIdle: 0
+  MoveDelay: 0.3
+  Speed: 1
   treasure: 0
-  Body: {fileID: 7761053200541588418}
+  treasureReq: 10
+  TargetPosition: {x: 0, y: 0, z: 0}
   InCombat: 0
-  thePosition: {x: 0, y: 0, z: 0}
-  MoveFoward: {x: 0, y: 0, z: 0}
+  ClassType: 0
+  Body: {fileID: 7761053200541588418}
   MaxHp: 10
   hp: 10
   Atk: 6
   AtkMod: 1
   Def: 6
   DefMod: 1
+--- !u!114 &7426264747626924197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5573105926687250677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64c2d164fc4cd8949ad1c9c0de53e074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Faction: 1
+  MaxHp: 10
+  hp: 10
+  Atk: 6
+  AtkMod: 1
+  Def: 6
+  DefMod: 1
+  Damage: 1
+  Splat: {fileID: 3493879478972447153, guid: 2f1eaacaa176ace43b88001c3767f9d0, type: 3}
+  AtkSplatGO: {fileID: 6101530069096244085, guid: 2b53f22a1dca70744917667af0ae3d7e, type: 3}
+  DefSplatGO: {fileID: 3036482323124313622, guid: b791b6ad0e3a74d43b324563bac238ba, type: 3}
 --- !u!50 &3547294657173812371
 Rigidbody2D:
   serializedVersion: 4
@@ -338,7 +365,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1}
   m_EdgeRadius: 0
---- !u!114 &7426264747626924197
+--- !u!114 &6268561963313508598
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -347,21 +374,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 5573105926687250677}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64c2d164fc4cd8949ad1c9c0de53e074, type: 3}
+  m_Script: {fileID: 11500000, guid: ff463efc1cf47e345ab2b436de07f5e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Faction: 1
-  MaxHp: 10
-  hp: 10
-  Atk: 6
-  AtkMod: 1
-  Def: 6
-  DefMod: 1
-  Damage: 1
-  Splat: {fileID: 3493879478972447153, guid: 2f1eaacaa176ace43b88001c3767f9d0, type: 3}
-  AtkSplatGO: {fileID: 6101530069096244085, guid: 2b53f22a1dca70744917667af0ae3d7e, type: 3}
-  DefSplatGO: {fileID: 3036482323124313622, guid: b791b6ad0e3a74d43b324563bac238ba, type: 3}
-  Cooldown: 0
+  MoveIdle: 0
+  MoveDelay: 0.3
+  Speed: 1
+  TargetPosition: {x: 0, y: 0, z: 0}
+  TreasureCare: 1
+  InCombat: 0
+  Body: {fileID: 0}
 --- !u!1 &7761053200541588418
 GameObject:
   m_ObjectHideFlags: 0

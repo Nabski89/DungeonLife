@@ -29,7 +29,7 @@ public class CoreBreaker : MonoBehaviour
         }
         if (Core != null)
         {
-            ManaController.ManaSpend += Damage;
+            ManaController.Spend(Damage);
             Destroy(gameObject);
         }
     }

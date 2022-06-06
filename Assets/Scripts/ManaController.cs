@@ -11,7 +11,12 @@ public class ManaController : MonoBehaviour
     public float ManaDisplayOnly = 0;
     Vector3 myVector;
 
-
+    void Start()
+    {
+        mana = 100;
+        ManaSpend = 0;
+        ManaGain = 0;
+    }
     void Awake()
     {
         myVector = new Vector3(1, 1, 1);
@@ -39,9 +44,9 @@ public class ManaController : MonoBehaviour
             ManaGain -= (1f + Mathf.Sqrt(ManaGain)) * Time.deltaTime;
         }
         // this is just so I can see how much mana we have
-        transform.localScale = 5 * myVector * (1.5f * Mathf.Pow((mana/*/ 100*/) / (4 * 3.14f), .3333f));
+        transform.localScale = 2.5f * myVector * (Mathf.Pow((mana/*/ 100*/) / (4 * 3.14f), .3333f));
 
-        Vector3 newRotation = new Vector3(-90, mana, 0);
+        Vector3 newRotation = new Vector3(-90, mana * 10, 0);
         transform.eulerAngles = newRotation;
 
         if (mana.ToString("0") != ManaDisplayOnly.ToString("0"))
@@ -62,5 +67,18 @@ public class ManaController : MonoBehaviour
                 Delver.treasure += Delver.treasureReq - Delver.treasure;
             }
         }
+    }
+
+
+    public static void Spend(float BLING)
+    {
+        ManaSpend += BLING;
+        UIMana.Instance.ManaUIUpdate();
+    }
+
+    public static void Gain(float CACHING)
+    {
+        ManaGain += CACHING;
+        UIMana.Instance.ManaUIUpdate();
     }
 }

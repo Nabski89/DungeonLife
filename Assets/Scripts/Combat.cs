@@ -5,7 +5,7 @@ using UnityEngine;
 public class Combat : MonoBehaviour
 {
     public int Faction = 1;
-    DelverController DelverScript;
+    MovementController MovementScript;
     Defender DefenderScript;
     Combat EnemyScript;
 
@@ -29,7 +29,7 @@ public class Combat : MonoBehaviour
     void Start()
     {
         //get our main body
-        DelverScript = GetComponent<DelverController>();
+        MovementScript = GetComponent<MovementController>();
         DefenderScript = GetComponent<Defender>();
 
         if (DefenderScript != null)
@@ -55,8 +55,8 @@ public class Combat : MonoBehaviour
             {
                 if (EnemyScript.Faction != Faction)
                 {
-                    if (DelverScript != null)
-                        DelverScript.InCombat = false;
+                    if (MovementScript != null)
+                        MovementScript.InCombat = false;
                     if (DefenderScript != null)
                         DefenderScript.InCombat = false;
                 }
@@ -69,23 +69,26 @@ public class Combat : MonoBehaviour
     {
         EnemyScript = other.GetComponent<Combat>();
         if (EnemyScript != null)
-        {
-            timer += Time.deltaTime;
+            if (EnemyScript.Faction != Faction)
+            {
+                {
+                    timer += Time.deltaTime;
 
-            if (timer > AtkCooldownTime)
-            {
-                timer = 0;
-                Attack();
+                    if (timer > AtkCooldownTime)
+                    {
+                        timer = 0;
+                        Attack();
+                    }
+                    if (MovementScript != null)
+                    {
+                        MovementScript.InCombat = true;
+                    }
+                    if (DefenderScript != null)
+                    {
+                        DefenderScript.InCombat = true;
+                    }
+                }
             }
-            if (DelverScript != null)
-            {
-                DelverScript.InCombat = true;
-            }
-            if (DefenderScript != null)
-            {
-                DefenderScript.InCombat = true;
-            }
-        }
     }
     public void Attack()
     {

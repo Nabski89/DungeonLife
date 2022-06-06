@@ -50,9 +50,8 @@ public class CameraController : MonoBehaviour
         }
 
         //speed
-        if (Input.GetKeyDown(KeyCode.Home))
+        if (Input.GetKeyDown(KeyCode.Home) && Time.timeScale < 3.5)
         {
-
             //Time.timeScale = 2;
             Time.timeScale += 0.5f;
         }

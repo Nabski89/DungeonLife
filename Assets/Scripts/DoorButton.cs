@@ -25,8 +25,7 @@ public class DoorButton : MonoBehaviour
                 Destroy(SoundEffect, 5);
                 Debug.Log("DOOR");
             }
-            ManaController.ManaSpend += 5;
-            UIMana.Instance.ManaUIUpdate();
+            ManaController.Spend(5);
         }
     }
 }

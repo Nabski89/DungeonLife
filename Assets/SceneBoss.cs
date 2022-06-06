@@ -10,7 +10,6 @@ public class SceneBoss : MonoBehaviour
 {
     SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
 }
-
     public static void TitleScene()
 {
     SceneManager.LoadScene("Title", LoadSceneMode.Single);

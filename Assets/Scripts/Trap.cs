@@ -45,7 +45,7 @@ public class Trap : MonoBehaviour
             {
                 controller.hp -= Damage;
                 //it takes 3 seconds to move between rooms
-                controller.MoveIdle = 3 * -30;
+                controller.MoveIdle = 3;
 
 
                 Vector3 SplatSpot = controller.transform.position;
