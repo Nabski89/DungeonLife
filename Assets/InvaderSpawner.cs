@@ -5,39 +5,22 @@ using UnityEngine;
 public class InvaderSpawner : MonoBehaviour
 {
     public float Timer;
-    public float TimeBetweenSpawns = 10;
+    public float TimeBetweenSpawns = 100;
     public GameObject Invader1;
 
-    public static float XMin = 6;
-    public static float XMax = 6;
-    public static float YMin = 6;
-    public static float YMax = 6;
-    public static int DungeonSize = 0;
+    public static List<GameObject> SpawnPointList = new List<GameObject>();
+
+    public static int DungeonSize = 1;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-        XMin = 6;
-        XMax = 6;
-        YMin = 6;
-        YMax = 6;
         DungeonSize = 0;
     }
 
-
-    // Update is called once per frame
-    public static void GrowDungeon(Vector3 RoomLocation)
-    {
-        XMin = Mathf.Min(XMin, Mathf.RoundToInt(RoomLocation.x));
-        XMax = Mathf.Max(XMax, Mathf.RoundToInt(RoomLocation.x));
-        YMin = Mathf.Min(YMin, Mathf.RoundToInt(RoomLocation.y));
-        YMax = Mathf.Max(YMax, Mathf.RoundToInt(RoomLocation.y));
-        DungeonSize += 1;
-        Debug.Log("X: " + XMin + " to " + XMax + "     Y: " + YMin + " to " + YMax);
-    }
     void Update()
     {
-        Timer -= Time.deltaTime * DungeonSize;
+        Timer -= Time.deltaTime * (DungeonSize/3);
         if (Timer < 0)
         {
             Timer = TimeBetweenSpawns;
@@ -47,9 +30,7 @@ public class InvaderSpawner : MonoBehaviour
 
     void Spawn()
     {
-        Debug.Log("Hello: " + gameObject.name);
-        Vector3 SpawnLocation = new Vector3(Random.Range(XMin - 1, XMax + 2), Random.Range(YMin - 1, YMax + 2), 0);
-        Debug.Log(SpawnLocation);
-        Instantiate(Invader1, SpawnLocation, transform.rotation, transform);
+        Instantiate(Invader1, SpawnPointList[Random.Range(0, SpawnPointList.Count)].transform.position, transform.rotation, transform);
+        Debug.Log("There are currently " + SpawnPointList.Count);
     }
 }

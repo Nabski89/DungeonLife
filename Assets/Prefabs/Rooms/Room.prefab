@@ -3227,6 +3227,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3926119986652771943}
     m_Modifications:
+    - target: {fileID: 3948446449909048486, guid: 998b5e3cdc768984ab1a2bb568bc1cc3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6192461571707944358, guid: 998b5e3cdc768984ab1a2bb568bc1cc3, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3311,7 +3315,11 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 2786759aa0be6a640b582262da92341c, type: 3}
     - target: {fileID: 1116482065361167475, guid: 9b3efce464743494cb61c933b1461ce4, type: 3}
       propertyPath: m_Name
-      value: Floor
+      value: TheMostImportantTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 1116482065361167475, guid: 9b3efce464743494cb61c933b1461ce4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1116482065361167475, guid: 9b3efce464743494cb61c933b1461ce4, type: 3}
       propertyPath: m_IsActive

@@ -30,7 +30,7 @@ public class UpgradeButton : MonoBehaviour
         Vector3 Position = transform.position;
         Position.x = Mathf.Round(Position.x / 3) * 3;
         Position.y = Mathf.Round(Position.y / 3) * 3;
-        Instantiate(Upgrade, Position, Quaternion.identity);
+        Instantiate(Upgrade, Position+Vector3.forward, Quaternion.identity);
 
         GameObject Pappy = transform.parent.gameObject;
         //        transform.parent = null;

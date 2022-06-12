@@ -15,7 +15,6 @@ public class DoorExterior : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("DoorExterior Wall touched something");
         DirectionTile NewRoom = other.GetComponent<DirectionTile>();
         if (NewRoom != null)
             GoingAway = true;

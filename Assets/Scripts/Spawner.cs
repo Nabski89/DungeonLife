@@ -21,7 +21,7 @@ public class Spawner : MonoBehaviour
             {
                 cooldown = 0;
                 Debug.Log(SpawnedMob.Length);
-                Instantiate(SpawnedMob[Random.Range(0, SpawnedMob.Length)], transform.position, Quaternion.identity, transform);
+                Instantiate(SpawnedMob[Random.Range(0, SpawnedMob.Length)], transform.position+Vector3.back, Quaternion.identity, transform);
             }
         }
     }

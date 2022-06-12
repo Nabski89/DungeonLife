@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 6230007118154485844}
   - component: {fileID: -4229959875651603928}
   - component: {fileID: -8131895339020766238}
+  - component: {fileID: 4660235359375403642}
+  - component: {fileID: -7706896509677729464}
   m_Layer: 0
   m_Name: Invader
   m_TagString: Untagged
@@ -42,11 +44,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5907077670077345947}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff463efc1cf47e345ab2b436de07f5e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MoveIdle: 0
+  MoveDelay: 0.3
+  Speed: 1
+  TargetPosition: {x: 0, y: 0, z: 0}
+  TreasureCare: 0
+  InCombat: 0
+  Body: {fileID: 0}
 --- !u!212 &1264434396434178381
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -136,7 +145,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -168,3 +177,27 @@ MonoBehaviour:
   Splat: {fileID: 3493879478972447153, guid: 2f1eaacaa176ace43b88001c3767f9d0, type: 3}
   AtkSplatGO: {fileID: 6101530069096244085, guid: 2b53f22a1dca70744917667af0ae3d7e, type: 3}
   DefSplatGO: {fileID: 3036482323124313622, guid: b791b6ad0e3a74d43b324563bac238ba, type: 3}
+--- !u!114 &4660235359375403642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5907077670077345947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb6d5d188e54a44d9a4037c54f2a7da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7706896509677729464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5907077670077345947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b7232b4cf38ff24ba2231fa28a9ca5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -137,4 +137,8 @@ public class Combat : MonoBehaviour
         DefSplat.GetComponent<Splat>().timer = (AtkCooldownTime / 2);
     }
 
+    void OnMouseDown()
+    {
+        UICombat.Instance.CombatUpdate(hp, Atk, AtkMod, Def, DefMod, Damage);
+    }
 }

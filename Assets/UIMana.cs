@@ -13,8 +13,6 @@ public class UIMana : MonoBehaviour
     }
     public void ManaUIUpdate()
     {
-
-            gameObject.GetComponent<TMPro.TextMeshProUGUI>().text = "↑"+ManaController.ManaGain.ToString("0") +"↑\n"+ ManaController.mana.ToString("0") + " Ѩ\n↓" + ManaController.ManaSpend.ToString("0") + "↓";
-
+        gameObject.GetComponent<TMPro.TextMeshProUGUI>().text = "↑" + ManaController.ManaGain.ToString("0") + "↑\n" + ManaController.mana.ToString("0") + " Ѩ\n↓" + ManaController.ManaSpend.ToString("0") + "↓";
     }
 }

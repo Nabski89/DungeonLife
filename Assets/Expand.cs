@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Expand : MonoBehaviour
 {
-    //public GameObject ALittleSquareThatIsTheMap;
     public GameObject Rooms;
     //GameObject RoomCenter;
 
@@ -17,6 +16,10 @@ public class Expand : MonoBehaviour
     {
         GetComponent<BoxCollider2D>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
+    }
+    void OnEnable()
+    {
+
     }
     void OnMouseDown()
     {
@@ -31,16 +34,21 @@ public class Expand : MonoBehaviour
             else
             {
                 Rooms.SetActive(true);
-                ManaController.Spend(cost);
-                //this tracks our dungeon size and costs and dimensions
-                Debug.Log(transform.position);
-                InvaderSpawner.GrowDungeon(transform.position);
+                ManaController.Spend(InvaderSpawner.DungeonSize * cost);
 
+                Debug.Log(transform.position);
                 foreach (var NextRooms in GameObject.FindObjectsOfType<Expand>())
                 {
                     if (Vector3.Distance(NextRooms.transform.position, transform.position) < 4)
+                    {
                         NextRooms.valid = true;
+                        NextRooms.Invoke("AddMe", 1);
+                    }
                 }
+
+                InvaderSpawner.DungeonSize += 1;
+                InvaderSpawner.SpawnPointList.Remove(gameObject);
+                Debug.Log("There are currently " + InvaderSpawner.SpawnPointList.Count);
                 Destroy(gameObject);
             }
         }
@@ -79,7 +87,13 @@ public class Expand : MonoBehaviour
         DirectionTile controller = other.GetComponent<DirectionTile>();
         if (controller != null)
         {
+            InvaderSpawner.SpawnPointList.Remove(gameObject);
             Destroy(gameObject);
         }
+    }
+
+    void AddMe()
+    {
+        InvaderSpawner.SpawnPointList.Add(gameObject);
     }
 }
