@@ -28,8 +28,8 @@ public class UpgradeButton : MonoBehaviour
     {
         ManaController.Spend(cost);
         Vector3 Position = transform.position;
-        Position.x = Mathf.Round(Position.x / 3) * 3;
-        Position.y = Mathf.Round(Position.y / 3) * 3;
+        Position.x = Mathf.Round(Position.x / 3) * 3-1;
+        Position.y = Mathf.Round(Position.y / 3) * 3-1;
         Instantiate(Upgrade, Position+Vector3.forward, Quaternion.identity);
 
         GameObject Pappy = transform.parent.gameObject;

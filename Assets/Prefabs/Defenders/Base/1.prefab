@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7285540073625003983}
   - component: {fileID: 1917002641439367840}
   m_Layer: 0
-  m_Name: Defender
+  m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,9 +164,9 @@ MonoBehaviour:
   Faction: 2
   MaxHp: 1
   hp: 1
-  Atk: 6
+  Atk: 4
   AtkMod: 1
-  Def: 6
+  Def: 4
   DefMod: 0
   Damage: 1
   Splat: {fileID: 3493879478972447153, guid: 2f1eaacaa176ace43b88001c3767f9d0, type: 3}

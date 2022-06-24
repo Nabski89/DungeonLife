@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Builder : MonoBehaviour
 {
-    public GameObject[] BuildingCoreOptions;
+
+
     public int Cost = 5;
     public float UnGrowTimer = 0;
     /* note to self, to prevent gameplay from getting stale maybe have this always give you 2 out of 5 upgrade options, esp at the start
@@ -30,9 +31,19 @@ public class Builder : MonoBehaviour
             all mobs go
             /      \
         stronger    more
+
+        MOBS
+        FARM    -1/-1, gives more rewards on death
+        SWARM   -1 hp -1/-1, Spawntime/2, higher spawn cap
+        NORMAL  +0/+0
+        STRONG  +1/+1
     */
     public GameObject LEFT;
     public GameObject RIGHT;
+
+    void Start()
+    {
+    }
 
     // Update is called once per frame
     void Update()
@@ -63,14 +74,15 @@ public class Builder : MonoBehaviour
             Vector3 LeftPosition = transform.TransformPoint(Vector3.left);
             Vector3 RightPosition = transform.TransformPoint(Vector3.right);
 
-            int rand1 = Random.Range(0, BuildingCoreOptions.Length);
-            int rand2 = Random.Range(0, BuildingCoreOptions.Length);
-            Instantiate(BuildingCoreOptions[rand1], LeftPosition, transform.rotation, transform);
+            int rand1 = Random.Range(0, UpgradeHolder.Defenders.Count);
+            int rand2 = Random.Range(0, UpgradeHolder.Defenders.Count);
+            Instantiate(UpgradeHolder.Defenders[rand1], LeftPosition, transform.rotation, transform);
             while (rand1 == rand2)
             {
-                rand2 = Random.Range(0, BuildingCoreOptions.Length);
+                rand2 = Random.Range(0, UpgradeHolder.Defenders.Count);
             }
-            Instantiate(BuildingCoreOptions[rand2], RightPosition, transform.rotation, transform);
+            Instantiate(UpgradeHolder.Defenders[rand2], RightPosition, transform.rotation, transform);
+
         }
     }
     //if the core is there, you can't build

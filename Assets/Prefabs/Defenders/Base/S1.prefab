@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -6250601872354092282}
   - component: {fileID: -2351013445187009235}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: S1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,4 +100,3 @@ MonoBehaviour:
   SpawnIntervalSeconds: 30
   SpawnedMob:
   - {fileID: 2910486035716723240, guid: 79b29e6b6fedc574fab0133c02953e68, type: 3}
-  - {fileID: 3084936306530288511, guid: 047325d77275aec4f9f0fc675c24de7d, type: 3}

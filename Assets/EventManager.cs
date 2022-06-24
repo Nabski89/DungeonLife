@@ -16,41 +16,41 @@ public class EventManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    float eventtimer = 1;
+    float eventtimer = 60;
     void Update()
     {
         eventtimer -= Time.deltaTime;
         if (eventtimer < 0)
         {
-            SpawnEvent("Main Text", "Text 1", "Text 2", "Text 3");
+            SpawnEvent(MiniEvent);
         }
     }
 
-    void SpawnEvent(string MainText, string Option1, string Option2, string Option3)
+    void SpawnEvent(GameObject EventSpawned)
     {
         if (EventLoc1.transform.childCount > 0)
         {
             if (EventLoc2.transform.childCount < 1)
             {
                 //spawn in slot 2
-                Spawn(EventLoc2);
+                Spawn(EventLoc2, MiniEvent);
             }
             else if (EventLoc3.transform.childCount < 1)
             {
                 //spawn in slot 3
-                Spawn(EventLoc3);
+                Spawn(EventLoc3, MiniEvent);
             }
         }
         else
         {
             //spawn in slot 1
-            Spawn(EventLoc1);
+            Spawn(EventLoc1, MiniEvent);
         }
     }
 
-    void Spawn(GameObject EventLoc)
+    void Spawn(GameObject EventLoc, GameObject MiniEventSpawned)
     {
-        Instantiate(MiniEvent, EventLoc.transform);
-        eventtimer += 1;
+        Instantiate(MiniEventSpawned, EventLoc.transform);
+        eventtimer += 60;
     }
 }

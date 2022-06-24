@@ -8,7 +8,7 @@ public class Defender : MonoBehaviour
     public Vector3 TargetPosition;
     void Start()
     {
-        TargetPosition = transform.parent.position;
+        TargetPosition = transform.parent.position+Vector3.one;
     }
     public float MoveCooldown = 4;
     public float MoveCooldownTimer = 4;
@@ -21,14 +21,14 @@ public class Defender : MonoBehaviour
         Debug.DrawRay(transform.position, transform.TransformDirection(-Vector3.up) * 2, Color.red);
         //only fire when you're hit a room center
         //take a break at the new location
-        if (transform.position == TargetPosition && transform.position != transform.parent.position)
+        if (transform.position == TargetPosition && transform.position != transform.parent.position+Vector3.one)
         {
             MoveCooldownTimer = MoveCooldown;
             Debug.Log("Lets go home");
-            TargetPosition = transform.parent.position;
+            TargetPosition = transform.parent.position+Vector3.one;
         }
 
-        if (transform.position == transform.parent.position)
+        if (transform.position == transform.parent.position+Vector3.one)
         {
             Debug.Log("Look for a route");
             //forward

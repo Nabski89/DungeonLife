@@ -7,8 +7,8 @@ public class EventMini : MonoBehaviour
 {
     public GameObject Event;
     Image m_Graphic;
-    float timer = 3;
-    float waitTime = 3;
+    public float timer = 120;
+    public float waitTime = 120;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +37,7 @@ public class EventMini : MonoBehaviour
         Time.timeScale = 0;
 
         GameObject Canvas = GameObject.Find("Canvas");
-        GameObject EventSpawned = (GameObject)Instantiate(Event, Canvas.transform, false);
+        GameObject EventSpawned = (GameObject)Instantiate(Event, Canvas.transform.position, Quaternion.identity, Canvas.transform);
         EventSpawned.GetComponent<EventPopup>().Speed = Speed;
         Destroy(gameObject);
     }
