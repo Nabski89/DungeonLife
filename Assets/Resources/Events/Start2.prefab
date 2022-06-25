@@ -73,11 +73,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5223635132952607, guid: fe75ceadfc880fb489949307673b54c7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 203
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5223635132952607, guid: fe75ceadfc880fb489949307673b54c7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 14.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5223635132952607, guid: fe75ceadfc880fb489949307673b54c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -95,17 +95,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: Start2
       objectReference: {fileID: 0}
+    - target: {fileID: 980052149740573239, guid: fe75ceadfc880fb489949307673b54c7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3210119287837664137, guid: fe75ceadfc880fb489949307673b54c7, type: 3}
+      propertyPath: m_text
+      value: Maybe something less simple
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277591877552195350, guid: fe75ceadfc880fb489949307673b54c7, type: 3}
+      propertyPath: PickAnEvent
+      value: Events/Start5
+      objectReference: {fileID: 0}
     - target: {fileID: 4277591877552195350, guid: fe75ceadfc880fb489949307673b54c7, type: 3}
       propertyPath: UpgradeSpawn
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5494434215719884022, guid: fe75ceadfc880fb489949307673b54c7, type: 3}
       propertyPath: m_text
-      value: Quality
+      value: The timeless classic
+      objectReference: {fileID: 0}
+    - target: {fileID: 6520402244885272423, guid: fe75ceadfc880fb489949307673b54c7, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6520402244885272423, guid: fe75ceadfc880fb489949307673b54c7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6520402244885272423, guid: fe75ceadfc880fb489949307673b54c7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7620126306978224256, guid: fe75ceadfc880fb489949307673b54c7, type: 3}
       propertyPath: m_text
-      value: Pick your first thing
+      value: You need to pick a defender, slimes are a classic, you're good with
+        slimes right?
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152553565032742615, guid: fe75ceadfc880fb489949307673b54c7, type: 3}
+      propertyPath: Event
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152553565032742615, guid: fe75ceadfc880fb489949307673b54c7, type: 3}
+      propertyPath: PickAnEvent
+      value: Events/Start3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe75ceadfc880fb489949307673b54c7, type: 3}

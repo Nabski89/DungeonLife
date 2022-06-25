@@ -7,6 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6250601872354092282, guid: 4f19b582b2d38f34e8b1097f2d638e32, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6250601872354092282, guid: 4f19b582b2d38f34e8b1097f2d638e32, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6250601872354092282, guid: 4f19b582b2d38f34e8b1097f2d638e32, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -2351013445187009235, guid: 4f19b582b2d38f34e8b1097f2d638e32, type: 3}
       propertyPath: SpawnedMob.Array.data[0]
       value: 

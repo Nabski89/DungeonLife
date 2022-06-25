@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2974570440316452343, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: m_text
-      value: Congratulations. You're a dungeon.
+      value: As a newly formed dungeon
       objectReference: {fileID: 0}
     - target: {fileID: 4653733888478319976, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: m_Pivot.x
@@ -89,11 +89,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4653733888478319976, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 203
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4653733888478319976, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 14.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4653733888478319976, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
