@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 698680131723554965, guid: 54930af7af9a1ca4785e079f7a891d19, type: 3}
       propertyPath: m_Name
-      value: Start7
+      value: Start8
       objectReference: {fileID: 0}
     - target: {fileID: 1114991375763591837, guid: 54930af7af9a1ca4785e079f7a891d19, type: 3}
       propertyPath: m_Pivot.x
@@ -93,6 +93,59 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1114991375763591837, guid: 54930af7af9a1ca4785e079f7a891d19, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587056414274601227, guid: 54930af7af9a1ca4785e079f7a891d19, type: 3}
+      propertyPath: m_text
+      value: The amount you can support
+      objectReference: {fileID: 0}
+    - target: {fileID: 3762404853718066580, guid: 54930af7af9a1ca4785e079f7a891d19, type: 3}
+      propertyPath: Upgrade
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3762404853718066580, guid: 54930af7af9a1ca4785e079f7a891d19, type: 3}
+      propertyPath: PickAnEvent
+      value: Events/Start9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3762404853718066580, guid: 54930af7af9a1ca4785e079f7a891d19, type: 3}
+      propertyPath: UpgradeSpawn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3842627735057649322, guid: 54930af7af9a1ca4785e079f7a891d19, type: 3}
+      propertyPath: Event
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3842627735057649322, guid: 54930af7af9a1ca4785e079f7a891d19, type: 3}
+      propertyPath: PickAnEvent
+      value: Events/Start9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840127903191938676, guid: 54930af7af9a1ca4785e079f7a891d19, type: 3}
+      propertyPath: m_text
+      value: Respawn Speed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420025726565106806, guid: 54930af7af9a1ca4785e079f7a891d19, type: 3}
+      propertyPath: m_text
+      value: Durability
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454055607549875937, guid: 54930af7af9a1ca4785e079f7a891d19, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398166109523917314, guid: 54930af7af9a1ca4785e079f7a891d19, type: 3}
+      propertyPath: m_text
+      value: Last one. When you upgrade your rooms, which would you like to be able
+        to improve first
+      objectReference: {fileID: 0}
+    - target: {fileID: 9099523202200411221, guid: 54930af7af9a1ca4785e079f7a891d19, type: 3}
+      propertyPath: Upgrade
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9099523202200411221, guid: 54930af7af9a1ca4785e079f7a891d19, type: 3}
+      propertyPath: PickAnEvent
+      value: Events/Start9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9099523202200411221, guid: 54930af7af9a1ca4785e079f7a891d19, type: 3}
+      propertyPath: UpgradeSpawn
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

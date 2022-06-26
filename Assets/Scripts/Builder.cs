@@ -38,6 +38,7 @@ public class Builder : MonoBehaviour
         NORMAL  +0/+0
         STRONG  +1/+1
     */
+    public GameObject SpawnerPrefab;
     public GameObject LEFT;
     public GameObject RIGHT;
 
@@ -73,16 +74,30 @@ public class Builder : MonoBehaviour
             UnGrowTimer = 10;
             Vector3 LeftPosition = transform.TransformPoint(Vector3.left);
             Vector3 RightPosition = transform.TransformPoint(Vector3.right);
+            int RandCount = UpgradeHolder.Defenders.Count;
+            int rand1 = Random.Range(0, RandCount);
+            int rand2 = Random.Range(0, RandCount);
 
-            int rand1 = Random.Range(0, UpgradeHolder.Defenders.Count);
-            int rand2 = Random.Range(0, UpgradeHolder.Defenders.Count);
-            Instantiate(UpgradeHolder.Defenders[rand1], LeftPosition, transform.rotation, transform);
-            while (rand1 == rand2)
+            Debug.Log(UpgradeHolder.Defenders.Count + " upgrades and you rolled " + rand1 + " and " + rand2);
+
+            Debug.Log(UpgradeHolder.Defenders[rand1]);
+
+            // spawn the purchaser, then set the cost, sprite, and what it will actually spawn if purchased, which is a pass down twice thing
+            LEFT = Instantiate(SpawnerPrefab, LeftPosition, transform.rotation, transform);
+            LEFT.GetComponent<UpgradeButton>().Cost = UpgradeHolder.Defenders[rand1].GetComponent<CostManager>().Cost;
+            LEFT.GetComponent<SpriteRenderer>().sprite = UpgradeHolder.Defenders[rand1].GetComponent<SpriteRenderer>().sprite;
+            LEFT.GetComponent<UpgradeButton>().Upgrade = UpgradeHolder.Defenders[rand1];
+            if (RandCount > 1)
             {
-                rand2 = Random.Range(0, UpgradeHolder.Defenders.Count);
+                while (rand1 == rand2)
+                {
+                    rand2 = Random.Range(0, RandCount);
+                }
+                RIGHT = Instantiate(SpawnerPrefab, RightPosition, transform.rotation, transform);
+                RIGHT.GetComponent<UpgradeButton>().Cost = UpgradeHolder.Defenders[rand2].GetComponent<CostManager>().Cost;
+                RIGHT.GetComponent<SpriteRenderer>().sprite = UpgradeHolder.Defenders[rand2].GetComponent<SpriteRenderer>().sprite;
+                RIGHT.GetComponent<UpgradeButton>().Upgrade = UpgradeHolder.Defenders[rand2];
             }
-            Instantiate(UpgradeHolder.Defenders[rand2], RightPosition, transform.rotation, transform);
-
         }
     }
     //if the core is there, you can't build

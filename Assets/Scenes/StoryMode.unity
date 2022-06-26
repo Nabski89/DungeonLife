@@ -3841,11 +3841,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2015077207433965498, guid: 70c806a4c8799c34bb55a0480b27f83f, type: 3}
       propertyPath: timer
-      value: 3
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2015077207433965498, guid: 70c806a4c8799c34bb55a0480b27f83f, type: 3}
       propertyPath: waitTime
-      value: 3
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8789322279851583815, guid: 70c806a4c8799c34bb55a0480b27f83f, type: 3}
       propertyPath: m_Name

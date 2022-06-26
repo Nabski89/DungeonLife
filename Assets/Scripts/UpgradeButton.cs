@@ -5,8 +5,9 @@ using UnityEngine;
 public class UpgradeButton : MonoBehaviour
 {
     float TimeToDie = 10;
-    float cost = 10;
+    public float Cost = 10;
     public GameObject Upgrade;
+    public GameObject SpawnerPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,11 +27,13 @@ public class UpgradeButton : MonoBehaviour
 
     void OnMouseDown()
     {
-        ManaController.Spend(cost);
+        ManaController.Spend(Cost);
         Vector3 Position = transform.position;
-        Position.x = Mathf.Round(Position.x / 3) * 3-1;
-        Position.y = Mathf.Round(Position.y / 3) * 3-1;
-        Instantiate(Upgrade, Position+Vector3.forward, Quaternion.identity);
+        Position.x = Mathf.Round(Position.x / 3) * 3 - 1;
+        Position.y = Mathf.Round(Position.y / 3) * 3 - 1;
+        GameObject NewSpawn = Instantiate(SpawnerPrefab, Position + Vector3.forward, Quaternion.identity);
+        NewSpawn.GetComponent<Spawner>().SpawnedMob = Upgrade;
+
 
         GameObject Pappy = transform.parent.gameObject;
         //        transform.parent = null;

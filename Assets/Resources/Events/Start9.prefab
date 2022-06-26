@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Got it.
       objectReference: {fileID: 0}
+    - target: {fileID: 4381614474025208878, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4848286405292818267, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
       propertyPath: Event
       value: 0

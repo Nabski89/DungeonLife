@@ -6,7 +6,7 @@ public class Spawner : MonoBehaviour
 {
     public float cooldown = 0;
     public int MobCountMax = 3;
-    public int SpawnIntervalSeconds = 5;
+    public float SpawnIntervalSeconds = 5;
 
     public GameObject SpawnedMob;
 
@@ -15,6 +15,13 @@ public class Spawner : MonoBehaviour
     {
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
         m_SpriteRenderer.sprite = SpawnedMob.GetComponent<SpriteRenderer>().sprite;
+        Defender Spawn = GetComponentInChildren(typeof(Defender)) as Defender;
+        if (Spawn != null)
+        {
+            MobCountMax += Spawn.MobCount;
+            SpawnIntervalSeconds = Spawn.SpawnRate * SpawnIntervalSeconds;
+        }
+
     }
 
     void Update()

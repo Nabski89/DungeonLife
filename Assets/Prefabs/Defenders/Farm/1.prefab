@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 103856979267352823}
   - component: {fileID: 7285540073625003983}
   - component: {fileID: 1917002641439367840}
+  - component: {fileID: -8701393308433744214}
   m_Layer: 0
   m_Name: 1
   m_TagString: Untagged
@@ -100,6 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InCombat: 0
   TargetPosition: {x: 0, y: 0, z: 0}
+  MobCount: 0
+  SpawnRate: 0
   MoveCooldown: 4
   MoveCooldownTimer: 0
 --- !u!50 &103856979267352823
@@ -172,3 +175,16 @@ MonoBehaviour:
   Splat: {fileID: 3493879478972447153, guid: 2f1eaacaa176ace43b88001c3767f9d0, type: 3}
   AtkSplatGO: {fileID: 6101530069096244085, guid: 2b53f22a1dca70744917667af0ae3d7e, type: 3}
   DefSplatGO: {fileID: 3036482323124313622, guid: b791b6ad0e3a74d43b324563bac238ba, type: 3}
+--- !u!114 &-8701393308433744214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2910486035716723240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 168a44dc8a4548044befca0cfe018beb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cost: 10

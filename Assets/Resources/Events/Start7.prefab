@@ -9,26 +9,43 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 165315873744078970, guid: 83547ce0cd572cf45ab099612232e0a1, type: 3}
       propertyPath: m_text
-      value: 'Okay last one.
-
-        Do you want to make better gear, or enhance
-        your attributes'
+      value: Traps to kill things with or treasure to lure away delvers?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1920997637761986093, guid: 83547ce0cd572cf45ab099612232e0a1, type: 3}
+      propertyPath: NewBuy
+      value: 
+      objectReference: {fileID: 2349817586100877439, guid: 69e5128518865874ea869e584db15293, type: 3}
+    - target: {fileID: 1920997637761986093, guid: 83547ce0cd572cf45ab099612232e0a1, type: 3}
+      propertyPath: Upgrade
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1920997637761986093, guid: 83547ce0cd572cf45ab099612232e0a1, type: 3}
       propertyPath: PickAnEvent
-      value: Events/Start9
+      value: Events/Start8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1920997637761986093, guid: 83547ce0cd572cf45ab099612232e0a1, type: 3}
+      propertyPath: UpgradeSpawn
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2867481964544803852, guid: 83547ce0cd572cf45ab099612232e0a1, type: 3}
       propertyPath: m_text
-      value: Gear
+      value: Traps
       objectReference: {fileID: 0}
     - target: {fileID: 5118291577722483571, guid: 83547ce0cd572cf45ab099612232e0a1, type: 3}
       propertyPath: m_text
-      value: Attributes
+      value: Treasure
       objectReference: {fileID: 0}
     - target: {fileID: 5824982048748361708, guid: 83547ce0cd572cf45ab099612232e0a1, type: 3}
+      propertyPath: NewBuy
+      value: 
+      objectReference: {fileID: 3283230026866835641, guid: b9cb01341ce16884b89ab8cd1d92fdd7, type: 3}
+    - target: {fileID: 5824982048748361708, guid: 83547ce0cd572cf45ab099612232e0a1, type: 3}
       propertyPath: PickAnEvent
-      value: Events/Start9
+      value: Events/Start8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5824982048748361708, guid: 83547ce0cd572cf45ab099612232e0a1, type: 3}
+      propertyPath: UpgradeSpawn
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7753509398592168165, guid: 83547ce0cd572cf45ab099612232e0a1, type: 3}
       propertyPath: m_Pivot.x

@@ -104,6 +104,14 @@ PrefabInstance:
       value: Maybe something less simple
       objectReference: {fileID: 0}
     - target: {fileID: 4277591877552195350, guid: fe75ceadfc880fb489949307673b54c7, type: 3}
+      propertyPath: NewBuy
+      value: 
+      objectReference: {fileID: 2910486035716723240, guid: fadb89f2173e29b459fb043bd4fc33c5, type: 3}
+    - target: {fileID: 4277591877552195350, guid: fe75ceadfc880fb489949307673b54c7, type: 3}
+      propertyPath: Upgradee
+      value: 
+      objectReference: {fileID: 2910486035716723240, guid: fadb89f2173e29b459fb043bd4fc33c5, type: 3}
+    - target: {fileID: 4277591877552195350, guid: fe75ceadfc880fb489949307673b54c7, type: 3}
       propertyPath: PickAnEvent
       value: Events/Start5
       objectReference: {fileID: 0}

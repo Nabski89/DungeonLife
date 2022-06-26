@@ -46,15 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 382ba4d1952ba1f488cb16f98d5b84bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuildingCoreOptions:
-  - {fileID: 8907262097956224310, guid: 888c918f308f8ea45b5385d4ceb56586, type: 3}
-  - {fileID: 3629571321903144652, guid: 3ea33d455e1da1a40b698cb8415bd2dc, type: 3}
-  - {fileID: 4793664011418442059, guid: 279a9a7e8a9687d408bf2c77d7301d4d, type: 3}
-  - {fileID: 9203938024247633873, guid: d3e6f8cdb715bd345acb727cf1595690, type: 3}
-  - {fileID: 8062673520904146178, guid: 119571aebeda54f4f8376d8a82137a59, type: 3}
+  Cost: 5
   UnGrowTimer: 0
-  LEFT: {fileID: 8907262097956224310, guid: 888c918f308f8ea45b5385d4ceb56586, type: 3}
-  RIGHT: {fileID: 3629571321903144652, guid: 3ea33d455e1da1a40b698cb8415bd2dc, type: 3}
+  SpawnerPrefab: {fileID: 4498515263174445146, guid: ce165c15025ac814ba3b49afc140a57b, type: 3}
+  LEFT: {fileID: 0}
+  RIGHT: {fileID: 0}
 --- !u!212 &8643930449103177061
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -123,7 +119,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

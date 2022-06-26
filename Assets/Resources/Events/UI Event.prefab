@@ -388,7 +388,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Just Disable the buttons if you don't want them and they will all auto
-    adjust to the right height.
+    adjust to the right height. Prefab off this one or you will regret propegating
+    changes
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

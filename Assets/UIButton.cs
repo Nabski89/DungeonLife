@@ -11,6 +11,8 @@ public class UIButton : MonoBehaviour
     Button ThisButton;
 
     RectTransform rectTransform;
+    //if we start another event we don't want to unpause yet
+
 
     // Start is called before the first frame update
     void Start()
@@ -81,7 +83,9 @@ public class UIButton : MonoBehaviour
     public void NewUpgrade()
     {
         if (UpgradeSpawn == true)
+        {
             UpgradeHolder.AddToUpgradeList(Upgradee);
+        }
     }
 
     public bool Create;
@@ -104,7 +108,6 @@ public class UIButton : MonoBehaviour
             Debug.Log(EventToSpawn);
             GameObject Canvas = GameObject.Find("Canvas");
             Instantiate(EventToSpawn, Canvas.transform.position, Quaternion.identity, Canvas.transform);
-
         }
     }
 }
