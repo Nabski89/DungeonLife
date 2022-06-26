@@ -139,6 +139,6 @@ public class Combat : MonoBehaviour
 
     void OnMouseDown()
     {
-        UICombat.Instance.CombatUpdate(hp, Atk, AtkMod, Def, DefMod, Damage);
+        UICombat.Instance.CombatUpdate(hp, Atk, AtkMod, Def, DefMod, Damage, this);
     }
 }

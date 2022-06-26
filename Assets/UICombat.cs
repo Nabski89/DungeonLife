@@ -13,6 +13,7 @@ public class UICombat : MonoBehaviour
     public TMPro.TextMeshProUGUI DefT;
     public TMPro.TextMeshProUGUI DamageT;
     public Combat StatBoi;
+    public GameObject StatsHolder;
 
 
 
@@ -22,9 +23,9 @@ public class UICombat : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()   
+    void Update()
     {
-        /*
+
         if (StatBoi != null)
         {
             HPT.text = StatBoi.hp.ToString("0") + " ♥";
@@ -32,19 +33,21 @@ public class UICombat : MonoBehaviour
             DefT.text = StatBoi.Def.ToString("0") + " + " + StatBoi.DefMod.ToString("0");
             DamageT.text = StatBoi.Damage.ToString("0") + " Damage";
         }
-        if (Statboi == null)
+        if (StatBoi == null)
         {
-
+            StatsHolder.SetActive(false);
         }
-        */
+
     }
 
 
-    public void CombatUpdate(int hp, int Atk, int AtkMod, int Def, int DefMod, int Damage)
+    public void CombatUpdate(int hp, int Atk, int AtkMod, int Def, int DefMod, int Damage, Combat OurBoi)
     {
+        StatsHolder.SetActive(true);
         HPT.text = hp.ToString("0") + " ♥";
         AtkT.text = Atk.ToString("0") + " + " + AtkMod.ToString("0");
         DefT.text = Def.ToString("0") + " + " + DefMod.ToString("0");
         DamageT.text = Damage.ToString("0") + " Damage";
+        StatBoi = OurBoi;
     }
 }
