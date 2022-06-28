@@ -147,6 +147,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3992177413650595100, guid: 01d04c8603970c645b4aa24707fce247, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4247121193766661860, guid: 01d04c8603970c645b4aa24707fce247, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5422544971750939635, guid: 01d04c8603970c645b4aa24707fce247, type: 3}
       propertyPath: spriteList.Array.data[0]
       value: 
@@ -181,7 +189,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 9ff6363ea1686d14783aa123d06574d6, type: 3}
     - target: {fileID: 7674219954355867426, guid: 01d04c8603970c645b4aa24707fce247, type: 3}
       propertyPath: m_Name
-      value: RoomStone
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 8558561107227499612, guid: 01d04c8603970c645b4aa24707fce247, type: 3}
       propertyPath: spriteList.Array.data[0]

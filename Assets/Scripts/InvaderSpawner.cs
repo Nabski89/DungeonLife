@@ -5,12 +5,13 @@ using UnityEngine;
 public class InvaderSpawner : MonoBehaviour
 {
     public float Timer;
-    public float TimeBetweenSpawns = 100;
+    public float TimeBetweenSpawns = 1;
     public GameObject Invader1;
 
     public static List<GameObject> SpawnPointList = new List<GameObject>();
 
-    public static int DungeonSize = 1;
+    //doing this as an int keeps the dungeon safe for the first few rooms but makes it taper harder
+    public static float DungeonSize = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,7 @@ public class InvaderSpawner : MonoBehaviour
 
     void Update()
     {
-        Timer -= Time.deltaTime * (DungeonSize/3);
+        Timer -= Mathf.Max(Time.deltaTime * ((DungeonSize - 2) / 3), 0);
         if (Timer < 0)
         {
             Timer = TimeBetweenSpawns;
@@ -31,6 +32,6 @@ public class InvaderSpawner : MonoBehaviour
     void Spawn()
     {
         Instantiate(Invader1, SpawnPointList[Random.Range(0, SpawnPointList.Count)].transform.position, transform.rotation, transform);
-        Debug.Log("There are currently " + SpawnPointList.Count);
+        Debug.Log("There are currently this man spawn points: " + SpawnPointList.Count);
     }
 }

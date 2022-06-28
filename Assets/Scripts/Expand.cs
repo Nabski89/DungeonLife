@@ -37,18 +37,21 @@ public class Expand : MonoBehaviour
                 ManaController.Spend(InvaderSpawner.DungeonSize * cost);
 
                 Debug.Log(transform.position);
+                //we are just going to clear out the list and re-add all valid spawn locations
+                InvaderSpawner.SpawnPointList.Clear();
                 foreach (var NextRooms in GameObject.FindObjectsOfType<Expand>())
                 {
+                    //this activates rooms that are close enough to connect to an existing room
                     if (Vector3.Distance(NextRooms.transform.position, transform.position) < 4)
                     {
                         NextRooms.valid = true;
-                        NextRooms.Invoke("AddMe", 1);
                     }
+                    if (NextRooms.valid == true)
+                        NextRooms.Invoke("AddMe", 1);
                 }
 
                 InvaderSpawner.DungeonSize += 1;
-                InvaderSpawner.SpawnPointList.Remove(gameObject);
-                Debug.Log("There are currently " + InvaderSpawner.SpawnPointList.Count);
+                Debug.Log("There are currently " + InvaderSpawner.SpawnPointList.Count + "invader spawn locations");
                 Destroy(gameObject);
             }
         }

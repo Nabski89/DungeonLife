@@ -38,7 +38,11 @@ public class EventMini : MonoBehaviour
 
         GameObject Canvas = GameObject.Find("Canvas");
         GameObject EventSpawned = (GameObject)Instantiate(Event, Canvas.transform.position, Quaternion.identity, Canvas.transform);
-        EventSpawned.GetComponent<EventPopup>().Speed = Speed;
+
+        foreach (var Camera in GameObject.FindObjectsOfType<CameraController>())
+        {
+            Camera.Pause();
+        }
         Destroy(gameObject);
     }
 }

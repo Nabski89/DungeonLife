@@ -176,6 +176,8 @@ MonoBehaviour:
   Splat: {fileID: 3493879478972447153, guid: 2f1eaacaa176ace43b88001c3767f9d0, type: 3}
   AtkSplatGO: {fileID: 6101530069096244085, guid: 2b53f22a1dca70744917667af0ae3d7e, type: 3}
   DefSplatGO: {fileID: 3036482323124313622, guid: b791b6ad0e3a74d43b324563bac238ba, type: 3}
+  DefManaGain: 1
+  AtkManaGain: 1
 --- !u!114 &2676977162208698742
 MonoBehaviour:
   m_ObjectHideFlags: 0

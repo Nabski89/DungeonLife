@@ -20,6 +20,10 @@ PrefabInstance:
       value: Okay well enjoy being a farmer then, you special little crystal you.
       objectReference: {fileID: 0}
     - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: Event
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: PickAnEvent
       value: Events/Start5
       objectReference: {fileID: 0}
@@ -118,6 +122,10 @@ PrefabInstance:
     - target: {fileID: 7785403195270498046, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: m_text
       value: Wait can I still do slimes?
+      objectReference: {fileID: 0}
+    - target: {fileID: 8924695925820220001, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: Event
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8924695925820220001, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: PickAnEvent

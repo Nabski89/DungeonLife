@@ -6,6 +6,7 @@ public class CameraController : MonoBehaviour
 {
     //if I was smarter I would auto assign this
     public Camera TheCamera;
+    public float TimeHolder = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -63,5 +64,16 @@ public class CameraController : MonoBehaviour
                 Time.timeScale = 1;
         }
 
+    }
+
+
+
+    public void Pause()
+    { TimeHolder = Time.timeScale; }
+
+    public void UnPause()
+    {
+        Debug.Log("Unpause");
+        Time.timeScale = 1;
     }
 }

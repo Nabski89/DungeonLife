@@ -28,6 +28,30 @@ PrefabInstance:
       propertyPath: Event
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4848286405292818267, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
+      propertyPath: Create
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848286405292818267, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
+      propertyPath: NewBuy
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848286405292818267, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
+      propertyPath: Createe
+      value: 
+      objectReference: {fileID: 3060575594812268363, guid: 3ce2ec809ace17849a5a96ac7b10c082, type: 3}
+    - target: {fileID: 4848286405292818267, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
+      propertyPath: MoveCam
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848286405292818267, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
+      propertyPath: LocationCreate.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848286405292818267, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
+      propertyPath: LocationCreate.y
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8470221787452942970, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -119,6 +143,46 @@ PrefabInstance:
     - target: {fileID: 9136704593424951898, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
       propertyPath: m_Name
       value: Start9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9149055269042577227, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9149055269042577227, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9149055269042577227, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9149055269042577227, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9149055269042577227, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9149055269042577227, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9149055269042577227, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9149055269042577227, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UIButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9149055269042577227, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UIButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9149055269042577227, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4aab88fdb789707458fd05c598982c31, type: 3}

@@ -12,7 +12,7 @@ public class Splat : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer < 0)
         {
-            Debug.Log("Destroy Splat");
+    //        Debug.Log("Destroy Splat");
             Destroy(gameObject);
         }
     }

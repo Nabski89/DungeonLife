@@ -10,6 +10,7 @@ public class InvaderLoot : MonoBehaviour
     void Start()
     {
         CombatScript = GetComponent<Combat>();
+        Destroy(gameObject, 5);
     }
 
     // Update is called once per frame
@@ -20,5 +21,9 @@ public class InvaderLoot : MonoBehaviour
             ManaController.ManaGain += Loot;
             Destroy(gameObject);
         }
+    }
+    void OnMouseDown()
+    {
+        if (Input.GetKeyDown("left ctrl")) { }
     }
 }

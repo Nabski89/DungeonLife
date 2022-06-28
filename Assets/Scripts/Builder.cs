@@ -80,8 +80,6 @@ public class Builder : MonoBehaviour
 
             Debug.Log(UpgradeHolder.Defenders.Count + " upgrades and you rolled " + rand1 + " and " + rand2);
 
-            Debug.Log(UpgradeHolder.Defenders[rand1]);
-
             // spawn the purchaser, then set the cost, sprite, and what it will actually spawn if purchased, which is a pass down twice thing
             LEFT = Instantiate(SpawnerPrefab, LeftPosition, transform.rotation, transform);
             LEFT.GetComponent<UpgradeButton>().Cost = UpgradeHolder.Defenders[rand1].GetComponent<CostManager>().Cost;

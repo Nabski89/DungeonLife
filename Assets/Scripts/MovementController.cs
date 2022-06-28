@@ -82,7 +82,7 @@ public class MovementController : MonoBehaviour
         if (FindAPath == true)
         {
 
-            Debug.Log("Look for a route");
+        //    Debug.Log("Look for a route");
             path = 0;
 
             //Left (Lowest Priority after turn back)

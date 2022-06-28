@@ -52,11 +52,13 @@ public class UIButton : MonoBehaviour
         NewCreate();
         //for new events to follow up on this one
         NewEvent();
-        EventPopup EventPup = GetComponentInParent<EventPopup>();
-        if (EventPup != null)
-        {
-            EventPup.Unpause();
-        }
+        MoveCamera();
+        if (Event == false)
+            foreach (var Camera in GameObject.FindObjectsOfType<CameraController>())
+            {
+                Camera.UnPause();
+            }
+        Destroy(transform.parent.gameObject);
     }
     public bool ManaB;
     public int ManaBoon;
@@ -98,7 +100,6 @@ public class UIButton : MonoBehaviour
     }
     public bool Event;
     public string PickAnEvent;
-    public Vector3 LocationEvent;
     public void NewEvent()
     {
         if (Event == true)
@@ -108,6 +109,18 @@ public class UIButton : MonoBehaviour
             Debug.Log(EventToSpawn);
             GameObject Canvas = GameObject.Find("Canvas");
             Instantiate(EventToSpawn, Canvas.transform.position, Quaternion.identity, Canvas.transform);
+        }
+    }
+
+    public bool MoveCam;
+    public void MoveCamera()
+    {
+        if (MoveCam == true)
+        {
+            foreach (var Camera in GameObject.FindObjectsOfType<CameraController>())
+            {
+                Camera.transform.position = new Vector3(LocationCreate.x, LocationCreate.y, -10);
+            }
         }
     }
 }

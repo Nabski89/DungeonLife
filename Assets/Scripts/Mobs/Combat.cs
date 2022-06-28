@@ -24,6 +24,9 @@ public class Combat : MonoBehaviour
     public GameObject AtkSplatGO;
     public GameObject DefSplatGO;
 
+    public float DefManaGain = 0;
+    public float AtkManaGain = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -96,6 +99,10 @@ public class Combat : MonoBehaviour
         //store our attack/defense rolls so we can display them later
         int AtkRoll = Random.Range(0, Atk) + AtkMod;
         int DefRoll = Random.Range(0, EnemyScript.Def) + EnemyScript.DefMod;
+
+        //Gain mana based on how well rolls went
+        ManaController.Gain(AtkRoll * AtkManaGain);
+        ManaController.Gain(EnemyScript.DefManaGain * DefRoll);
 
         // check if we hit
         if (AtkRoll > DefRoll)
