@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 663768226996668058, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
+      propertyPath: UpUpgrade
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1285141534739980493, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
       propertyPath: m_text
       value: Alright that's it. You'll need to find some delvers before you get overrun
@@ -22,6 +26,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4381614474025208878, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768727183242531941, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
+      propertyPath: UpUpgrade
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4848286405292818267, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
@@ -43,6 +51,14 @@ PrefabInstance:
     - target: {fileID: 4848286405292818267, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
       propertyPath: MoveCam
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848286405292818267, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
+      propertyPath: Upgrade
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848286405292818267, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
+      propertyPath: UpUpgrade
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4848286405292818267, guid: 4aab88fdb789707458fd05c598982c31, type: 3}
       propertyPath: LocationCreate.x

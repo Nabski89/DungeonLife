@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1760305272798118788}
+  - component: {fileID: 8924695925820220001}
+  - component: {fileID: 5072610293222490737}
   - component: {fileID: 4222974358056326756}
   - component: {fileID: 2161182539140189449}
-  - component: {fileID: 5072610293222490737}
-  - component: {fileID: 8924695925820220001}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -41,44 +41,32 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 150}
   m_SizeDelta: {x: 380, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &4222974358056326756
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 85929056382093538}
-  m_CullTransparentMesh: 1
---- !u!114 &2161182539140189449
+--- !u!114 &8924695925820220001
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 85929056382093538}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Script: {fileID: 11500000, guid: 47b08908ea413e74a8f1292d5e3fc19d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  ButtonNum: 1
+  PushIt: 49
+  ManaB: 0
+  ManaBoone: 0
+  UpSpawn: 0
+  Spawne: {fileID: 0}
+  UpUpgrade: 0
+  Upgradee: {fileID: 0}
+  Create: 0
+  Createe: {fileID: 0}
+  LocationCreate: {x: 0, y: 0, z: 0}
+  Event: 0
+  PickAnEvent: 
+  MoveCam: 0
 --- !u!114 &5072610293222490737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,32 +123,44 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8924695925820220001
+--- !u!222 &4222974358056326756
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85929056382093538}
+  m_CullTransparentMesh: 1
+--- !u!114 &2161182539140189449
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 85929056382093538}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47b08908ea413e74a8f1292d5e3fc19d, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonNum: 1
-  PushIt: 49
-  ManaB: 0
-  ManaBoon: 0
-  UpgradeSpawn: 0
-  NewBuy: {fileID: 0}
-  Upgrade: 0
-  Upgradee: {fileID: 0}
-  Create: 0
-  Createe: {fileID: 0}
-  LocationCreate: {x: 0, y: 0, z: 0}
-  Event: 0
-  PickAnEvent: 
-  MoveCam: 0
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &314388044277682452
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,10 +170,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 146258816405935830}
+  - component: {fileID: 8844961366090254687}
   - component: {fileID: 4533099311246945974}
   - component: {fileID: 6675640915513744111}
   - component: {fileID: 5853734709662786747}
-  - component: {fileID: 8844961366090254687}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -202,6 +202,32 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 50}
   m_SizeDelta: {x: 380, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8844961366090254687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314388044277682452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b08908ea413e74a8f1292d5e3fc19d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButtonNum: 3
+  PushIt: 51
+  ManaB: 0
+  ManaBoone: 0
+  UpSpawn: 0
+  Spawne: {fileID: 0}
+  UpUpgrade: 0
+  Upgradee: {fileID: 0}
+  Create: 0
+  Createe: {fileID: 0}
+  LocationCreate: {x: 0, y: 0, z: 0}
+  Event: 0
+  PickAnEvent: 
+  MoveCam: 0
 --- !u!222 &4533099311246945974
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -296,32 +322,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8844961366090254687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 314388044277682452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47b08908ea413e74a8f1292d5e3fc19d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ButtonNum: 3
-  PushIt: 51
-  ManaB: 0
-  ManaBoon: 0
-  UpgradeSpawn: 0
-  NewBuy: {fileID: 0}
-  Upgrade: 0
-  Upgradee: {fileID: 0}
-  Create: 0
-  Createe: {fileID: 0}
-  LocationCreate: {x: 0, y: 0, z: 0}
-  Event: 0
-  PickAnEvent: 
-  MoveCam: 0
 --- !u!1 &942169978394000412
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,10 +948,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1547527642948394214}
+  - component: {fileID: 3577086031144770464}
   - component: {fileID: 1337083318867892119}
   - component: {fileID: 1944134218719195664}
   - component: {fileID: 2210999278374986828}
-  - component: {fileID: 3577086031144770464}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -980,6 +980,32 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 100}
   m_SizeDelta: {x: 380, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3577086031144770464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5556936929999501120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b08908ea413e74a8f1292d5e3fc19d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButtonNum: 2
+  PushIt: 50
+  ManaB: 0
+  ManaBoone: 0
+  UpSpawn: 0
+  Spawne: {fileID: 0}
+  UpUpgrade: 0
+  Upgradee: {fileID: 0}
+  Create: 0
+  Createe: {fileID: 0}
+  LocationCreate: {x: 0, y: 0, z: 0}
+  Event: 0
+  PickAnEvent: 
+  MoveCam: 0
 --- !u!222 &1337083318867892119
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1074,32 +1100,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3577086031144770464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5556936929999501120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47b08908ea413e74a8f1292d5e3fc19d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ButtonNum: 2
-  PushIt: 50
-  ManaB: 0
-  ManaBoon: 0
-  UpgradeSpawn: 0
-  NewBuy: {fileID: 0}
-  Upgrade: 0
-  Upgradee: {fileID: 0}
-  Create: 0
-  Createe: {fileID: 0}
-  LocationCreate: {x: 0, y: 0, z: 0}
-  Event: 0
-  PickAnEvent: 
-  MoveCam: 0
 --- !u!1 &6173383691056354799
 GameObject:
   m_ObjectHideFlags: 0

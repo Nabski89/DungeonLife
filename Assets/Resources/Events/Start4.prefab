@@ -24,6 +24,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: Spawne
+      value: 
+      objectReference: {fileID: 2910486035716723240, guid: fadb89f2173e29b459fb043bd4fc33c5, type: 3}
+    - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: UpSpawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: PickAnEvent
       value: Events/Start5
       objectReference: {fileID: 0}
@@ -128,8 +136,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8924695925820220001, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: NewBuy
+      value: 
+      objectReference: {fileID: 2910486035716723240, guid: a298ead2503f36a468154c226bc6a34c, type: 3}
+    - target: {fileID: 8924695925820220001, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: Spawne
+      value: 
+      objectReference: {fileID: 2910486035716723240, guid: a298ead2503f36a468154c226bc6a34c, type: 3}
+    - target: {fileID: 8924695925820220001, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: UpSpawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8924695925820220001, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: PickAnEvent
       value: Events/Start5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8924695925820220001, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: UpgradeSpawn
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6be0a0429cd274b488f334c51a334938, type: 3}

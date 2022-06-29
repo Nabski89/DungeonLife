@@ -14,6 +14,9 @@ public class Spawner : MonoBehaviour
 
     SpriteRenderer m_SpriteRenderer;
 
+    public GameObject LeftUpgrade;
+    public GameObject MidUpgrade;
+    public GameObject RightUpgrade;
     bool ShopActive;
     void Start()
     {
@@ -35,7 +38,7 @@ public class Spawner : MonoBehaviour
         if (cooldown > SpawnIntervalSeconds)
         {
 
-            if (transform.childCount < MobCountMax)
+            if (transform.childCount < MobCountMax + 3)
             {
                 cooldown = 0;
 
@@ -85,9 +88,6 @@ public class Spawner : MonoBehaviour
         if (ShopActive == true)
         {
             UnGrowTimer = 10;
-            Vector3 UpPosition = transform.TransformPoint(Vector3.up * 2);
-            Vector3 UpRightPosition = transform.TransformPoint(Vector3.up * 2 + Vector3.right * 2);
-            Vector3 RightPosition = transform.TransformPoint(Vector3.right * 2);
 
             int RandCount = UpgradeHolder.Upgrades.Count;
             int rand1 = Random.Range(0, RandCount);
@@ -97,37 +97,48 @@ public class Spawner : MonoBehaviour
             Debug.Log(UpgradeHolder.Upgrades.Count + " upgrades avaliable");
             // spawn the purchaser, then set the cost, sprite, and what it will actually spawn if purchased, which is a pass down twice thing
 
-            if (UpgradesBought < 1)
+            if (UpgradesBought < 1 && LeftUpgrade.transform.childCount < 1)
             {
-                GameObject LEFT = Instantiate(SpawnerPrefab, UpPosition, transform.rotation, transform);
-                LEFT.GetComponent<UpgradeButton>().Cost = UpgradeHolder.Upgrades[rand1].GetComponent<CostManager>().Cost;
-                LEFT.GetComponent<SpriteRenderer>().sprite = UpgradeHolder.Upgrades[rand1].GetComponent<SpriteRenderer>().sprite;
-                LEFT.GetComponent<UpgradeButton>().Upgrade = UpgradeHolder.Upgrades[rand1];
+                Vector3 UpPosition = transform.TransformPoint(Vector3.up * 2);
+                GameObject LEFT = Instantiate(SpawnerPrefab, UpPosition, transform.rotation, LeftUpgrade.transform);
+
+                CreateShopButton(LEFT, rand1, 1);
             }
-            if (RandCount > 3 && UpgradesBought < 2)
+
+            if (RandCount > 3 && UpgradesBought < 2 && MidUpgrade.transform.childCount < 1)
             {
 
                 while (rand1 == rand2)
                 {
                     rand2 = Random.Range(0, RandCount);
                 }
-                GameObject UPRIGHT = Instantiate(SpawnerPrefab, UpRightPosition, transform.rotation, transform);
-                UPRIGHT.GetComponent<UpgradeButton>().Cost = UpgradeHolder.Upgrades[rand2].GetComponent<CostManager>().Cost * 2;
-                UPRIGHT.GetComponent<SpriteRenderer>().sprite = UpgradeHolder.Upgrades[rand2].GetComponent<SpriteRenderer>().sprite;
-                UPRIGHT.GetComponent<UpgradeButton>().Upgrade = UpgradeHolder.Upgrades[rand2];
+                Vector3 UpRightPosition = transform.TransformPoint(Vector3.up * 2 + Vector3.right * 2);
+                GameObject MID = Instantiate(SpawnerPrefab, UpRightPosition, transform.rotation, MidUpgrade.transform);
+                CreateShopButton(MID, rand2, 2);
             }
-            if (RandCount > 5)
-            {
 
+            if (RandCount > 5 && RightUpgrade.transform.childCount < 1)
+            {
                 while (rand3 == rand2 || rand3 == rand1)
                 {
                     rand3 = Random.Range(0, RandCount);
                 }
-                GameObject RIGHT = Instantiate(SpawnerPrefab, RightPosition, transform.rotation, transform);
-                RIGHT.GetComponent<UpgradeButton>().Cost = UpgradeHolder.Upgrades[rand3].GetComponent<CostManager>().Cost * 4;
-                RIGHT.GetComponent<SpriteRenderer>().sprite = UpgradeHolder.Upgrades[rand3].GetComponent<SpriteRenderer>().sprite;
-                RIGHT.GetComponent<UpgradeButton>().Upgrade = UpgradeHolder.Upgrades[rand3];
+                Vector3 RightPosition = transform.TransformPoint(Vector3.right * 2);
+                GameObject RIGHT = Instantiate(SpawnerPrefab, RightPosition, transform.rotation, RightUpgrade.transform);
+                CreateShopButton(RIGHT, rand3, 4);
             }
         }
+    }
+    //spawn a clickable prefab with the icon of what you'll actuall create, with the cost varying based on location
+    void CreateShopButton(GameObject Object, int Rand, float PriceMod)
+    {
+        ShopUpgradeButton UpgradeScript = Object.GetComponent<ShopUpgradeButton>();
+        Debug.Log(UpgradeScript);
+
+        UpgradeScript.UpgradePrefab = UpgradeHolder.Upgrades[Rand];
+        UpgradeScript.Cost = UpgradeHolder.Upgrades[Rand].GetComponent<CostManager>().Cost * PriceMod;
+
+
+        Object.GetComponent<SpriteRenderer>().sprite = UpgradeHolder.Upgrades[Rand].GetComponent<SpriteRenderer>().sprite;
     }
 }

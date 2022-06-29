@@ -82,9 +82,9 @@ public class Builder : MonoBehaviour
 
             // spawn the purchaser, then set the cost, sprite, and what it will actually spawn if purchased, which is a pass down twice thing
             LEFT = Instantiate(SpawnerPrefab, LeftPosition, transform.rotation, transform);
-            LEFT.GetComponent<UpgradeButton>().Cost = UpgradeHolder.Defenders[rand1].GetComponent<CostManager>().Cost;
+            LEFT.GetComponent<SpawnerButton>().Cost = UpgradeHolder.Defenders[rand1].GetComponent<CostManager>().Cost;
             LEFT.GetComponent<SpriteRenderer>().sprite = UpgradeHolder.Defenders[rand1].GetComponent<SpriteRenderer>().sprite;
-            LEFT.GetComponent<UpgradeButton>().Upgrade = UpgradeHolder.Defenders[rand1];
+            LEFT.GetComponent<SpawnerButton>().Upgrade = UpgradeHolder.Defenders[rand1];
             if (RandCount > 1)
             {
                 while (rand1 == rand2)
@@ -92,9 +92,9 @@ public class Builder : MonoBehaviour
                     rand2 = Random.Range(0, RandCount);
                 }
                 RIGHT = Instantiate(SpawnerPrefab, RightPosition, transform.rotation, transform);
-                RIGHT.GetComponent<UpgradeButton>().Cost = UpgradeHolder.Defenders[rand2].GetComponent<CostManager>().Cost;
+                RIGHT.GetComponent<SpawnerButton>().Cost = UpgradeHolder.Defenders[rand2].GetComponent<CostManager>().Cost;
                 RIGHT.GetComponent<SpriteRenderer>().sprite = UpgradeHolder.Defenders[rand2].GetComponent<SpriteRenderer>().sprite;
-                RIGHT.GetComponent<UpgradeButton>().Upgrade = UpgradeHolder.Defenders[rand2];
+                RIGHT.GetComponent<SpawnerButton>().Upgrade = UpgradeHolder.Defenders[rand2];
             }
         }
     }

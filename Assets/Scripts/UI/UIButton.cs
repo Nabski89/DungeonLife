@@ -61,32 +61,33 @@ public class UIButton : MonoBehaviour
         Destroy(transform.parent.gameObject);
     }
     public bool ManaB;
-    public int ManaBoon;
+    public int ManaBoone;
     public void GainMana()
     {
         if (ManaB == true)
-            ManaController.Gain(ManaBoon);
+            ManaController.Gain(ManaBoone);
     }
 
 
-    public bool UpgradeSpawn;
-    public GameObject NewBuy;
+    public bool UpSpawn;
+    public GameObject Spawne;
     public void NewSpawn()
     {
-        if (UpgradeSpawn == true)
+        if (UpSpawn == true)
         {
-            Debug.Log("Can now spawn" + NewBuy);
-            UpgradeHolder.AddToSpawnList(NewBuy);
+            Debug.Log("Can now spawn " + Spawne);
+            UpgradeHolder.AddToSpawnList(Spawne);
         }
     }
 
-    public bool Upgrade;
+    public bool UpUpgrade;
     public GameObject Upgradee;
     public void NewUpgrade()
     {
-        if (UpgradeSpawn == true)
+        if (UpUpgrade == true)
         {
             UpgradeHolder.AddToUpgradeList(Upgradee);
+            Debug.Log("Can now upgrade with " + Upgradee);
         }
     }
 
