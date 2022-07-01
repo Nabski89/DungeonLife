@@ -10,7 +10,7 @@ public class InvaderLoot : MonoBehaviour
     void Start()
     {
         CombatScript = GetComponent<Combat>();
-        Destroy(gameObject, 5);
+ //       Destroy(gameObject, 5);
     }
 
     // Update is called once per frame
