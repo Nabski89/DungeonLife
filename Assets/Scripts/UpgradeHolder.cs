@@ -13,6 +13,8 @@ public class UpgradeHolder : MonoBehaviour
     }
     public static void AddToUpgradeList(GameObject AddedThis)
     {
+        //     if (Upgrades.Contains AddedThis)
         Upgrades.Add(AddedThis);
+        UIUpgrades.ShowUpgrades();
     }
 }
