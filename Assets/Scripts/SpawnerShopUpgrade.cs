@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnerShopUpgrade : MonoBehaviour
 {
+    public int Tier = 1;
     public int MobCountMaxMod = 0;
     //positive removes this many seconds
     public float SpawnIntervalSecondsMod = 0;
@@ -14,16 +15,20 @@ public class SpawnerShopUpgrade : MonoBehaviour
     void Start()
     {
         Spawner Spawner = gameObject.GetComponentInParent(typeof(Spawner)) as Spawner;
-        Combat CombatController = Spawner.SpawnedMob.GetComponent<Combat>();
+        if (Spawner != null)
+        {
 
-        Spawner.MobCountMax += MobCountMaxMod;
-        Spawner.SpawnIntervalSeconds -= SpawnIntervalSecondsMod;
+            Combat CombatController = Spawner.SpawnedMob.GetComponent<Combat>();
 
-        //effects of what we are spawning
-        CombatController.hp += HPMod;
-        CombatController.MaxHp += HPMod;
+            Spawner.MobCountMax += MobCountMaxMod * Tier;
+            Spawner.SpawnIntervalSeconds -= SpawnIntervalSecondsMod * Tier;
 
-        CombatController.Atk += AtkMod;
-        CombatController.Def += DefMod;
+            //effects of what we are spawning
+            CombatController.hp += HPMod * Tier;
+            CombatController.MaxHp += HPMod * Tier;
+
+            CombatController.Atk += AtkMod * Tier;
+            CombatController.Def += DefMod * Tier;
+        }
     }
 }
