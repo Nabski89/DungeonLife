@@ -5,6 +5,8 @@ using UnityEngine;
 public class Combat : MonoBehaviour
 {
     public int Faction = 1;
+    public int Tier = 0;
+
     MovementController MovementScript;
     Defender DefenderScript;
     Combat EnemyScript;
@@ -31,6 +33,10 @@ public class Combat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Atk += Tier;
+        Def += Tier;
+        MaxHp += Tier / 2;
+        MaxHp += Tier / 2;
         //get our main body
         MovementScript = GetComponent<MovementController>();
         DefenderScript = GetComponent<Defender>();

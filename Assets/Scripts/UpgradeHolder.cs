@@ -15,7 +15,30 @@ public class UpgradeHolder : MonoBehaviour
     }
     public static void AddToSpawnList(GameObject AddedThis)
     {
-        Defenders.Add(AddedThis);
+        int DefendersLength = Defenders.Count;
+        Defenders.RemoveAll(u => u.name == AddedThis.name);
+
+        if (Defenders.Count - DefendersLength == 0)
+        {
+            Defenders.Add(AddedThis);
+            DestroyChildren();
+            UIUpgrades.ShowUpgrades();
+        }
+        if (Defenders.Count - DefendersLength == -1)
+        {
+            Defenders.Add(AddedThis);
+            Defenders.Add(AddedThis);
+            DestroyChildren();
+            UIUpgrades.ShowUpgrades();
+        }
+        if (Defenders.Count - DefendersLength == -2)
+        {
+            GameObject StarSpawn = Instantiate(AddedThis, Instance.transform);
+            StarSpawn.name += "*";
+            StarSpawn.GetComponent<Combat>().Tier += 1;
+            Debug.Log(AddedThis + " Was Upgraded");
+            AddToUpgradeList(StarSpawn);
+        }
     }
     public static void AddToUpgradeList(GameObject AddedThis)
     {
@@ -51,7 +74,7 @@ public class UpgradeHolder : MonoBehaviour
     {
         foreach (Transform child in Instance.transform)
         {
-           // GameObject.Destroy(child.gameObject);
+            // GameObject.Destroy(child.gameObject);
         }
     }
 }

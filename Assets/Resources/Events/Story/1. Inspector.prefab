@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4649945238964249975
+--- !u!1001 &3191649248348401158
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,39 +9,32 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 314388044277682452, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350032007525663619, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: m_text
+      value: 'Observe carefully
+
+        (+ 50 Mana)'
       objectReference: {fileID: 0}
     - target: {fileID: 920927025127485825, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: m_text
-      value: What?
-      objectReference: {fileID: 0}
-    - target: {fileID: 1944134218719195664, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
-      propertyPath: m_Enabled
-      value: 0
+      value: 'Maybe a house mouse can sneak by
+
+        (+ Mouse Spawn)'
       objectReference: {fileID: 0}
     - target: {fileID: 2974570440316452343, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: m_text
-      value: As a newly formed dungeon
+      value: "Inspectors report: \r\nCan confirm house is a dungeon. I can feel it's
+        attention on me."
       objectReference: {fileID: 0}
     - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
-      propertyPath: Create
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
-      propertyPath: Createe
+      propertyPath: Upgradee
       value: 
-      objectReference: {fileID: 6622893969789985642, guid: 7150df8f87609c848a988dd655a48f71, type: 3}
+      objectReference: {fileID: 5243855248287018612, guid: a1db04570f2cb114ca4d615e80a5290f, type: 3}
     - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
-      propertyPath: MoveCam
+      propertyPath: UpUpgrade
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
-      propertyPath: LocationCreate.x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
-      propertyPath: LocationCreate.y
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4653733888478319976, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: m_Pivot.x
@@ -129,31 +122,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5070605747150174048, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: m_Name
-      value: Start1
+      value: 1. Inspector
       objectReference: {fileID: 0}
     - target: {fileID: 5556936929999501120, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6675640915513744111, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7785403195270498046, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: m_text
-      value: QUICKSTART
+      value: 'I need stronger minions
+
+        (+ HP Upgrade)'
       objectReference: {fileID: 0}
-    - target: {fileID: 8924695925820220001, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
-      propertyPath: Event
+    - target: {fileID: 8844961366090254687, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: ManaB
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8924695925820220001, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
-      propertyPath: PickAnEvent
-      value: Events/Start2
+    - target: {fileID: 8844961366090254687, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: ManaBoone
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8924695925820220001, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
-      propertyPath: UpgradeSpawn
-      value: 0
+      propertyPath: Spawne
+      value: 
+      objectReference: {fileID: 2910486035716723240, guid: 0e55aaef0c8b31d4493478d20bf86dfa, type: 3}
+    - target: {fileID: 8924695925820220001, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: UpSpawn
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6be0a0429cd274b488f334c51a334938, type: 3}

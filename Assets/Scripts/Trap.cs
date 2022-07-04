@@ -21,6 +21,7 @@ public class Trap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        transform.position = transform.position + Vector3.one + Vector3.back;
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
         m_SpriteRenderer.sprite = spriteList[0];
     }
