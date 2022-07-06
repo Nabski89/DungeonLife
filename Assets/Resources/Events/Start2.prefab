@@ -153,6 +153,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8152553565032742615, guid: fe75ceadfc880fb489949307673b54c7, type: 3}
+      propertyPath: Create
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152553565032742615, guid: fe75ceadfc880fb489949307673b54c7, type: 3}
       propertyPath: PickAnEvent
       value: Events/Start3
       objectReference: {fileID: 0}

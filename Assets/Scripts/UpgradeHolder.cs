@@ -22,14 +22,14 @@ public class UpgradeHolder : MonoBehaviour
         {
             Defenders.Add(AddedThis);
             DestroyChildren();
-            UIUpgrades.ShowUpgrades();
+            UISpawns.ShowUpgrades();
         }
         if (Defenders.Count - DefendersLength == -1)
         {
             Defenders.Add(AddedThis);
             Defenders.Add(AddedThis);
             DestroyChildren();
-            UIUpgrades.ShowUpgrades();
+            UISpawns.ShowUpgrades();
         }
         if (Defenders.Count - DefendersLength == -2)
         {

@@ -21,7 +21,8 @@ public class InvaderSpawner : MonoBehaviour
 
     void Update()
     {
-        Timer -= Mathf.Max(Time.deltaTime * ((DungeonSize - 2) / 3), 0);
+        //minus two is to account for the core and the one other room you must have
+        Timer -= Mathf.Max(Time.deltaTime * ((DungeonSize - 1) / 3), 0);
         if (Timer < 0)
         {
             Timer = TimeBetweenSpawns;

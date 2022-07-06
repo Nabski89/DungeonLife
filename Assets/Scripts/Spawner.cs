@@ -28,20 +28,17 @@ public class Spawner : MonoBehaviour
             MobCountMax += Spawn.MobCount;
             SpawnIntervalSeconds = Spawn.SpawnRate * SpawnIntervalSeconds;
         }
-
     }
 
     public float UnGrowTimer = 0;
     void Update()
     {
-        cooldown += Time.deltaTime;
-        if (cooldown > SpawnIntervalSeconds)
+        if (transform.childCount < MobCountMax + 3)
         {
-
-            if (transform.childCount < MobCountMax + 3)
+            cooldown += Time.deltaTime;
+            if (cooldown > SpawnIntervalSeconds)
             {
                 cooldown = 0;
-
                 Instantiate(SpawnedMob, transform.position + Vector3.back, Quaternion.identity, transform);
                 //                Debug.Log(SpawnedMob.Length);
                 //       Instantiate(SpawnedMob[Random.Range(0, SpawnedMob.Length)], transform.position+Vector3.back, Quaternion.identity, transform);
@@ -64,8 +61,6 @@ public class Spawner : MonoBehaviour
         {
             ungrow();
         }
-
-
     }
 
     void grow()
@@ -81,7 +76,6 @@ public class Spawner : MonoBehaviour
         m_SpriteRenderer.color = Color.black;
         ShopActive = false;
     }
-
 
     void OnMouseDown()
     {
@@ -137,7 +131,6 @@ public class Spawner : MonoBehaviour
 
         UpgradeScript.UpgradePrefab = UpgradeHolder.Upgrades[Rand];
         UpgradeScript.Cost = UpgradeHolder.Upgrades[Rand].GetComponent<CostManager>().Cost * PriceMod;
-
 
         Object.GetComponent<SpriteRenderer>().sprite = UpgradeHolder.Upgrades[Rand].GetComponent<SpriteRenderer>().sprite;
     }

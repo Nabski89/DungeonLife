@@ -20,7 +20,7 @@ public class DoorExterior : MonoBehaviour
             GoingAway = true;
     }
 
-    void Update()
+  /*  void Update()
     {
 
         if (GoingAway == true)
@@ -35,4 +35,5 @@ public class DoorExterior : MonoBehaviour
 
         }
     }
+    */
 }

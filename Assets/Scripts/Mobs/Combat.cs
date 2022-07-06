@@ -43,7 +43,7 @@ public class Combat : MonoBehaviour
 
         if (DefenderScript != null)
         {
-            timer -= 2.5f;
+            timer -= 0.5f;
         }
     }
 
@@ -73,7 +73,7 @@ public class Combat : MonoBehaviour
         }
     }
     float timer = 0.0f;
-    int AtkCooldownTime = 4;
+    float AtkCooldownTime = 2;
     public void OnTriggerStay2D(Collider2D other)
     {
         EnemyScript = other.GetComponent<Combat>();

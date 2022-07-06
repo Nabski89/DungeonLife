@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 29
   MobCountMax: 1
-  SpawnIntervalSeconds: 30
+  SpawnIntervalSeconds: 10
   SpawnedMob: {fileID: 0}
   SpawnerPrefab: {fileID: 3817290633688492480, guid: b337157749530614dbe625eb468dc4bc, type: 3}
   UpgradesBought: 0

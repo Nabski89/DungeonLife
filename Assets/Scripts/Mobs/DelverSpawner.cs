@@ -6,18 +6,20 @@ public class DelverSpawner : MonoBehaviour
 {
     public GameObject DelverPrefab;
     public GameObject NotEnoughTreasureGun;
-
+    public int Tier = 0;
+    float timer;
+    float cooldown = 30;
     // Update is called once per frame
     void Update()
     {
-        if (transform.childCount < 1)
+        timer += 1 * Time.deltaTime;
+        if (transform.childCount < 5 && timer > cooldown)
         {
-
-
-
+            timer = 0;
             var type = Random.Range(0, 3);
 
             GameObject DelverSpawned = (GameObject)Instantiate(DelverPrefab, transform.position + Vector3.down, Quaternion.identity, transform);
+            DelverSpawned.GetComponent<Combat>().Tier += Tier;
             DelverSpawned.GetComponent<DelverController>().ClassType = type;
 
             if (type == 0)
