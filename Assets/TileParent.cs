@@ -6,7 +6,8 @@ public class TileParent : MonoBehaviour
 {
     public string AreaTypo;
     public int Ranwood = 1;
-    public int ReadyToPassRoomType = 0;
+    public GameObject DirTile;
+    public GameObject FloorTile;
     //Awake is before start
     // Start is called before the first frame update
     void Awake()
@@ -19,17 +20,33 @@ public class TileParent : MonoBehaviour
 
         if (Area != null)
         {
-            ReadyToPassRoomType = 1;
             AreaTypo = Area.AreaType;
-            Debug.Log(ReadyToPassRoomType);
             //       Debug.Log("time to spawn a tile");
             Destroy(GetComponent<Rigidbody2D>());
             Destroy(GetComponent<BoxCollider2D>());
-            Destroy(this, 1);
+
+            Instantiate(DirTile, transform);
+            SpawnTile(Vector3.down);
+            SpawnTile(Vector3.up);
+
+            SpawnTile(Vector3.right);
+            SpawnTile(Vector3.down + Vector3.right);
+            SpawnTile(Vector3.up + Vector3.right);
+
+            SpawnTile(Vector3.left);
+            SpawnTile(Vector3.down + Vector3.left);
+            SpawnTile(Vector3.up + Vector3.left);
+
+            Destroy(this);
         }
         //spin the floor tile
         //  transform.Rotate(0, 0, Random.Range(0, 4) * 90, Space.Self);
     }
     //spin the floor tile
     //  transform.Rotate(0, 0, Random.Range(0, 4) * 90, Space.Self);
+
+    void SpawnTile(Vector3 Direction)
+    {
+        Instantiate(FloorTile, transform.position + Direction, Quaternion.identity, transform);
+    }
 }

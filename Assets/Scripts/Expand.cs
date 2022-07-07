@@ -4,22 +4,20 @@ using UnityEngine;
 
 public class Expand : MonoBehaviour
 {
-    public GameObject Rooms;
+    public GameObject Room;
     //GameObject RoomCenter;
 
     public bool valid = false;
     public int cost = 10;
     float TextDelay = 5;
-
+    bool GoodLocation = false;
     public GameObject Text;
+    public GameObject ExpansionRoom;
     void Start()
     {
-        GetComponent<BoxCollider2D>().enabled = false;
-        GetComponent<SpriteRenderer>().enabled = false;
-    }
-    void OnEnable()
-    {
-
+        Invoke("NotValid", 0.1f);
+        //    GetComponent<PolygonCollider2D>().enabled = false;
+        //  GetComponent<SpriteRenderer>().enabled = false;
     }
     void OnMouseDown()
     {
@@ -33,21 +31,21 @@ public class Expand : MonoBehaviour
             }
             else
             {
-                Rooms.SetActive(true);
+                ExpansionRoom.SetActive(true);
                 ManaController.Spend(InvaderSpawner.DungeonSize * cost);
 
                 Debug.Log(transform.position);
                 //we are just going to clear out the list and re-add all valid spawn locations
                 InvaderSpawner.SpawnPointList.Clear();
-                foreach (var NextRooms in GameObject.FindObjectsOfType<Expand>())
+                foreach (var NextRoom in GameObject.FindObjectsOfType<Expand>())
                 {
-                    //this activates rooms that are close enough to connect to an existing room
-                    if (Vector3.Distance(NextRooms.transform.position, transform.position) < 4)
+                    //this activates Room that are close enough to connect to an existing room
+                    if (Vector3.Distance(NextRoom.transform.position, transform.position) < 4)
                     {
-                        NextRooms.valid = true;
+                        NextRoom.valid = true;
                     }
-                    if (NextRooms.valid == true)
-                        NextRooms.Invoke("AddMe", 1);
+                    if (NextRoom.valid == true)
+                        NextRoom.Invoke("AddMe", 1);
                 }
 
                 InvaderSpawner.DungeonSize += 1;
@@ -87,6 +85,16 @@ public class Expand : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
+        //Make a new room on hitting the area game object
+        Area Area = other.GetComponent<Area>();
+        if (Area != null && ExpansionRoom == null)
+        {
+            GoodLocation = true;
+            Debug.Log("Spawn A Room");
+            ExpansionRoom = Instantiate(Room, transform.position, Quaternion.identity, transform.parent);
+            //       ExpansionRoom.SetActive(false);
+        }
+
         DirectionTile controller = other.GetComponent<DirectionTile>();
         if (controller != null)
         {
@@ -98,5 +106,11 @@ public class Expand : MonoBehaviour
     void AddMe()
     {
         InvaderSpawner.SpawnPointList.Add(gameObject);
+    }
+
+    void NotValid()
+    {
+        if (GoodLocation == false)
+            Destroy(gameObject);
     }
 }

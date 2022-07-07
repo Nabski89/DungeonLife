@@ -12,11 +12,6 @@ public class TileSpawn : MonoBehaviour
     void Start()
     {
         Source = GetComponentInParent(typeof(TileParent)) as TileParent;
-    }
-    void Update()
-    {
-  //      Debug.Log(Source.ReadyToPassRoomType);
-        if (Source.ReadyToPassRoomType == 1)
         {
             Debug.Log("time to spawn a tile");
             if (Source.AreaTypo == "wood")
@@ -35,7 +30,7 @@ public class TileSpawn : MonoBehaviour
                 GetComponent<SpriteRenderer>().sprite = TileHolder.Instance.Grass1[Random.Range(0, TileHolder.Instance.Grass1.Length)];
             if (Source.AreaTypo == "cave")
                 GetComponent<SpriteRenderer>().sprite = TileHolder.Instance.Cave1[Random.Range(0, TileHolder.Instance.Cave1.Length)];
-            Destroy(this);
+            Destroy(this, 1);
         }
         //spin the floor tile
         //  transform.Rotate(0, 0, Random.Range(0, 4) * 90, Space.Self);
