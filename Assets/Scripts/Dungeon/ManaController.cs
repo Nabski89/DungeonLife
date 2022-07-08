@@ -11,14 +11,11 @@ public class ManaController : MonoBehaviour
     public float ManaDisplayOnly = 0;
     Vector3 myVector;
 
-    void Start()
+    void Awake()
     {
         mana = 100;
         ManaSpend = 0;
         ManaGain = 0;
-    }
-    void Awake()
-    {
         myVector = new Vector3(1, 1, 1);
         Instance = this;
     }

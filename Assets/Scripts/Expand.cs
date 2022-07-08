@@ -10,19 +10,21 @@ public class Expand : MonoBehaviour
     public bool valid = false;
     public int cost = 10;
     float TextDelay = 5;
-    bool GoodLocation = false;
     public GameObject Text;
     public GameObject ExpansionRoom;
     void Start()
     {
-        Invoke("NotValid", 0.1f);
-        //    GetComponent<PolygonCollider2D>().enabled = false;
-        //  GetComponent<SpriteRenderer>().enabled = false;
+        Invoke("NotValid", 0.05f);
+
+        //oh boy we are hard coding our starting tile
+        if (Vector3.Distance(ManaController.Instance.transform.position, transform.position) < 2)
+            Expandiate();
     }
     void OnMouseDown()
     {
-        {
-            //activate the text, get the ability to edit it, display the cost, then if you click it while text is up you buy it
+        Expandiate();
+        /*
+                    //activate the text, get the ability to edit it, display the cost, then if you click it while text is up you buy it
             if (Text.activeSelf == false)
             {
                 Text.SetActive(true);
@@ -30,57 +32,66 @@ public class Expand : MonoBehaviour
                 TextDelay = 5;
             }
             else
-            {
-                ExpansionRoom.SetActive(true);
-                ManaController.Spend(InvaderSpawner.DungeonSize * cost);
-
-                Debug.Log(transform.position);
-                //we are just going to clear out the list and re-add all valid spawn locations
-                InvaderSpawner.SpawnPointList.Clear();
-                foreach (var NextRoom in GameObject.FindObjectsOfType<Expand>())
+                            Expandiate();
+            */
+    }
+    public void Expandiate()
+    {
+        ExpansionRoom.SetActive(true);
+        ManaController.Spend(InvaderSpawner.DungeonSize * cost);
+        ExpansionRoom.transform.SetParent(transform.parent);
+        //we are just going to clear out the list and re-add all valid spawn locations
+        foreach (var NextRoom in GameObject.FindObjectsOfType<Expand>())
+        {
+            //this activates Room that are close enough to connect to an existing room
+            if (Vector3.Distance(NextRoom.transform.position, transform.position) < 4)
+                //make sure we aren't adding ourself here
+                if (Vector3.Distance(NextRoom.transform.position, transform.position) > 1)
                 {
-                    //this activates Room that are close enough to connect to an existing room
-                    if (Vector3.Distance(NextRoom.transform.position, transform.position) < 4)
-                    {
-                        NextRoom.valid = true;
-                    }
-                    if (NextRoom.valid == true)
-                        NextRoom.Invoke("AddMe", 1);
+                    NextRoom.valid = true;
+                    GetComponent<PolygonCollider2D>().enabled = true;
+                    GetComponent<SpriteRenderer>().enabled = true;
+                    NextRoom.AddMe();
+                    Debug.Log("Added 1 room to Invader spawn points, there are now " + InvaderSpawner.SpawnPointList.Count + " invader spawn locations");
                 }
-
-                InvaderSpawner.DungeonSize += 1;
-                Debug.Log("There are currently " + InvaderSpawner.SpawnPointList.Count + "invader spawn locations");
-                Destroy(gameObject);
-            }
         }
+
+        InvaderSpawner.DungeonSize += 1;
+
+        InvaderSpawner.SpawnPointList.Remove(gameObject);
+        Debug.Log("Removed 1 room from Invader spawn points, there are now " + InvaderSpawner.SpawnPointList.Count + " invader spawn locations. The dungeon size is now " + InvaderSpawner.DungeonSize);
+        BuilderButton.Instance.RemoveFromRoomList(gameObject);
+        //remove this next line if you want them to minimize after purchase
+        BuilderButton.Activate = false;
+        BuilderButton.ShowRoomExpansions();
+        Destroy(gameObject);
     }
     void Update()
     {
-        if (valid == true)
-        {
-            if (ManaController.ManaSpend > 0)
-            {
-                if (GetComponent<BoxCollider2D>().enabled == true)
-                {
-                    GetComponent<BoxCollider2D>().enabled = false;
-                    GetComponent<SpriteRenderer>().enabled = false;
-                    Text.SetActive(false);
-                    TextDelay = 0;
-                }
-            }
+        /*       if (valid == true)
+               {
+                   if (ManaController.ManaSpend > 0)
+                   {
+                       if (GetComponent<PolygonCollider2D>().enabled == true)
+                       {
+                           GetComponent<PolygonCollider2D>().enabled = false;
+                           GetComponent<SpriteRenderer>().enabled = false;
+                           Text.SetActive(false);
+                           TextDelay = 0;
+                       }
+                   }
 
-            if (ManaController.ManaSpend <= 0)
-            {
-                {
-                    GetComponent<BoxCollider2D>().enabled = true;
-                    GetComponent<SpriteRenderer>().enabled = true;
-                }
-            }
-
-            TextDelay -= 1 * Time.deltaTime;
-            if (TextDelay < 0)
-                Text.SetActive(false);
-        }
+                   if (ManaController.ManaSpend <= 0)
+                   {
+                       {
+                           GetComponent<PolygonCollider2D>().enabled = true;
+                           GetComponent<SpriteRenderer>().enabled = true;
+                       }
+                   }
+       */
+        TextDelay -= 1 * Time.deltaTime;
+        if (TextDelay < 0)
+            Text.SetActive(false);
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -89,17 +100,8 @@ public class Expand : MonoBehaviour
         Area Area = other.GetComponent<Area>();
         if (Area != null && ExpansionRoom == null)
         {
-            GoodLocation = true;
             Debug.Log("Spawn A Room");
-            ExpansionRoom = Instantiate(Room, transform.position, Quaternion.identity, transform.parent);
-            //       ExpansionRoom.SetActive(false);
-        }
-
-        DirectionTile controller = other.GetComponent<DirectionTile>();
-        if (controller != null)
-        {
-            InvaderSpawner.SpawnPointList.Remove(gameObject);
-            Destroy(gameObject);
+            ExpansionRoom = Instantiate(Room, transform.position, Quaternion.identity, transform);
         }
     }
 
@@ -110,7 +112,30 @@ public class Expand : MonoBehaviour
 
     void NotValid()
     {
-        if (GoodLocation == false)
+        DirectionTile HasRoom = GetComponentInChildren(typeof(DirectionTile), true) as DirectionTile;
+
+        if (HasRoom != null)
+        {
+            ExpansionRoom.SetActive(false);
+            BuilderButton.Instance.AddToRoomList(gameObject);
+            GetComponent<PolygonCollider2D>().enabled = false;
+            GetComponent<SpriteRenderer>().enabled = false;
+        }
+        else
             Destroy(gameObject);
     }
+    public void EnableIfValid()
+    {
+        if (valid == true)
+        {
+            GetComponent<PolygonCollider2D>().enabled = true;
+            GetComponent<SpriteRenderer>().enabled = true;
+        }
+    }
+    public void DisableForTheButton()
+    {
+        GetComponent<PolygonCollider2D>().enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
+    }
+
 }

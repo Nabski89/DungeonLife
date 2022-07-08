@@ -13,10 +13,10 @@ public class TileSpawn : MonoBehaviour
     {
         Source = GetComponentInParent(typeof(TileParent)) as TileParent;
         {
-            Debug.Log("time to spawn a tile");
+      //      Debug.Log("time to spawn a tile");
             if (Source.AreaTypo == "wood")
             {
-                Debug.Log("wood type");
+        //        Debug.Log("wood type");
                 if (Source.Ranwood == 0)
                     GetComponent<SpriteRenderer>().sprite = TileHolder.Instance.Wood1[Random.Range(0, TileHolder.Instance.Wood1.Length)];
                 if (Source.Ranwood == 1)
