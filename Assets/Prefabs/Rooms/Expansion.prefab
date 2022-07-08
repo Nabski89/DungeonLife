@@ -273,6 +273,7 @@ MonoBehaviour:
   cost: 10
   Text: {fileID: 5102636228621358611}
   ExpansionRoom: {fileID: 0}
+  DoorCheck: {fileID: 8435034172411954406, guid: 267f265d5aca5be4b8226148aa9160d1, type: 3}
 --- !u!50 &8919095335475861732
 Rigidbody2D:
   serializedVersion: 4

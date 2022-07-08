@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class DoorChecker : MonoBehaviour
 {
-
     void Start()
     {
-
+        Destroy(this, 5);
     }
     void OnTriggerEnter2D(Collider2D other)
     {
+        DoorButton DoorButtonScript = GetComponent<DoorButton>();
+
         DoorBlocker controller = other.GetComponent<DoorBlocker>();
         if (controller != null)
         {
-            DelverController DelverParent = GetComponentInParent<DelverController>();
-            //   Debug.Log("WAKE UP MR ANDERSON");
-      //      DelverParent.TurnRight();
+            if (DoorButtonScript.DOOR1 == null)
+                DoorButtonScript.DOOR1 = other.gameObject;
+            else
+                DoorButtonScript.DOOR2 = other.gameObject;
         }
     }
 

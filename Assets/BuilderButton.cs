@@ -5,13 +5,15 @@ using UnityEngine;
 public class BuilderButton : MonoBehaviour
 {
     public static List<GameObject> ExpansionList = new List<GameObject>();
+    public static List<GameObject> DoorBuilderList = new List<GameObject>();
     public static BuilderButton Instance;
 
-    public static bool Activate = false;
+    public static bool Activate = true;
     void Awake()
     {
         Instance = this;
         ExpansionList.Clear();
+        DoorBuilderList.Clear();
     }
 
     public void AddToRoomList(GameObject AddedThis)
@@ -25,25 +27,38 @@ public class BuilderButton : MonoBehaviour
     public static void ShowRoomExpansions()
     {
 
-        Debug.Log("you pushed the button");
-        int Amount = ExpansionList.Count;
+        Debug.Log("you pushed the button and it holds " + ExpansionList.Count);
+        int Amounti = ExpansionList.Count;
+        int Amountj = DoorBuilderList.Count;
         int i = 0;
+        int j = 0;
 
         if (Activate == true)
         {
-            while (i < Amount)
+            while (i < Amounti)
             {
                 ExpansionList[i].GetComponent<Expand>().DisableForTheButton();
                 i++;
             }
+            while (j < Amountj)
+            {
+                DoorBuilderList[j].SetActive(false);
+                j++;
+            }
+
             Activate = false;
         }
         else
         {
-            while (i < Amount)
+            while (i < Amounti)
             {
                 ExpansionList[i].GetComponent<Expand>().EnableIfValid();
                 i++;
+            }
+            while (j < Amountj)
+            {
+                DoorBuilderList[j].SetActive(true);
+                j++;
             }
             Activate = true;
         }

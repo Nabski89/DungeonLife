@@ -12,6 +12,7 @@ public class Expand : MonoBehaviour
     float TextDelay = 5;
     public GameObject Text;
     public GameObject ExpansionRoom;
+    public GameObject DoorCheck;
     void Start()
     {
         Invoke("NotValid", 0.05f);
@@ -53,6 +54,21 @@ public class Expand : MonoBehaviour
                     GetComponent<SpriteRenderer>().enabled = true;
                     NextRoom.AddMe();
                     Debug.Log("Added 1 room to Invader spawn points, there are now " + InvaderSpawner.SpawnPointList.Count + " invader spawn locations");
+                }
+        }
+
+
+        //this builds the door, we still need to put it in some kind of door builder button thing then make the door script
+        foreach (var RoomWeAreNextTo in GameObject.FindObjectsOfType<DirectionTile>())
+        {
+            Debug.Log("FOUND A DIRECTION TILE THIS FAR AWAY" + Vector2.Distance(RoomWeAreNextTo.transform.position, transform.position));
+            //this activates Room that are close enough to connect to an existing room
+            if (Vector2.Distance(RoomWeAreNextTo.transform.position, transform.position) < 4)
+                //make sure we aren't adding ourself here
+                if (Vector2.Distance(RoomWeAreNextTo.transform.position, transform.position) > 1)
+                {
+                    GameObject Doory = Instantiate(DoorCheck, (transform.position + RoomWeAreNextTo.transform.position) / 2, Quaternion.identity, transform.parent);
+                    BuilderButton.DoorBuilderList.Add(Doory);
                 }
         }
 
