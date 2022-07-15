@@ -7,13 +7,8 @@ public class EventManager : MonoBehaviour
     public GameObject EventLoc1;
     public GameObject EventLoc2;
     public GameObject EventLoc3;
-    // Start is called before the first frame update
 
     public GameObject MiniEvent;
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     float eventtimer = 60;
