@@ -18,6 +18,11 @@ public class Spawner : MonoBehaviour
     public GameObject MidUpgrade;
     public GameObject RightUpgrade;
     bool ShopActive;
+
+    // these are used in the SpawnIt sub
+    public int HPMod = 0;
+    public int AtkMod = 0;
+    public int DefMod = 0;
     void Start()
     {
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
@@ -39,7 +44,8 @@ public class Spawner : MonoBehaviour
             if (cooldown > SpawnIntervalSeconds)
             {
                 cooldown = 0;
-                Instantiate(SpawnedMob, transform.position + Vector3.back, Quaternion.identity, transform);
+                SpawnIn();
+
                 //                Debug.Log(SpawnedMob.Length);
                 //       Instantiate(SpawnedMob[Random.Range(0, SpawnedMob.Length)], transform.position+Vector3.back, Quaternion.identity, transform);
             }
@@ -62,6 +68,19 @@ public class Spawner : MonoBehaviour
             ungrow();
         }
     }
+    void SpawnIn()
+    {
+        GameObject SpawnIt = Instantiate(SpawnedMob, transform.position + Vector3.back, Quaternion.identity, transform);
+
+        Combat CombatController = SpawnIt.GetComponent<Combat>();
+        //effects of what we are spawning
+        CombatController.hp += HPMod;
+        CombatController.MaxHp += HPMod;
+
+        CombatController.Atk += AtkMod;
+        CombatController.Def += DefMod;
+    }
+
 
     void grow()
     {

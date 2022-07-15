@@ -8,7 +8,7 @@ public class BuilderButton : MonoBehaviour
     public static List<GameObject> DoorBuilderList = new List<GameObject>();
     public static BuilderButton Instance;
 
-    public static bool Activate = true;
+    public static bool Activate = false;
     void Awake()
     {
         Instance = this;

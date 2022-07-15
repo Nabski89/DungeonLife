@@ -24,11 +24,9 @@ public class SpawnerShopUpgrade : MonoBehaviour
             Spawner.SpawnIntervalSeconds -= SpawnIntervalSecondsMod * Tier;
 
             //effects of what we are spawning
-            CombatController.hp += HPMod * Tier;
-            CombatController.MaxHp += HPMod * Tier;
-
-            CombatController.Atk += AtkMod * Tier;
-            CombatController.Def += DefMod * Tier;
+            Spawner.HPMod += HPMod * Tier;
+            Spawner.AtkMod += AtkMod * Tier;
+            Spawner.DefMod += DefMod * Tier;
         }
     }
 }

@@ -27,8 +27,9 @@ public class ManaController : MonoBehaviour
         if (ManaSpend > 0)
         {
             //square root so that the more you're in debt the faster it goes
-            mana -= (1f + Mathf.Sqrt(ManaSpend)) * Time.deltaTime;
-            ManaSpend -= (1f * Mathf.Sqrt(ManaSpend)) * Time.deltaTime;
+            float Deduction = (1f + Mathf.Sqrt(ManaSpend)) * Time.deltaTime;
+            mana -= Deduction;
+            ManaSpend -= Deduction;
 
             //a game over screen
             if (mana < 0)
