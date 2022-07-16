@@ -8,13 +8,22 @@ public class ScionController : MonoBehaviour
     public Vector3 TargetPosition1;
     public Vector3 TargetPosition2;
     public bool Forward = false;
+    public GameObject ScionChildren;
+    float speed = 1;
+    public int XP;
+    public int Level;
+
+    Combat CombatScript;
 
     // Start is called before the first frame update
     void Start()
     {
+        CombatScript = GetComponent<Combat>();
+        transform.position = ManaController.Instance.transform.position;
         foreach (var Manager in GameObject.FindObjectsOfType<ScionManager>())
             Manager.AddScion(transform.gameObject);
-        TargetPosition1 = transform.position;
+        TargetPosition1 = ManaController.Instance.transform.position + Vector3.up + Vector3.right;
+        TargetPosition2 = ManaController.Instance.transform.position - Vector3.up - Vector3.right;
     }
 
     // Update is called once per frame
@@ -22,7 +31,7 @@ public class ScionController : MonoBehaviour
     {
         if (InCombat == false)
         {
-            var step = 1 * Time.deltaTime; // calculate distance to move
+            var step = 1 * speed * Time.deltaTime; // calculate distance to move
 
             if (Forward == true)
             {
@@ -42,6 +51,40 @@ public class ScionController : MonoBehaviour
                 Forward = false;
             if (transform.position == TargetPosition2)
                 Forward = true;
+        }
+    }
+
+
+    public void Kill(int XPgain)
+    {
+        ManaController.Gain(XPgain);
+        XP += XPgain;
+        if (XP > 50 * (Level * Level + (Level - 2)))
+        {
+            Level += 1;
+            CombatScript.Atk += 1;
+            CombatScript.Def += 1;
+            UpgradeHolder.AddToSpawnList(ScionChildren);
+            Debug.Log("Level " + Level);
+        }
+        CombatScript.hp += 1;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        DoorBlocker Door = other.GetComponent<DoorBlocker>();
+        if (Door != null)
+        {
+            speed = 0.25f;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        DoorBlocker Door = other.GetComponent<DoorBlocker>();
+        if (Door != null)
+        {
+            speed = 1f;
         }
     }
 }

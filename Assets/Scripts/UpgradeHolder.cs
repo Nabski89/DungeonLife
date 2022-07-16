@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UpgradeHolder : MonoBehaviour
 {
-    public static List<GameObject> Defenders = new List<GameObject>();
+    public static List<GameObject> SpawnList = new List<GameObject>();
     public static List<GameObject> Upgrades = new List<GameObject>();
 
     public static UpgradeHolder Instance;
@@ -15,29 +15,29 @@ public class UpgradeHolder : MonoBehaviour
     }
     public static void AddToSpawnList(GameObject AddedThis)
     {
-        int DefendersLength = Defenders.Count;
-        Defenders.RemoveAll(u => u.name == AddedThis.name);
+        int SpawnListLength = SpawnList.Count;
+        SpawnList.RemoveAll(u => u.name == AddedThis.name);
 
-        if (Defenders.Count - DefendersLength == 0)
+        if (SpawnList.Count - SpawnListLength == 0)
         {
-            Defenders.Add(AddedThis);
+            SpawnList.Add(AddedThis);
             DestroyChildren();
             UISpawns.ShowUpgrades();
         }
-        if (Defenders.Count - DefendersLength == -1)
+        if (SpawnList.Count - SpawnListLength == -1)
         {
-            Defenders.Add(AddedThis);
-            Defenders.Add(AddedThis);
+            SpawnList.Add(AddedThis);
+            SpawnList.Add(AddedThis);
             DestroyChildren();
             UISpawns.ShowUpgrades();
         }
-        if (Defenders.Count - DefendersLength == -2)
+        if (SpawnList.Count - SpawnListLength == -2)
         {
             GameObject StarSpawn = Instantiate(AddedThis, Instance.transform);
             StarSpawn.name += "*";
             StarSpawn.GetComponent<Combat>().Tier += 1;
             Debug.Log(AddedThis + " Was Upgraded");
-            AddToUpgradeList(StarSpawn);
+            AddToSpawnList(StarSpawn);
         }
     }
     public static void AddToUpgradeList(GameObject AddedThis)
@@ -68,6 +68,17 @@ public class UpgradeHolder : MonoBehaviour
         }
     }
 
+    public static void RemoveFromSpawnList(int RemoveThis)
+    {
+        SpawnList.RemoveAt(RemoveThis);
+        UISpawns.ShowUpgrades();
+    }
+
+    public static void RemoveFromUpgradeList(int RemoveThis)
+    {
+        Upgrades.RemoveAt(RemoveThis);
+        UIUpgrades.ShowUpgrades();
+    }
 
     // I should clean this up every now and then, but I have absolutely no idea when it is safe to do so in the mean time I'm just letting them pile up
     public static void DestroyChildren()

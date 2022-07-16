@@ -49,11 +49,6 @@ public class Builder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("left ctrl"))
-        {
-            grow();
-            UnGrowTimer = 5;
-        }
         if (Input.GetKey("left ctrl"))
         {
             UnGrowTimer += 1 * Time.deltaTime;
@@ -68,33 +63,48 @@ public class Builder : MonoBehaviour
 
     void OnMouseDown()
     {
+        grow();
         if (transform.childCount < 1)
         {
-
-            UnGrowTimer = 10;
-            Vector3 LeftPosition = transform.TransformPoint(Vector3.left);
-            Vector3 RightPosition = transform.TransformPoint(Vector3.right);
-            int RandCount = UpgradeHolder.Defenders.Count;
-            int rand1 = Random.Range(0, RandCount);
-            int rand2 = Random.Range(0, RandCount);
-
-            Debug.Log(UpgradeHolder.Defenders.Count + " upgrades and you rolled " + rand1 + " and " + rand2);
-
-            // spawn the purchaser, then set the cost, sprite, and what it will actually spawn if purchased, which is a pass down twice thing
-            LEFT = Instantiate(SpawnerPrefab, LeftPosition, transform.rotation, transform);
-            LEFT.GetComponent<SpawnerButton>().Cost = UpgradeHolder.Defenders[rand1].GetComponent<CostManager>().Cost;
-            LEFT.GetComponent<SpriteRenderer>().sprite = UpgradeHolder.Defenders[rand1].GetComponent<SpriteRenderer>().sprite;
-            LEFT.GetComponent<SpawnerButton>().Upgrade = UpgradeHolder.Defenders[rand1];
-            if (RandCount > 1)
+            //minimize everyone else first
+            foreach (var Shop in GameObject.FindObjectsOfType<Builder>())
             {
-                while (rand1 == rand2)
+                Shop.UnGrowTimer = 0;
+            }
+            UnGrowTimer = 10;
+            Vector3 LeftPosition = transform.TransformPoint(Vector3.up);
+            Vector3 RightPosition = transform.TransformPoint(Vector3.right + Vector3.right + Vector3.up);
+            int RandCount = UpgradeHolder.SpawnList.Count;
+
+            // make sure we can actually spawn something
+            if (RandCount > 0)
+            {
+                int rand1 = Random.Range(0, RandCount);
+                int rand2 = Random.Range(0, RandCount);
+
+                Debug.Log(UpgradeHolder.SpawnList.Count + " upgrades and you rolled " + rand1 + " and " + rand2);
+
+                // spawn the purchaser, then set the cost, sprite, and what it will actually spawn if purchased, which is a pass down twice thing
+                LEFT = Instantiate(SpawnerPrefab, LeftPosition, transform.rotation, transform);
+                LEFT.GetComponent<SpawnerButton>().Cost = UpgradeHolder.SpawnList[rand1].GetComponent<CostManager>().Cost;
+                LEFT.GetComponent<SpriteRenderer>().sprite = UpgradeHolder.SpawnList[rand1].GetComponent<SpriteRenderer>().sprite;
+                LEFT.GetComponent<SpawnerButton>().Upgrade = UpgradeHolder.SpawnList[rand1];
+                LEFT.GetComponent<SpawnerButton>().SlotNum = rand1;
+
+                //make sure we have two options
+                if (RandCount > 1)
                 {
-                    rand2 = Random.Range(0, RandCount);
+                    while (rand1 == rand2)
+                    {
+                        rand2 = Random.Range(0, RandCount);
+                    }
+                    RIGHT = Instantiate(SpawnerPrefab, RightPosition, transform.rotation, transform);
+                    RIGHT.GetComponent<SpawnerButton>().Cost = UpgradeHolder.SpawnList[rand2].GetComponent<CostManager>().Cost;
+                    RIGHT.GetComponent<SpriteRenderer>().sprite = UpgradeHolder.SpawnList[rand2].GetComponent<SpriteRenderer>().sprite;
+                    RIGHT.GetComponent<SpawnerButton>().Upgrade = UpgradeHolder.SpawnList[rand2];
+                    RIGHT.GetComponent<SpawnerButton>().SlotNum = rand2;
+
                 }
-                RIGHT = Instantiate(SpawnerPrefab, RightPosition, transform.rotation, transform);
-                RIGHT.GetComponent<SpawnerButton>().Cost = UpgradeHolder.Defenders[rand2].GetComponent<CostManager>().Cost;
-                RIGHT.GetComponent<SpriteRenderer>().sprite = UpgradeHolder.Defenders[rand2].GetComponent<SpriteRenderer>().sprite;
-                RIGHT.GetComponent<SpawnerButton>().Upgrade = UpgradeHolder.Defenders[rand2];
             }
         }
     }
@@ -112,7 +122,11 @@ public class Builder : MonoBehaviour
     }
     void ungrow()
     {
-        transform.localScale = new Vector3(1, 1, 1) * 0.0005f;
+        transform.localScale = new Vector3(1, 1, 1) * 0.5f;
+        foreach (Transform child in transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
     }
 
 

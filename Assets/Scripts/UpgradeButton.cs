@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnerButton : MonoBehaviour
+public class UpgradeButton : MonoBehaviour
 {
     float TimeToDie = 10;
     public float Cost = 10;

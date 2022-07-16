@@ -8,8 +8,18 @@ public class Combat : MonoBehaviour
     public int Tier = 0;
 
     MovementController MovementScript;
-    Defender DefenderScript;
+
     Combat EnemyScript;
+    ScionController ScionScript;
+    Defender DefenderScript;
+    DelverController DelverScript;
+    Invader InvaderScript;
+
+    bool Scion = false;
+    bool Defender = false;
+    bool Delver = false;
+    bool Invader = false;
+
 
     //COMBAT STUFF BELOW
 
@@ -39,11 +49,31 @@ public class Combat : MonoBehaviour
         MaxHp += Tier / 2;
         //get our main body
         MovementScript = GetComponent<MovementController>();
-        DefenderScript = GetComponent<Defender>();
 
+
+        ScionScript = GetComponent<ScionController>();
+        if (ScionScript != null)
+        {
+            Scion = true;
+        }
+
+        DefenderScript = GetComponent<Defender>();
         if (DefenderScript != null)
         {
             timer -= 0.5f;
+            Defender = true;
+        }
+
+        DelverScript = GetComponent<DelverController>();
+        if (DelverScript != null)
+        {
+            Delver = true;
+        }
+
+        InvaderScript = GetComponent<Invader>();
+        if (InvaderScript != null)
+        {
+            Invader = true;
         }
     }
 
@@ -68,6 +98,9 @@ public class Combat : MonoBehaviour
                         MovementScript.InCombat = false;
                     if (DefenderScript != null)
                         DefenderScript.InCombat = false;
+                    if (ScionScript != null)
+                        ScionScript.InCombat = false;
+
                 }
             }
         }
@@ -96,6 +129,10 @@ public class Combat : MonoBehaviour
                     {
                         DefenderScript.InCombat = true;
                     }
+                    if (ScionScript != null)
+                    {
+                        ScionScript.InCombat = true;
+                    }
                 }
             }
     }
@@ -107,6 +144,7 @@ public class Combat : MonoBehaviour
         int DefRoll = Random.Range(0, EnemyScript.Def) + EnemyScript.DefMod;
 
         //Gain mana based on how well rolls went
+        //this should be a rare thing with most of our mana income coming from kills or work
         ManaController.Gain(AtkRoll * AtkManaGain);
         ManaController.Gain(EnemyScript.DefManaGain * DefRoll);
 
@@ -114,6 +152,10 @@ public class Combat : MonoBehaviour
         if (AtkRoll > DefRoll)
         {
             EnemyScript.hp -= Damage;
+            if (EnemyScript.hp < 1)
+            {
+                Kill();
+            }
             Vector3 SplatSpot = EnemyScript.transform.position;
             SplatSpot.y += 0.5f;
             GameObject HPSplat = (GameObject)Instantiate(Splat, SplatSpot, Quaternion.identity);
@@ -149,7 +191,18 @@ public class Combat : MonoBehaviour
         DefSplat.GetComponent<TMPro.TextMeshPro>().text = DefRoll.ToString();
         DefSplat.GetComponent<Splat>().timer = (AtkCooldownTime / 2);
     }
+    void Kill()
+    {
+        int xp = EnemyScript.Def + EnemyScript.DefMod + EnemyScript.Atk + EnemyScript.AtkMod + 3 * EnemyScript.MaxHp + 5 * EnemyScript.Damage;
+        if (Scion == true)
+        {
+            ScionScript.Kill(xp);
+        }
+        if (Delver == true)
+        {
 
+        }
+    }
     void OnMouseDown()
     {
         UICombat.Instance.CombatUpdate(hp, Atk, AtkMod, Def, DefMod, Damage, this);

@@ -24,14 +24,14 @@ public class UISpawns : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
-        int Amount = UpgradeHolder.Defenders.Count;
+        int Amount = UpgradeHolder.SpawnList.Count;
         int i = 0;
         while (i < Amount)
         {
             GameObject UpSpawn = Instantiate(Instance.BLANK, Instance.transform.position + Vector3.left * 50 * (i + 1), Instance.transform.rotation, Instance.transform.GetChild(0));
             m_Graphic = UpSpawn.GetComponent<Image>();
-            m_Graphic.sprite = UpgradeHolder.Defenders[i].GetComponent<SpriteRenderer>().sprite;
-            UpSpawn.name = UpgradeHolder.Defenders[i].name;
+            m_Graphic.sprite = UpgradeHolder.SpawnList[i].GetComponent<SpriteRenderer>().sprite;
+            UpSpawn.name = UpgradeHolder.SpawnList[i].name;
             i++;
         }
     }

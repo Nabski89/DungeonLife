@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InvaderLoot : MonoBehaviour
+public class Invader : MonoBehaviour
 {
     Combat CombatScript;
     public int Loot = 1;
