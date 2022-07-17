@@ -7,6 +7,7 @@ public class UIUpgrades : MonoBehaviour
 {
     public static UIUpgrades Instance;
     public GameObject BLANK;
+    public GameObject Star;
     GameObject Baby;
     public static Image m_Graphic;
     // Start is called before the first frame update
@@ -27,10 +28,26 @@ public class UIUpgrades : MonoBehaviour
         int i = 0;
         while (i < Amount)
         {
-            GameObject UpSpawn = Instantiate(Instance.BLANK, Instance.transform.position + Vector3.left * 50 * (i + 1), Instance.transform.rotation, Instance.transform.GetChild(0));
+            //spawn a button to buy the upgrade, set the image and name
+            GameObject UpSpawn = Instantiate(Instance.BLANK, Instance.transform.position + Vector3.left * 64 * (i + 1), Instance.transform.rotation, Instance.transform.GetChild(0));
             m_Graphic = UpSpawn.GetComponent<Image>();
             m_Graphic.sprite = UpgradeHolder.Upgrades[i].GetComponent<SpriteRenderer>().sprite;
             UpSpawn.name = UpgradeHolder.Upgrades[i].name;
+
+            //give it upgrade stars
+
+            SpawnerShopUpgrade Spawned = UpgradeHolder.Upgrades[i].GetComponent<SpawnerShopUpgrade>();
+
+            if (Spawned != null)
+            {
+                int j = 1;
+                Debug.Log("make star?????");
+                while (j < Spawned.Tier)
+                {
+                    Instantiate(Instance.Star, UpSpawn.transform.position + Vector3.left * (26) + Vector3.up * (j * 12 + -26), UpSpawn.transform.rotation, UpSpawn.transform);
+                    j++;
+                }
+            }
             i++;
         }
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScionManager : MonoBehaviour
 {
@@ -13,12 +14,8 @@ public class ScionManager : MonoBehaviour
     }
     public void AddScion(GameObject NewLad)
     {
-        Spawn(ScionUI);
-    }
-
-    void Spawn(GameObject MiniEventSpawned)
-    {
-        GameObject NewButton = Instantiate(MiniEventSpawned, transform);
+        GameObject NewButton = Instantiate(ScionUI, transform);
         NewButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, transform.childCount * -50);
+        NewButton.GetComponent<ScionTarget>().Scion = NewLad;
     }
 }
