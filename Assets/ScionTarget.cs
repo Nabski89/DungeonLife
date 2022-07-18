@@ -17,23 +17,26 @@ public class ScionTarget : MonoBehaviour
     {
         transform.GetChild(0).GetComponent<Image>().sprite = Scion.GetComponent<SpriteRenderer>().sprite;
         Button1 = Instantiate(Button, transform.position + Vector3.right * 64, Quaternion.identity, transform);
+        Button1.GetComponent<ScionTargetButton>().ButtonNum = 1;
         Button1.SetActive(false);
         Button2 = Instantiate(Button, transform.position + Vector3.right * 128, Quaternion.identity, transform);
         Button2.SetActive(false);
+        Button2.GetComponent<ScionTargetButton>().ButtonNum = 2;
     }
 
-    // Update is called once per frame
     public void Push()
     {
         foreach (var Camera in GameObject.FindObjectsOfType<CameraController>())
         {
             Camera.transform.position = new Vector3(Scion.transform.position.x, Scion.transform.position.y, Camera.transform.position.z);
         }
+
         Button1.SetActive(true);
         Button1.GetComponent<ScionTargetButton>().DisableTimer = 10;
         Button2.SetActive(true);
         Button2.GetComponent<ScionTargetButton>().DisableTimer = 10;
+
+        Button1.GetComponent<ScionTargetButton>().Targeter.SetActive(true);
+        Button2.GetComponent<ScionTargetButton>().Targeter.SetActive(true);
     }
-
-
 }

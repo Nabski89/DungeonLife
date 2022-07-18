@@ -6,7 +6,9 @@ public class ScionController : MonoBehaviour
 {
     public bool InCombat = false;
     public Vector3 TargetPosition1;
+    Vector3 TrueTargetPosition1;
     public Vector3 TargetPosition2;
+    Vector3 TrueTargetPosition2;
     public bool Forward = false;
     public GameObject ScionChildren;
     float speed = 1;
@@ -24,6 +26,8 @@ public class ScionController : MonoBehaviour
             Manager.AddScion(transform.gameObject);
         TargetPosition1 = ManaController.Instance.transform.position + Vector3.up + Vector3.right;
         TargetPosition2 = ManaController.Instance.transform.position - Vector3.up - Vector3.right;
+        TrueTargetPosition1 = TargetPosition1;
+        TrueTargetPosition2 = TargetPosition2;
     }
 
     // Update is called once per frame
@@ -35,22 +39,28 @@ public class ScionController : MonoBehaviour
 
             if (Forward == true)
             {
-                if (transform.position.x == TargetPosition1.x)
-                    transform.position = Vector3.MoveTowards(transform.position, TargetPosition1, step);
+                if (transform.position.x == TrueTargetPosition1.x)
+                    transform.position = Vector3.MoveTowards(transform.position, TrueTargetPosition1, step);
                 else
-                    transform.position = Vector3.MoveTowards(transform.position, new Vector3(TargetPosition1.x, transform.position.y, transform.position.z), step);
+                    transform.position = Vector3.MoveTowards(transform.position, new Vector3(TrueTargetPosition1.x, transform.position.y, transform.position.z), step);
             }
             else
             {
-                if (transform.position.y == TargetPosition2.y)
-                    transform.position = Vector3.MoveTowards(transform.position, TargetPosition2, step);
+                if (transform.position.y == TrueTargetPosition2.y)
+                    transform.position = Vector3.MoveTowards(transform.position, TrueTargetPosition2, step);
                 else
-                    transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, TargetPosition2.y, transform.position.z), step);
+                    transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, TrueTargetPosition2.y, transform.position.z), step);
             }
-            if (transform.position == TargetPosition1)
+            if (transform.position == TrueTargetPosition1)
+            {
                 Forward = false;
-            if (transform.position == TargetPosition2)
+                TrueTargetPosition1 = TargetPosition1;
+            }
+            if (transform.position == TrueTargetPosition2)
+            {
                 Forward = true;
+                TrueTargetPosition2 = TargetPosition2;
+            }
         }
     }
 

@@ -67,8 +67,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: aef50ca5c9b1ab64bada93f2ebb879fd, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -121,13 +121,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3371491974123276480}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: -479220768722114609}
+        m_TargetAssemblyTypeName: ScionTargetButton, Assembly-CSharp
+        m_MethodName: PRESSEDABUTTON
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -146,3 +146,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DisableTimer: 0
+  ButtonNum: 0
+  TargeterPrefab: {fileID: 3030096846436413746, guid: 688036bb6f31eba44a15c564ff67c7c1, type: 3}
+  Targeter: {fileID: 0}
