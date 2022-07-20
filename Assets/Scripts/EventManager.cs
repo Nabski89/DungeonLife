@@ -9,6 +9,8 @@ public class EventManager : MonoBehaviour
     public GameObject EventLoc3;
 
     public GameObject MiniEvent;
+    public float EventTrigger;
+    public float EventWeight;
 
     // Update is called once per frame
     float eventtimer = 60;
@@ -17,8 +19,16 @@ public class EventManager : MonoBehaviour
         eventtimer -= Time.deltaTime;
         if (eventtimer < 0)
         {
+            EventWeight += 1;
+            eventtimer += 60;
+        }
+        if (EventWeight > EventTrigger)
+        {
+            EventWeight = 0;
+            EventTrigger += 1;
             SpawnEvent(MiniEvent);
         }
+
     }
 
     void SpawnEvent(GameObject EventSpawned)
@@ -46,6 +56,5 @@ public class EventManager : MonoBehaviour
     void Spawn(GameObject EventLoc, GameObject MiniEventSpawned)
     {
         Instantiate(MiniEventSpawned, EventLoc.transform);
-        eventtimer += 60;
     }
 }
