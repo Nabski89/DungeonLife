@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 610439762405279311}
   - component: {fileID: 3073082862671991655}
   - component: {fileID: 1957926629331428109}
+  - component: {fileID: 7061195944623626929}
   m_Layer: 0
   m_Name: Floors
   m_TagString: Untagged
@@ -96,6 +97,21 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &7061195944623626929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3637918373554523945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c396fccb01d4c254484491237beef611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Delver: {fileID: 5143831543791117952, guid: dc39a6295aa823446871aaa250e7a30e, type: 3}
+  Resource: {fileID: 1835891608088927091, guid: 9bbbce383eed98f44b12f9f4504e7faa, type: 3}
+  Invader: {fileID: 6703598020388911617, guid: eb0819ae34a77ad44ac5b4c64edffd08, type: 3}
 --- !u!1 &7674219954355867426
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,8 +11,19 @@ public class EventManager : MonoBehaviour
     public GameObject MiniEvent;
     public float EventTrigger;
     public float EventWeight;
+    public static int RoomEventTracker;
+    public static int RoomEventTrackerDelver;
+    public static int RoomEventTrackerResource;
+    public static int RoomEventTrackerInvader;
 
     // Update is called once per frame
+    void Awake()
+    {
+        RoomEventTracker = 30;
+        RoomEventTrackerDelver = 10;
+        RoomEventTrackerResource = 10;
+        RoomEventTrackerInvader = 10;
+    }
     float eventtimer = 60;
     void Update()
     {
