@@ -80,6 +80,8 @@ public class Expand : MonoBehaviour
         //remove this next line if you want them to minimize after purchase
         BuilderButton.Activate = false;
         BuilderButton.ShowRoomExpansions();
+
+        ExpansionRoom.GetComponent<RoomEvent>().RoomEventGo();
         Destroy(gameObject);
     }
     void Update()

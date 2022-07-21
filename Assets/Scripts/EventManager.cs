@@ -19,10 +19,10 @@ public class EventManager : MonoBehaviour
     // Update is called once per frame
     void Awake()
     {
-        RoomEventTracker = 30;
-        RoomEventTrackerDelver = 10;
-        RoomEventTrackerResource = 10;
-        RoomEventTrackerInvader = 10;
+        RoomEventTracker = 100;
+        RoomEventTrackerDelver = 0;
+        RoomEventTrackerResource = 0;
+        RoomEventTrackerInvader = 0;
     }
     float eventtimer = 60;
     void Update()
