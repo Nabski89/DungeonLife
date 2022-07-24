@@ -8,15 +8,14 @@ public class RoomEvent : MonoBehaviour
     public GameObject Resource;
     public GameObject Invader;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-
     //spawn an event, then make it less likely that that type of event will happen in the future, we probably need to have this weighted better than
     void Event()
     {
+        //check to make sure we don't spawn at our start location
+        if (ManaController.Instance.transform.position.x == transform.position.x && ManaController.Instance.transform.position.y == transform.position.y)
+            Destroy(this);
+
+
         int RRValue = Random.Range(0, EventManager.RoomEventTracker);
 
 
@@ -25,7 +24,7 @@ public class RoomEvent : MonoBehaviour
         EventManager.RoomEventTrackerResource += 5;
         EventManager.RoomEventTrackerInvader += 7;
 
-        Debug.Log("Room Event Roll (Delver Resource Invader) " + EventManager.RoomEventTrackerDelver + EventManager.RoomEventTrackerResource + EventManager.RoomEventTrackerInvader);
+        Debug.Log("Room Event Roll (Delver Resource Invader) " + EventManager.RoomEventTrackerDelver + " " + EventManager.RoomEventTrackerResource + " " + EventManager.RoomEventTrackerInvader);
 
         if (RRValue < EventManager.RoomEventTrackerDelver)
         {
@@ -61,6 +60,6 @@ public class RoomEvent : MonoBehaviour
         */
         Event();
 
-        Destroy(this);
+
     }
 }

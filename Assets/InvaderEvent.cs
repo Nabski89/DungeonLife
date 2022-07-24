@@ -18,8 +18,35 @@ public class InvaderEvent : MonoBehaviour
     public void NewEvent()
     {
         {
+            //get a random number
             int RNG = Mathf.Min(MaxEvents, Random.Range(0, EventCount));
-            GameObject EventToSpawn = Resources.Load<GameObject>("Events/Invader/InvadeRandom" + RNG.ToString());
+            //pick one of the events
+            GameObject EventToSpawn = Resources.Load<GameObject>("Events/Invader/IR" + RNG.ToString());
+            GameObject Canvas = GameObject.Find("Canvas");
+            Debug.Log("Events/Invader/IR" + RNG.ToString());
+
+
+            Debug.Log("location of invade event is " + transform.position);
+            Component[] EventButton;
+
+            EventButton = EventToSpawn.GetComponentsInChildren(typeof(UIButton));
+
+            if (EventButton != null)
+            {
+                foreach (UIButton EventEached in EventButton)
+                {
+                    EventEached.GetComponent<UIButton>().LocationCreate = transform.position;
+                    Debug.Log("We have a button" + EventEached.GetComponent<UIButton>().LocationCreate);
+                }
+            }
+            
+            Instantiate(EventToSpawn, Canvas.transform.position, Quaternion.identity, Canvas.transform);
+
+
+            //EventToSpawn.GetComponent<LocationCreate = transform.position;
+
+
+
         }
     }
 }

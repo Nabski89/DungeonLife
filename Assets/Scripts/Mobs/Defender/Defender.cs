@@ -37,7 +37,7 @@ public class Defender : MonoBehaviour
 
         if (transform.position == transform.parent.position + Vector3.one)
         {
-            Debug.Log("Look for a route");
+        //    Debug.Log("Look for a route");
             //forward
             RaycastHit2D hitDown = Physics2D.Raycast(transform.position, transform.TransformDirection(-Vector3.up), 2, layerMask);
             // if it doesn't hit anything

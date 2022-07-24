@@ -661,7 +661,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 274582327}
-  - component: {fileID: 274582328}
   m_Layer: 0
   m_Name: Research
   m_TagString: Untagged
@@ -683,18 +682,6 @@ Transform:
   m_Father: {fileID: 1988463481}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &274582328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 274582326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4662071beba8f9645bc2bcc390357f18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &286951066
 GameObject:
   m_ObjectHideFlags: 0
@@ -2242,7 +2229,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 567677297}
-  - component: {fileID: 567677298}
   m_Layer: 0
   m_Name: Treasure
   m_TagString: Untagged
@@ -2264,18 +2250,6 @@ Transform:
   m_Father: {fileID: 1988463481}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &567677298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 567677296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4662071beba8f9645bc2bcc390357f18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &584510592
 GameObject:
   m_ObjectHideFlags: 0
@@ -2915,7 +2889,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 775831680}
-  - component: {fileID: 775831681}
   m_Layer: 0
   m_Name: Trap
   m_TagString: Untagged
@@ -2937,18 +2910,6 @@ Transform:
   m_Father: {fileID: 1988463481}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &775831681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 775831679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4662071beba8f9645bc2bcc390357f18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &783659691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3479,6 +3440,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -2802542714983334184, guid: 2d17add4294f51b408254920c87fb1eb, type: 3}
+      propertyPath: Invader
+      value: 
+      objectReference: {fileID: 5907077670077345947, guid: 9df9793523c1a714283feab3cce16849, type: 3}
     - target: {fileID: -2802542714983334184, guid: 2d17add4294f51b408254920c87fb1eb, type: 3}
       propertyPath: TimeBetweenSpawns
       value: 10
@@ -4836,7 +4801,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1353149384}
-  - component: {fileID: 1353149385}
   m_Layer: 0
   m_Name: Anti-Trap
   m_TagString: Untagged
@@ -4858,18 +4822,6 @@ Transform:
   m_Father: {fileID: 1988463481}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1353149385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1353149383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4662071beba8f9645bc2bcc390357f18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1360951124
 GameObject:
   m_ObjectHideFlags: 0
@@ -6948,6 +6900,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1988463481}
+  - component: {fileID: 1988463482}
   m_Layer: 0
   m_Name: Upgrades
   m_TagString: Untagged
@@ -6977,6 +6930,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1988463482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988463480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4662071beba8f9645bc2bcc390357f18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2002859100
 GameObject:
   m_ObjectHideFlags: 0
