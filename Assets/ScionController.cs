@@ -11,9 +11,11 @@ public class ScionController : MonoBehaviour
     Vector3 TrueTargetPosition2;
     public bool Forward = false;
     public GameObject ScionChildren;
+    public float InitialSpeed = 1;
     float speed = 1;
     public int XP;
     public int Level;
+
 
     Combat CombatScript;
 
@@ -28,6 +30,8 @@ public class ScionController : MonoBehaviour
         TargetPosition2 = ManaController.Instance.transform.position - Vector3.up - Vector3.right;
         TrueTargetPosition1 = TargetPosition1;
         TrueTargetPosition2 = TargetPosition2;
+
+        speed = InitialSpeed;
     }
 
     // Update is called once per frame
@@ -85,7 +89,7 @@ public class ScionController : MonoBehaviour
         DoorBlocker Door = other.GetComponent<DoorBlocker>();
         if (Door != null)
         {
-            speed = 0.25f;
+            speed = InitialSpeed * 0.25f;
         }
     }
 
@@ -94,7 +98,7 @@ public class ScionController : MonoBehaviour
         DoorBlocker Door = other.GetComponent<DoorBlocker>();
         if (Door != null)
         {
-            speed = 1f;
+            speed = InitialSpeed;
         }
     }
 }

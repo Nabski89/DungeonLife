@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4660235359375403642}
   - component: {fileID: -7706896509677729464}
   m_Layer: 0
-  m_Name: Invader
+  m_Name: 1 Roach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,16 +167,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Faction: 3
-  MaxHp: 1
-  hp: 1
-  Atk: 6
+  Tier: 0
+  MaxHp: 2
+  hp: 2
+  Atk: 5
   AtkMod: 1
-  Def: 6
+  Def: 5
   DefMod: 1
   Damage: 1
   Splat: {fileID: 3493879478972447153, guid: 2f1eaacaa176ace43b88001c3767f9d0, type: 3}
   AtkSplatGO: {fileID: 6101530069096244085, guid: 2b53f22a1dca70744917667af0ae3d7e, type: 3}
   DefSplatGO: {fileID: 3036482323124313622, guid: b791b6ad0e3a74d43b324563bac238ba, type: 3}
+  DefManaGain: 0
+  AtkManaGain: 0
 --- !u!114 &4660235359375403642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,3 +204,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7232b4cf38ff24ba2231fa28a9ca5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Loot: 1

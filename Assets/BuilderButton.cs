@@ -9,6 +9,7 @@ public class BuilderButton : MonoBehaviour
     public static BuilderButton Instance;
 
     public static bool Activate = false;
+    public static bool FixMyBugByRunningItTwice = false;
     void Awake()
     {
         Instance = this;
@@ -27,6 +28,11 @@ public class BuilderButton : MonoBehaviour
     public static void ShowRoomExpansions()
     {
 
+        if (FixMyBugByRunningItTwice == false)
+        {
+            FixMyBugByRunningItTwice = true;
+            ShowRoomExpansions();
+        }
         Debug.Log("you pushed the button and it holds " + ExpansionList.Count);
         int Amounti = ExpansionList.Count;
         int Amountj = DoorBuilderList.Count;

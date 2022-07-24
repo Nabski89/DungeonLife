@@ -69,25 +69,51 @@ public class UIButton : MonoBehaviour
     }
 
 
-    public bool UpSpawn;
-    public GameObject Spawne;
+    public int RandSpawn = 0;
+    public GameObject[] Spawne;
     public void NewSpawn()
     {
-        if (UpSpawn == true)
+        if (Spawne.Length != 0)
         {
-            Debug.Log("Can now spawn " + Spawne);
-            UpgradeHolder.AddToSpawnList(Spawne);
+            if (RandSpawn == 0)
+            {
+                int i = 0;
+                while (i < Spawne.Length)
+                {
+                    UpgradeHolder.AddToSpawnList(Spawne[i]);
+                    i += 1;
+                }
+            }
+            else
+                while (RandSpawn > 0)
+                {
+                    UpgradeHolder.AddToSpawnList(Spawne[Random.Range(0, Spawne.Length)]);
+                    RandSpawn -= 1;
+                }
         }
     }
 
-    public bool UpUpgrade;
-    public GameObject Upgradee;
+   public int RandUpgrade = 0;
+    public GameObject[] Upgradee;
     public void NewUpgrade()
     {
-        if (UpUpgrade == true)
+        if (Upgradee.Length != 0)
         {
-            UpgradeHolder.AddToUpgradeList(Upgradee);
-            Debug.Log("Can now upgrade with " + Upgradee);
+            if (RandUpgrade == 0)
+            {
+                int i = 0;
+                while (i < Upgradee.Length)
+                {
+                    UpgradeHolder.AddToUpgradeList(Upgradee[i]);
+                    i += 1;
+                }
+            }
+            else
+                while (RandUpgrade > 0)
+                {
+                    UpgradeHolder.AddToUpgradeList(Upgradee[Random.Range(0, Upgradee.Length)]);
+                    RandUpgrade -= 1;
+                }
         }
     }
 

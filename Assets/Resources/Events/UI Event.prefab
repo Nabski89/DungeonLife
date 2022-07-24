@@ -57,10 +57,10 @@ MonoBehaviour:
   PushIt: 49
   ManaB: 0
   ManaBoone: 0
-  UpSpawn: 0
-  Spawne: {fileID: 0}
-  UpUpgrade: 0
-  Upgradee: {fileID: 0}
+  RandSpawn: 0
+  Spawne: []
+  RandUpgrade: 0
+  Upgradee: []
   Create: 0
   Createe: {fileID: 0}
   LocationCreate: {x: 0, y: 0, z: 0}
@@ -218,10 +218,10 @@ MonoBehaviour:
   PushIt: 51
   ManaB: 0
   ManaBoone: 0
-  UpSpawn: 0
-  Spawne: {fileID: 0}
-  UpUpgrade: 0
-  Upgradee: {fileID: 0}
+  RandSpawn: 0
+  Spawne: []
+  RandUpgrade: 0
+  Upgradee: []
   Create: 0
   Createe: {fileID: 0}
   LocationCreate: {x: 0, y: 0, z: 0}
@@ -996,10 +996,10 @@ MonoBehaviour:
   PushIt: 50
   ManaB: 0
   ManaBoone: 0
-  UpSpawn: 0
-  Spawne: {fileID: 0}
-  UpUpgrade: 0
-  Upgradee: {fileID: 0}
+  RandSpawn: 0
+  Spawne: []
+  RandUpgrade: 0
+  Upgradee: []
   Create: 0
   Createe: {fileID: 0}
   LocationCreate: {x: 0, y: 0, z: 0}

@@ -181,5 +181,9 @@ PrefabInstance:
       propertyPath: UpgradeSpawn
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8924695925820220001, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: Spawne.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6be0a0429cd274b488f334c51a334938, type: 3}

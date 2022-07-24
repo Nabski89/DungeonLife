@@ -18,6 +18,7 @@ public class Defender : MonoBehaviour
     }
     public float MoveCooldown = 4;
     public float MoveCooldownTimer = 4;
+    public float speed = 1;
     //raycasts want to be in fixed update. We are using this as our door check.
     void FixedUpdate()
     {
@@ -56,7 +57,7 @@ public class Defender : MonoBehaviour
         {
             if (MoveCooldownTimer <= 0)
             {
-                var step = 1 * Time.deltaTime; // calculate distance to move
+                var step = 1 * speed * Time.deltaTime; // calculate distance to move
                 transform.position = Vector3.MoveTowards(transform.position, TargetPosition, step);
             }
             else

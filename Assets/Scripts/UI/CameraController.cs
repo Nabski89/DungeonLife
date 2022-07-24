@@ -13,6 +13,8 @@ public class CameraController : MonoBehaviour
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 30;
         Time.timeScale = 1;
+
+        InvaderEvent.EventCount = 0;
     }
 
     // Update is called once per frame

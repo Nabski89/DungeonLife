@@ -25,7 +25,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: Create
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: Createe
@@ -36,6 +36,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: RandSpawn
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: RandUpgrade
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: LocationCreate.x
       value: 6
       objectReference: {fileID: 0}
@@ -43,6 +51,58 @@ PrefabInstance:
       propertyPath: LocationCreate.y
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: Spawne.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: Upgradee.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: Spawne.Array.data[0]
+      value: 
+      objectReference: {fileID: 1576965149290501487, guid: 73cf7e44bcc036c4095d3cc1851bc385, type: 3}
+    - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: Spawne.Array.data[1]
+      value: 
+      objectReference: {fileID: 4212352416464519180, guid: 30bb3ce29fec9314086b57646e5d9bf1, type: 3}
+    - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: Spawne.Array.data[2]
+      value: 
+      objectReference: {fileID: 8792935584668838010, guid: f5ecaab8a7f63de4292419e6b93c6266, type: 3}
+    - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: Spawne.Array.data[3]
+      value: 
+      objectReference: {fileID: 5003418030801737226, guid: 2ec30a7d682c92247b37d1855c29a459, type: 3}
+    - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: Spawne.Array.data[4]
+      value: 
+      objectReference: {fileID: 5762993216786175083, guid: ee0d6094e99e92747aa39bfc11de8831, type: 3}
+    - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: Spawne.Array.data[5]
+      value: 
+      objectReference: {fileID: 3067326433351315799, guid: 7addd5d8c09590741b01347695077402, type: 3}
+    - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: Upgradee.Array.data[0]
+      value: 
+      objectReference: {fileID: 7643432150390922872, guid: 4f0bad9c2c0a1ca4480fe2377c77406b, type: 3}
+    - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: Upgradee.Array.data[1]
+      value: 
+      objectReference: {fileID: 8153613965551358592, guid: bb03c0cc9a06d4245aba25bfc310881a, type: 3}
+    - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: Upgradee.Array.data[2]
+      value: 
+      objectReference: {fileID: 298259843451956430, guid: 57c6dc9a9b082cc4abcbbf930e9fd1c2, type: 3}
+    - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: Upgradee.Array.data[3]
+      value: 
+      objectReference: {fileID: 3559768443733812108, guid: 64c104b8466592d41b6b9fde1600ff2f, type: 3}
+    - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+      propertyPath: Upgradee.Array.data[4]
+      value: 
+      objectReference: {fileID: 5243855248287018612, guid: a1db04570f2cb114ca4d615e80a5290f, type: 3}
     - target: {fileID: 4653733888478319976, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

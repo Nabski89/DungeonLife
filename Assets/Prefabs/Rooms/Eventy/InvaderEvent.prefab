@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6021030394157811910}
   - component: {fileID: -5150237403368684884}
+  - component: {fileID: 3460512398185455807}
   m_Layer: 0
   m_Name: InvaderEvent
   m_TagString: Untagged
@@ -82,3 +83,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3460512398185455807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6703598020388911617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4df674971e0a29b4b9b16d53be22241a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

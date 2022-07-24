@@ -8,6 +8,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -6209932611974949479, guid: 9f9ef94e6c51b3d44824d6299936126c, type: 3}
+      propertyPath: InitialSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6209932611974949479, guid: 9f9ef94e6c51b3d44824d6299936126c, type: 3}
       propertyPath: ScionChildren
       value: 
       objectReference: {fileID: 3067326433351315799, guid: 7addd5d8c09590741b01347695077402, type: 3}
@@ -63,5 +67,29 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: fdac0675151cdab4d9f698c8bc0c23e0, type: 3}
+    - target: {fileID: 5788389366338757004, guid: 9f9ef94e6c51b3d44824d6299936126c, type: 3}
+      propertyPath: hp
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5788389366338757004, guid: 9f9ef94e6c51b3d44824d6299936126c, type: 3}
+      propertyPath: Atk
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5788389366338757004, guid: 9f9ef94e6c51b3d44824d6299936126c, type: 3}
+      propertyPath: Def
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5788389366338757004, guid: 9f9ef94e6c51b3d44824d6299936126c, type: 3}
+      propertyPath: MaxHp
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5788389366338757004, guid: 9f9ef94e6c51b3d44824d6299936126c, type: 3}
+      propertyPath: AtkMod
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5788389366338757004, guid: 9f9ef94e6c51b3d44824d6299936126c, type: 3}
+      propertyPath: DefMod
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f9ef94e6c51b3d44824d6299936126c, type: 3}

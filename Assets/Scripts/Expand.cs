@@ -125,7 +125,8 @@ public class Expand : MonoBehaviour
 
     void AddMe()
     {
-        InvaderSpawner.SpawnPointList.Add(gameObject);
+        if (InvaderSpawner.SpawnPointList.Contains(gameObject) != true)
+            InvaderSpawner.SpawnPointList.Add(gameObject);
     }
 
     void NotValid()
