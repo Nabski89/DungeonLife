@@ -95,6 +95,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IR8
       objectReference: {fileID: 0}
+    - target: {fileID: 2530122595421657370, guid: a21567bbf38dc8640a718a31586e7c86, type: 3}
+      propertyPath: Createe
+      value: 
+      objectReference: {fileID: 5474008349442703385, guid: 979e61ccd22572348ab4fe43311e00c4, type: 3}
     - target: {fileID: 8179067706350208652, guid: a21567bbf38dc8640a718a31586e7c86, type: 3}
       propertyPath: m_text
       value: Tomato

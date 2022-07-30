@@ -93,7 +93,7 @@ public class UIButton : MonoBehaviour
         }
     }
 
-   public int RandUpgrade = 0;
+    public int RandUpgrade = 0;
     public GameObject[] Upgradee;
     public void NewUpgrade()
     {

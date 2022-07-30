@@ -8,7 +8,7 @@ public class Expand : MonoBehaviour
     //GameObject RoomCenter;
 
     public bool valid = false;
-    public int cost = 10;
+    public int cost = 5;
     float TextDelay = 5;
     public GameObject Text;
     public GameObject ExpansionRoom;
@@ -118,7 +118,7 @@ public class Expand : MonoBehaviour
         Area Area = other.GetComponent<Area>();
         if (Area != null && ExpansionRoom == null)
         {
-            Debug.Log("Spawn A Room");
+       //     Debug.Log("Spawn A Room");
             ExpansionRoom = Instantiate(Room, transform.position, Quaternion.identity, transform);
         }
     }

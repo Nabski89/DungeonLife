@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
 {
     //if I was smarter I would auto assign this
     public Camera TheCamera;
-    public float TimeHolder = 1;
+    public static float TimeHolder = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,7 +53,7 @@ public class CameraController : MonoBehaviour
         }
 
         //speed
-        if (Input.GetKeyDown(KeyCode.Home) && Time.timeScale < 3.5)
+        if (Input.GetKeyDown(KeyCode.Home) && Time.timeScale < 3.5 && Time.timeScale != 0)
         {
             //Time.timeScale = 2;
             Time.timeScale += 0.5f;
@@ -76,6 +76,6 @@ public class CameraController : MonoBehaviour
     public void UnPause()
     {
         Debug.Log("Unpause");
-        Time.timeScale = 1;
+        Time.timeScale = Mathf.Max(1, TimeHolder);
     }
 }

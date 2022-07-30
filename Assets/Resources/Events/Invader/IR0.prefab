@@ -107,6 +107,14 @@ PrefabInstance:
       propertyPath: Createe
       value: 
       objectReference: {fileID: 5907077670077345947, guid: 9df9793523c1a714283feab3cce16849, type: 3}
+    - target: {fileID: 6184968591857272679, guid: a21567bbf38dc8640a718a31586e7c86, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6482763117157020569, guid: a21567bbf38dc8640a718a31586e7c86, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6672857943725238895, guid: a21567bbf38dc8640a718a31586e7c86, type: 3}
       propertyPath: m_IsActive
       value: 0

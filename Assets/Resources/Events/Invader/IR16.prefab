@@ -95,6 +95,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IR16
       objectReference: {fileID: 0}
+    - target: {fileID: 2530122595421657370, guid: a21567bbf38dc8640a718a31586e7c86, type: 3}
+      propertyPath: Createe
+      value: 
+      objectReference: {fileID: 6146233623133793642, guid: a84345776c38ca04cb47bbc315988ef7, type: 3}
     - target: {fileID: 8179067706350208652, guid: a21567bbf38dc8640a718a31586e7c86, type: 3}
       propertyPath: m_text
       value: You're pretty sure that you didn't kill that delver, but the ghost is

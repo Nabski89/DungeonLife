@@ -18,7 +18,10 @@ public class DoorChecker : MonoBehaviour
             if (DoorButtonScript.DOOR1 == null)
                 DoorButtonScript.DOOR1 = other.gameObject;
             else
+            {
                 DoorButtonScript.DOOR2 = other.gameObject;
+                DoorButtonScript.DoorTrigger();
+            }
         }
     }
 

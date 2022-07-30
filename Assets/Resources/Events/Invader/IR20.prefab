@@ -95,6 +95,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IR20
       objectReference: {fileID: 0}
+    - target: {fileID: 2530122595421657370, guid: a21567bbf38dc8640a718a31586e7c86, type: 3}
+      propertyPath: Createe
+      value: 
+      objectReference: {fileID: 254516772840273336, guid: fffaf9ce031dc1f49996af277ebab2d6, type: 3}
     - target: {fileID: 8179067706350208652, guid: a21567bbf38dc8640a718a31586e7c86, type: 3}
       propertyPath: m_text
       value: Cool Spirit

@@ -13,30 +13,33 @@ public class DoorButton : MonoBehaviour
     {
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
         m_SpriteRenderer.color = Color.blue;
-    }
+            }
     void OnMouseDown()
     {
-        if (ManaController.mana > 5)
+        ManaController.Spend(5);
+        DoorTrigger();
+    }
+
+    public void DoorTrigger()
+    {
+        if (DOOR1.activeSelf == true)
         {
-            if (DOOR1.activeSelf == true)
-            {
-                DOOR1.SetActive(false);
-                DOOR2.SetActive(false);
-                //hoho we can just make the game object of a sound and then destroy it? Big brain or stupid I don't know or care right now I've been at this most of the afternoon.
-                GameObject SoundEffect = (GameObject)Instantiate(SoundEffect1, transform.position, Quaternion.identity);
-                Destroy(SoundEffect, 5);
-                m_SpriteRenderer.color = Color.green;
-            }
-            else
-            {
-                DOOR1.SetActive(true);
-                DOOR2.SetActive(true);
-                GameObject SoundEffect = (GameObject)Instantiate(SoundEffect1, transform.position, Quaternion.identity);
-                Destroy(SoundEffect, 5);
-                Debug.Log("DOOR");
-                m_SpriteRenderer.color = Color.blue;
-            }
-            ManaController.Spend(5);
+            DOOR1.SetActive(false);
+            DOOR2.SetActive(false);
+            //hoho we can just make the game object of a sound and then destroy it? Big brain or stupid I don't know or care right now I've been at this most of the afternoon.
+            GameObject SoundEffect = (GameObject)Instantiate(SoundEffect1, transform.position, Quaternion.identity);
+            Destroy(SoundEffect, 5);
+            m_SpriteRenderer.color = Color.green;
         }
+        else
+        {
+            DOOR1.SetActive(true);
+            DOOR2.SetActive(true);
+            GameObject SoundEffect = (GameObject)Instantiate(SoundEffect1, transform.position, Quaternion.identity);
+            Destroy(SoundEffect, 5);
+            Debug.Log("DOOR");
+            m_SpriteRenderer.color = Color.blue;
+        }
+
     }
 }

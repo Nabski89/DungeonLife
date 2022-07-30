@@ -33,7 +33,7 @@ public class BuilderButton : MonoBehaviour
             FixMyBugByRunningItTwice = true;
             ShowRoomExpansions();
         }
-        Debug.Log("you pushed the button and it holds " + ExpansionList.Count);
+        Debug.Log("you pushed the button and it holds " + ExpansionList.Count + " remaining rooms you can expand into");
         int Amounti = ExpansionList.Count;
         int Amountj = DoorBuilderList.Count;
         int i = 0;

@@ -9,11 +9,20 @@ public class EventMini : MonoBehaviour
     Image m_Graphic;
     public float timer = 120;
     public float waitTime = 120;
+
+    CameraController CameraTarget;
+
     // Start is called before the first frame update
     void Start()
     {
         //Fetch the Graphic from the GameObject
         m_Graphic = GetComponent<Image>();
+
+//set our camera
+        foreach (var Camera in GameObject.FindObjectsOfType<CameraController>())
+        {
+            CameraTarget = Camera;
+        }
     }
 
 
@@ -34,15 +43,14 @@ public class EventMini : MonoBehaviour
     public void EventTrigger()
     {
         float Speed = Time.timeScale;
+        CameraController.TimeHolder = Speed;
         Time.timeScale = 0;
 
         GameObject Canvas = GameObject.Find("Canvas");
         GameObject EventSpawned = (GameObject)Instantiate(Event, Canvas.transform.position, Quaternion.identity, Canvas.transform);
 
-        foreach (var Camera in GameObject.FindObjectsOfType<CameraController>())
-        {
-            Camera.Pause();
-        }
+        CameraTarget.Pause();
+
         Destroy(gameObject);
     }
 }

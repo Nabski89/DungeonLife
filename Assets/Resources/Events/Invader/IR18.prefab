@@ -95,6 +95,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IR18
       objectReference: {fileID: 0}
+    - target: {fileID: 2530122595421657370, guid: a21567bbf38dc8640a718a31586e7c86, type: 3}
+      propertyPath: Createe
+      value: 
+      objectReference: {fileID: 3726361210699948906, guid: a127b0e2582a04a479819a53b7cef05d, type: 3}
     - target: {fileID: 8179067706350208652, guid: a21567bbf38dc8640a718a31586e7c86, type: 3}
       propertyPath: m_text
       value: Is this a delver thinking they can sneak in and steal from us by pretending

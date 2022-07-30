@@ -95,6 +95,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IR10
       objectReference: {fileID: 0}
+    - target: {fileID: 2530122595421657370, guid: a21567bbf38dc8640a718a31586e7c86, type: 3}
+      propertyPath: Createe
+      value: 
+      objectReference: {fileID: 3701357639102431625, guid: 44fce0b2577453944bd8062f55bfeba5, type: 3}
     - target: {fileID: 8179067706350208652, guid: a21567bbf38dc8640a718a31586e7c86, type: 3}
       propertyPath: m_text
       value: Rust Walker this sprite is so cool

@@ -42,30 +42,31 @@ public class EventManager : MonoBehaviour
 
     }
 
-    void SpawnEvent(GameObject EventSpawned)
+    public void SpawnEvent(GameObject EventSpawned)
     {
         if (EventLoc1.transform.childCount > 0)
         {
             if (EventLoc2.transform.childCount < 1)
             {
                 //spawn in slot 2
-                Spawn(EventLoc2, MiniEvent);
+                Spawn(EventLoc2, EventSpawned);
             }
             else if (EventLoc3.transform.childCount < 1)
             {
                 //spawn in slot 3
-                Spawn(EventLoc3, MiniEvent);
+                Spawn(EventLoc3, EventSpawned);
             }
         }
         else
         {
             //spawn in slot 1
-            Spawn(EventLoc1, MiniEvent);
+            Spawn(EventLoc1, EventSpawned);
         }
     }
 
     void Spawn(GameObject EventLoc, GameObject MiniEventSpawned)
     {
-        Instantiate(MiniEventSpawned, EventLoc.transform);
+       GameObject NewEvent = Instantiate(MiniEvent, EventLoc.transform);
+       NewEvent.GetComponent<EventMini>().Event = MiniEventSpawned;
     }
 }

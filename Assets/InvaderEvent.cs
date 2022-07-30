@@ -6,12 +6,22 @@ public class InvaderEvent : MonoBehaviour
 {
     public int MaxEvents = 24;
 
+    static EventManager EventTarget;
+
     //we have reset this to zero in our camera controller so you can start a new game without grumbling
     public static int EventCount = 0;
     // up the range of event difficulty over time
     void Start()
     {
         EventCount += 3;
+
+        //find our event manager and set it as the target so that we don't have to find it every time
+        if (EventTarget == null)
+        {
+            EventManager Event = GameObject.FindObjectOfType<EventManager>();
+            EventTarget = Event;
+        }
+
         NewEvent();
     }
 
@@ -26,6 +36,7 @@ public class InvaderEvent : MonoBehaviour
             Debug.Log("Events/Invader/IR" + RNG.ToString());
 
 
+            // get our location and set it to spawn in the middle of that room
             Debug.Log("location of invade event is " + transform.position);
             Component[] EventButton;
 
@@ -39,8 +50,8 @@ public class InvaderEvent : MonoBehaviour
                     Debug.Log("We have a button" + EventEached.GetComponent<UIButton>().LocationCreate);
                 }
             }
-            
-            Instantiate(EventToSpawn, Canvas.transform.position, Quaternion.identity, Canvas.transform);
+            EventTarget.SpawnEvent(EventToSpawn);
+            //  Instantiate(EventToSpawn, Canvas.transform.position, Quaternion.identity, Canvas.transform);
 
 
             //EventToSpawn.GetComponent<LocationCreate = transform.position;
