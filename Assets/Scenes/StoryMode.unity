@@ -1937,7 +1937,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TheCamera: {fileID: 519420031}
-  TimeHolder: 1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -3448,6 +3447,58 @@ PrefabInstance:
       propertyPath: TimeBetweenSpawns
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: -2802542714983334184, guid: 2d17add4294f51b408254920c87fb1eb, type: 3}
+      propertyPath: Invader.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: -2802542714983334184, guid: 2d17add4294f51b408254920c87fb1eb, type: 3}
+      propertyPath: Invader.Array.data[0]
+      value: 
+      objectReference: {fileID: 5907077670077345947, guid: 9df9793523c1a714283feab3cce16849, type: 3}
+    - target: {fileID: -2802542714983334184, guid: 2d17add4294f51b408254920c87fb1eb, type: 3}
+      propertyPath: Invader.Array.data[1]
+      value: 
+      objectReference: {fileID: 6450300733588598952, guid: 5330e38a592638946946ab33115d51e5, type: 3}
+    - target: {fileID: -2802542714983334184, guid: 2d17add4294f51b408254920c87fb1eb, type: 3}
+      propertyPath: Invader.Array.data[2]
+      value: 
+      objectReference: {fileID: 5250560998875124262, guid: a77c045d4c452364187b28bf013128d4, type: 3}
+    - target: {fileID: -2802542714983334184, guid: 2d17add4294f51b408254920c87fb1eb, type: 3}
+      propertyPath: Invader.Array.data[3]
+      value: 
+      objectReference: {fileID: 5247793516095839822, guid: 600568795297dd74d9929b292a6bc6ac, type: 3}
+    - target: {fileID: -2802542714983334184, guid: 2d17add4294f51b408254920c87fb1eb, type: 3}
+      propertyPath: Invader.Array.data[4]
+      value: 
+      objectReference: {fileID: 5474008349442703385, guid: 979e61ccd22572348ab4fe43311e00c4, type: 3}
+    - target: {fileID: -2802542714983334184, guid: 2d17add4294f51b408254920c87fb1eb, type: 3}
+      propertyPath: Invader.Array.data[5]
+      value: 
+      objectReference: {fileID: 3701357639102431625, guid: 44fce0b2577453944bd8062f55bfeba5, type: 3}
+    - target: {fileID: -2802542714983334184, guid: 2d17add4294f51b408254920c87fb1eb, type: 3}
+      propertyPath: Invader.Array.data[6]
+      value: 
+      objectReference: {fileID: 2896252917867772809, guid: 5794059de371b6a44968ce5d3f664eed, type: 3}
+    - target: {fileID: -2802542714983334184, guid: 2d17add4294f51b408254920c87fb1eb, type: 3}
+      propertyPath: Invader.Array.data[7]
+      value: 
+      objectReference: {fileID: 6407258369606576198, guid: 69815f60bfa43544581a2804d7fb2f04, type: 3}
+    - target: {fileID: -2802542714983334184, guid: 2d17add4294f51b408254920c87fb1eb, type: 3}
+      propertyPath: Invader.Array.data[8]
+      value: 
+      objectReference: {fileID: 6146233623133793642, guid: a84345776c38ca04cb47bbc315988ef7, type: 3}
+    - target: {fileID: -2802542714983334184, guid: 2d17add4294f51b408254920c87fb1eb, type: 3}
+      propertyPath: Invader.Array.data[9]
+      value: 
+      objectReference: {fileID: 3726361210699948906, guid: a127b0e2582a04a479819a53b7cef05d, type: 3}
+    - target: {fileID: -2802542714983334184, guid: 2d17add4294f51b408254920c87fb1eb, type: 3}
+      propertyPath: Invader.Array.data[10]
+      value: 
+      objectReference: {fileID: 254516772840273336, guid: fffaf9ce031dc1f49996af277ebab2d6, type: 3}
+    - target: {fileID: -2802542714983334184, guid: 2d17add4294f51b408254920c87fb1eb, type: 3}
+      propertyPath: Invader.Array.data[11]
+      value: 
+      objectReference: {fileID: 4723526182918923561, guid: 48e5d5bbfde89ec4690502392f9311d0, type: 3}
     - target: {fileID: 3202965511681812199, guid: 2d17add4294f51b408254920c87fb1eb, type: 3}
       propertyPath: m_RootOrder
       value: 2

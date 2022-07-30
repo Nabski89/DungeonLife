@@ -6,11 +6,13 @@ public class Invader : MonoBehaviour
 {
     Combat CombatScript;
     public int Loot = 1;
+    public int Number = 0;
     // Start is called before the first frame update
     void Start()
     {
         CombatScript = GetComponent<Combat>();
- //       Destroy(gameObject, 5);
+        InvaderSpawner.InvaderTier = Mathf.Max(InvaderSpawner.InvaderTier, Number);
+        //       Destroy(gameObject, 5);
     }
 
     // Update is called once per frame

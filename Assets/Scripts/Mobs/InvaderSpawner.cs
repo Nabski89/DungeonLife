@@ -6,7 +6,8 @@ public class InvaderSpawner : MonoBehaviour
 {
     public float Timer;
     public float TimeBetweenSpawns = 1;
-    public GameObject Invader;
+    public GameObject[] Invader;
+    public static int InvaderTier = 0;
 
     public static List<GameObject> SpawnPointList = new List<GameObject>();
 
@@ -30,7 +31,7 @@ public class InvaderSpawner : MonoBehaviour
 
     void Spawn()
     {
-        Instantiate(Invader, SpawnPointList[Random.Range(0, SpawnPointList.Count)].transform.position, transform.rotation, transform);
+        Instantiate(Invader[Random.Range(0, InvaderTier)], SpawnPointList[Random.Range(0, SpawnPointList.Count)].transform.position, transform.rotation, transform);
         Debug.Log("There are currently this many spawn points: " + SpawnPointList.Count);
     }
 }

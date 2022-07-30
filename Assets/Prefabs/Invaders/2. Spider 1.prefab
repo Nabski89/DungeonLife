@@ -31,6 +31,10 @@ PrefabInstance:
       propertyPath: MaxHp
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5954742059342582791, guid: 96d00a8dbc492c24fb3dd9da8f7d5a96, type: 3}
+      propertyPath: Number
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6207306419645578242, guid: 96d00a8dbc492c24fb3dd9da8f7d5a96, type: 3}
       propertyPath: m_Sprite
       value: 
