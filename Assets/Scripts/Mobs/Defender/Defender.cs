@@ -14,7 +14,8 @@ public class Defender : MonoBehaviour
 
     void Start()
     {
-        TargetPosition = transform.parent.position + Vector3.one;
+        if (transform.parent != null)
+            TargetPosition = transform.parent.position + Vector3.one;
     }
     public float MoveCooldown = 4;
     public float MoveCooldownTimer = 4;
@@ -28,27 +29,30 @@ public class Defender : MonoBehaviour
         Debug.DrawRay(transform.position, transform.TransformDirection(-Vector3.up) * 2, Color.red);
         //only fire when you're hit a room center
         //take a break at the new location
-        if (transform.position == TargetPosition && transform.position != transform.parent.position + Vector3.one)
+        if (transform.parent != null)
         {
-            MoveCooldownTimer = MoveCooldown;
-            Debug.Log("Lets go home");
-            TargetPosition = transform.parent.position + Vector3.one;
-        }
-
-        if (transform.position == transform.parent.position + Vector3.one)
-        {
-        //    Debug.Log("Look for a route");
-            //forward
-            RaycastHit2D hitDown = Physics2D.Raycast(transform.position, transform.TransformDirection(-Vector3.up), 2, layerMask);
-            // if it doesn't hit anything
-            TurnRight();
-            if (hitDown.collider != null)
+            if (transform.position == TargetPosition && transform.position != transform.parent.position + Vector3.one)
             {
-                Debug.Log("Foward Hits " + hitDown.collider.gameObject.name);
+                MoveCooldownTimer = MoveCooldown;
+                Debug.Log("Lets go home");
+                TargetPosition = transform.parent.position + Vector3.one;
             }
-            if (hitDown.collider == null)
+
+            if (transform.position == transform.parent.position + Vector3.one)
             {
-                TargetPosition = transform.position + (3 * transform.TransformDirection(Vector3.right));
+                //    Debug.Log("Look for a route");
+                //forward
+                RaycastHit2D hitDown = Physics2D.Raycast(transform.position, transform.TransformDirection(-Vector3.up), 2, layerMask);
+                // if it doesn't hit anything
+                TurnRight();
+                if (hitDown.collider != null)
+                {
+                    Debug.Log("Foward Hits " + hitDown.collider.gameObject.name);
+                }
+                if (hitDown.collider == null)
+                {
+                    TargetPosition = transform.position + (3 * transform.TransformDirection(Vector3.right));
+                }
             }
         }
 

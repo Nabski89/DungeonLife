@@ -60,11 +60,9 @@ public class UIButton : MonoBehaviour
             }
         Destroy(transform.parent.gameObject);
     }
-    public bool ManaB;
     public int ManaBoone;
     public void GainMana()
     {
-        if (ManaB == true)
             ManaController.Gain(ManaBoone);
     }
 

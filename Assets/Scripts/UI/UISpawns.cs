@@ -51,7 +51,7 @@ public class UISpawns : MonoBehaviour
             i++;
         }
     }
-    //This could also be done with transform.GetChild(0) type stuff, it's jut a button to toggle upgrades
+    //This could also be done with transform.GetChild(0) type stuff, it's just a button to toggle upgrades
     public void ToggleActive()
     {
         if (Baby.activeSelf == true)

@@ -4,22 +4,6 @@ using UnityEngine;
 
 public class DoorExterior : MonoBehaviour
 {
-    bool GoingAway = false;
-    public GameObject ReplacementDoor;
-    public Vector3 move;
-    Vector3 home;
-
-    void Start()
-    {
-        home = transform.position;
-    }
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        DirectionTile NewRoom = other.GetComponent<DirectionTile>();
-        if (NewRoom != null)
-            GoingAway = true;
-    }
-
   /*  void Update()
     {
 

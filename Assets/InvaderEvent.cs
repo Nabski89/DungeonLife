@@ -35,7 +35,6 @@ public class InvaderEvent : MonoBehaviour
             GameObject Canvas = GameObject.Find("Canvas");
             Debug.Log("Events/Invader/IR" + RNG.ToString());
 
-
             // get our location and set it to spawn in the middle of that room
             Debug.Log("location of invade event is " + transform.position);
             Component[] EventButton;
@@ -51,13 +50,6 @@ public class InvaderEvent : MonoBehaviour
                 }
             }
             EventTarget.SpawnEvent(EventToSpawn);
-            //  Instantiate(EventToSpawn, Canvas.transform.position, Quaternion.identity, Canvas.transform);
-
-
-            //EventToSpawn.GetComponent<LocationCreate = transform.position;
-
-
-
         }
     }
 }

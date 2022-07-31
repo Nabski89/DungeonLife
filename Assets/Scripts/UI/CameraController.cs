@@ -15,6 +15,7 @@ public class CameraController : MonoBehaviour
         Time.timeScale = 1;
 
         InvaderEvent.EventCount = 0;
+        DelverEvent.EventCount = 0;
     }
 
     // Update is called once per frame
