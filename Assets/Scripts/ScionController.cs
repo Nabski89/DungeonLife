@@ -67,7 +67,17 @@ public class ScionController : MonoBehaviour
             }
         }
     }
-
+    public void Die()
+    {
+        Debug.Log("A scion has died");
+        transform.position = transform.position = ManaController.Instance.transform.position;
+        ManaController.Spend(XP);
+        CombatScript.Atk -= Level;
+        CombatScript.Def -= Level;
+        Level = 0;
+        XP = 0;
+        CombatScript.hp = CombatScript.MaxHp;
+    }
 
     public void Kill(int XPgain)
     {

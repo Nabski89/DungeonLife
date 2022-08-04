@@ -71,5 +71,13 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6897110993367728458, guid: fadb89f2173e29b459fb043bd4fc33c5, type: 3}
+      propertyPath: Scion
+      value: 
+      objectReference: {fileID: 5888197918366258998, guid: 2116c7c592879634aa1ec177513d88ec, type: 3}
+    - target: {fileID: 6897110993367728458, guid: fadb89f2173e29b459fb043bd4fc33c5, type: 3}
+      propertyPath: Upgrade
+      value: 
+      objectReference: {fileID: 7643432150390922872, guid: 4f0bad9c2c0a1ca4480fe2377c77406b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fadb89f2173e29b459fb043bd4fc33c5, type: 3}

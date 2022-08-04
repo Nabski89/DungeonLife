@@ -79,5 +79,13 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.039
       objectReference: {fileID: 0}
+    - target: {fileID: 6897110993367728458, guid: fadb89f2173e29b459fb043bd4fc33c5, type: 3}
+      propertyPath: Scion
+      value: 
+      objectReference: {fileID: 3036414285172437738, guid: daf3d365e7f14f64bac9d2aa95b119f9, type: 3}
+    - target: {fileID: 6897110993367728458, guid: fadb89f2173e29b459fb043bd4fc33c5, type: 3}
+      propertyPath: Upgrade
+      value: 
+      objectReference: {fileID: 298259843451956430, guid: 57c6dc9a9b082cc4abcbbf930e9fd1c2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fadb89f2173e29b459fb043bd4fc33c5, type: 3}

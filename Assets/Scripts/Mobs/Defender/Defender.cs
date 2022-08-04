@@ -79,4 +79,29 @@ public class Defender : MonoBehaviour
     {
         transform.Rotate(0, 0, 90, Space.Self);
     }
+
+    public int ScionType = 0;
+    public GameObject Scion;
+    public GameObject Upgrade;
+    public void Kill(int xp)
+    {
+        bool ScionCheckSpawn = false;
+        //this gets the name of the object but only the first character of it!
+        foreach (var Scion in GameObject.FindObjectsOfType<ScionController>())
+        {
+            if (Scion.gameObject.transform.name.Substring(0, 1) == gameObject.transform.name.Substring(0, 1))
+                ScionCheckSpawn = true;
+        }
+        if (ScionCheckSpawn == false)
+        {
+            Instantiate(Scion, transform.position, Quaternion.identity);
+        }
+        else
+        {
+            if (Upgrade != null)
+                UpgradeHolder.AddToUpgradeList(Upgrade);
+            else
+                ManaController.Gain((xp / 2) - 2);
+        }
+    }
 }

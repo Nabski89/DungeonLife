@@ -81,7 +81,10 @@ public class Combat : MonoBehaviour
     void Update()
     {
         if (hp <= 0)
-            Destroy(gameObject);
+            if (Scion == false)
+                Destroy(gameObject);
+            else
+                ScionScript.Die();
     }
 
 
@@ -202,6 +205,11 @@ public class Combat : MonoBehaviour
         {
 
         }
+        if (Defender == true)
+        {
+            DefenderScript.Kill(xp);
+        }
+
     }
     void OnMouseDown()
     {

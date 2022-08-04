@@ -222,3 +222,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 5070605747150174048, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
+  timer: 0.05
+  waitTime: 0.05

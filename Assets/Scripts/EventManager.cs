@@ -24,6 +24,7 @@ public class EventManager : MonoBehaviour
         RoomEventTrackerResource = 0;
         RoomEventTrackerInvader = 0;
     }
+    /*
     float eventtimer = 60;
     void Update()
     {
@@ -41,7 +42,7 @@ public class EventManager : MonoBehaviour
         }
 
     }
-
+*/
     public void SpawnEvent(GameObject EventSpawned)
     {
         if (EventLoc1.transform.childCount > 0)
@@ -66,7 +67,7 @@ public class EventManager : MonoBehaviour
 
     void Spawn(GameObject EventLoc, GameObject MiniEventSpawned)
     {
-       GameObject NewEvent = Instantiate(MiniEvent, EventLoc.transform);
-       NewEvent.GetComponent<EventMini>().Event = MiniEventSpawned;
+        GameObject NewEvent = Instantiate(MiniEvent, EventLoc.transform);
+        NewEvent.GetComponent<EventMini>().Event = MiniEventSpawned;
     }
 }

@@ -11,6 +11,14 @@ PrefabInstance:
       propertyPath: Event
       value: 
       objectReference: {fileID: 493572423867372055, guid: fe75ceadfc880fb489949307673b54c7, type: 3}
+    - target: {fileID: -6606388061798649443, guid: a51a1130addbe6d4c97c613cc65efff7, type: 3}
+      propertyPath: timer
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: -6606388061798649443, guid: a51a1130addbe6d4c97c613cc65efff7, type: 3}
+      propertyPath: waitTime
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 4653733888478319976, guid: a51a1130addbe6d4c97c613cc65efff7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

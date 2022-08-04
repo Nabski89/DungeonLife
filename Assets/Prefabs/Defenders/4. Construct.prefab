@@ -75,6 +75,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6897110993367728458, guid: fadb89f2173e29b459fb043bd4fc33c5, type: 3}
+      propertyPath: Scion
+      value: 
+      objectReference: {fileID: 527479779672933805, guid: bbef2187081b568408a1e1fc2374aaa5, type: 3}
+    - target: {fileID: 6897110993367728458, guid: fadb89f2173e29b459fb043bd4fc33c5, type: 3}
+      propertyPath: Upgrade
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7285540073625003983, guid: fadb89f2173e29b459fb043bd4fc33c5, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 1

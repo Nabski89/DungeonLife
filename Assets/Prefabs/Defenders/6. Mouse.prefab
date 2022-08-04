@@ -68,8 +68,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6897110993367728458, guid: fadb89f2173e29b459fb043bd4fc33c5, type: 3}
+      propertyPath: Scion
+      value: 
+      objectReference: {fileID: 7742306618253089292, guid: 40781f5cdcec7a240b27c6f3a47a8aca, type: 3}
+    - target: {fileID: 6897110993367728458, guid: fadb89f2173e29b459fb043bd4fc33c5, type: 3}
       propertyPath: speed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6897110993367728458, guid: fadb89f2173e29b459fb043bd4fc33c5, type: 3}
+      propertyPath: Upgrade
+      value: 
+      objectReference: {fileID: 3559768443733812108, guid: 64c104b8466592d41b6b9fde1600ff2f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fadb89f2173e29b459fb043bd4fc33c5, type: 3}
