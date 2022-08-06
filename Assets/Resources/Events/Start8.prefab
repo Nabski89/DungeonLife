@@ -157,8 +157,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7398166109523917314, guid: 54930af7af9a1ca4785e079f7a891d19, type: 3}
       propertyPath: m_text
-      value: Last one. When you upgrade your rooms, which would you like to be able
-        to improve first
+      value: You probably should have pressed quickstart, it gives better stuff because
+        I need to rework all these buttons
       objectReference: {fileID: 0}
     - target: {fileID: 9099523202200411221, guid: 54930af7af9a1ca4785e079f7a891d19, type: 3}
       propertyPath: UpSpawn

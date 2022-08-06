@@ -17,8 +17,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2974570440316452343, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: m_text
-      value: Now that you have your first defender, you'll need to decide on a Scion
-        to defend your core.
+      value: INVADER and DELVERS will attack you. Delvers are great and you get plenty
+        of mana from interacting with them. INVADERS not so much.
       objectReference: {fileID: 0}
     - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: Event

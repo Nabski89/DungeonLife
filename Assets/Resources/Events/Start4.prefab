@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2974570440316452343, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: m_text
-      value: Okay well enjoy being a farmer then, you special little crystal you.
+      value: UPGRADES can be purchased to enhance anything coming from a spawner
       objectReference: {fileID: 0}
     - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: Event

@@ -17,13 +17,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2974570440316452343, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: m_text
-      value: 'Not slimes huh? You''re making a mistake, but it''s okay you''ll gain
-        access to all of them eventually.
-
-        Do you want Quantity or Quality
-        then?
-
-'
+      value: Spawners can be purchased in rooms to create DEFENDERS to of course,
+        defend yourself.
       objectReference: {fileID: 0}
     - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: Event

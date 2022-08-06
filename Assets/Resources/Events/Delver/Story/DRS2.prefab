@@ -7,9 +7,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 313304180751545024, guid: c6593c3c92850394499e54ea6e1a6f6a, type: 3}
+      propertyPath: Spawne.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 313304180751545024, guid: c6593c3c92850394499e54ea6e1a6f6a, type: 3}
+      propertyPath: Spawne.Array.data[0]
+      value: 
+      objectReference: {fileID: 5573105926687250677, guid: 05afdc61e253ec34db2e1e2bea826887, type: 3}
+    - target: {fileID: 377293743803980286, guid: c6593c3c92850394499e54ea6e1a6f6a, type: 3}
+      propertyPath: Spawne.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 377293743803980286, guid: c6593c3c92850394499e54ea6e1a6f6a, type: 3}
+      propertyPath: Spawne.Array.data[0]
+      value: 
+      objectReference: {fileID: 5573105926687250677, guid: 05afdc61e253ec34db2e1e2bea826887, type: 3}
     - target: {fileID: 4087263013503667455, guid: c6593c3c92850394499e54ea6e1a6f6a, type: 3}
       propertyPath: m_Name
-      value: DRS Base
+      value: DRS2
       objectReference: {fileID: 0}
     - target: {fileID: 4500199186879786743, guid: c6593c3c92850394499e54ea6e1a6f6a, type: 3}
       propertyPath: m_Pivot.x
@@ -94,6 +110,18 @@ PrefabInstance:
     - target: {fileID: 4500199186879786743, guid: c6593c3c92850394499e54ea6e1a6f6a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5711362344994431039, guid: c6593c3c92850394499e54ea6e1a6f6a, type: 3}
+      propertyPath: Spawne.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5711362344994431039, guid: c6593c3c92850394499e54ea6e1a6f6a, type: 3}
+      propertyPath: Spawne.Array.data[0]
+      value: 
+      objectReference: {fileID: 5573105926687250677, guid: 05afdc61e253ec34db2e1e2bea826887, type: 3}
+    - target: {fileID: 6314404086833366632, guid: c6593c3c92850394499e54ea6e1a6f6a, type: 3}
+      propertyPath: m_text
+      value: I need another story event here
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6593c3c92850394499e54ea6e1a6f6a, type: 3}

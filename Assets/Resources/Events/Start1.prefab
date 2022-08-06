@@ -21,7 +21,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2974570440316452343, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: m_text
-      value: As a newly formed dungeon
+      value: As a newly formed dungeon you will need to protect your core as you
+        expand to the surrounding areas.
       objectReference: {fileID: 0}
     - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: Create

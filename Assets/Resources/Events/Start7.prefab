@@ -9,7 +9,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 165315873744078970, guid: 83547ce0cd572cf45ab099612232e0a1, type: 3}
       propertyPath: m_text
-      value: Traps to kill things with or treasure to lure away delvers?
+      value: TRAPS/TREASURE/RESOURCE are things that I have half coded then broke.
+        Delvers always turn towards traps.
       objectReference: {fileID: 0}
     - target: {fileID: 1920997637761986093, guid: 83547ce0cd572cf45ab099612232e0a1, type: 3}
       propertyPath: NewBuy

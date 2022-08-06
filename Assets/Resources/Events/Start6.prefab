@@ -17,8 +17,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2974570440316452343, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: m_text
-      value: While you could change your mind about the defenders, there is no changing
-        this one. Do you have mercy to wounded delvers?
+      value: SCIONS can be set to patrol between two locations. They can walk through
+        doors but being near a door slows them down significantly.
       objectReference: {fileID: 0}
     - target: {fileID: 3577086031144770464, guid: 6be0a0429cd274b488f334c51a334938, type: 3}
       propertyPath: Event

@@ -41,7 +41,7 @@ public class UISpawns : MonoBehaviour
             {
                 //j is negative 1 here because it's a different script than upgrades
                 int j = 0;
-                Debug.Log("make star?????");
+             //   Debug.Log("make star?????");
                 while (j < Spawned.Tier)
                 {
                     Instantiate(Instance.Star, UpSpawn.transform.position + Vector3.left * (26) + Vector3.up * (j * 12 + -26), UpSpawn.transform.rotation, UpSpawn.transform);
