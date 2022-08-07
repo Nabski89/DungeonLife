@@ -68,6 +68,10 @@ public class Expand : MonoBehaviour
                 if (Vector2.Distance(RoomWeAreNextTo.transform.position, transform.position) > 1)
                 {
                     GameObject Doory = Instantiate(DoorCheck, (transform.position + RoomWeAreNextTo.transform.position) / 2, Quaternion.identity, transform.parent);
+
+                    if (RoomWeAreNextTo.transform.position.x == transform.position.x)
+                        //Door Rotation Check
+                        Doory.transform.Rotate(0, 0, 90, Space.Self);
                     BuilderButton.DoorBuilderList.Add(Doory);
                 }
         }
@@ -118,7 +122,7 @@ public class Expand : MonoBehaviour
         Area Area = other.GetComponent<Area>();
         if (Area != null && ExpansionRoom == null)
         {
-       //     Debug.Log("Spawn A Room");
+            //     Debug.Log("Spawn A Room");
             ExpansionRoom = Instantiate(Room, transform.position, Quaternion.identity, transform);
         }
     }

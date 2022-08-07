@@ -37,23 +37,25 @@ public class Defender : MonoBehaviour
                 Debug.Log("Lets go home");
                 TargetPosition = transform.parent.position + Vector3.one;
             }
-
-            if (transform.position == transform.parent.position + Vector3.one)
-            {
-                //    Debug.Log("Look for a route");
-                //forward
-                RaycastHit2D hitDown = Physics2D.Raycast(transform.position, transform.TransformDirection(-Vector3.up), 2, layerMask);
-                // if it doesn't hit anything
-                TurnRight();
-                if (hitDown.collider != null)
-                {
-                    Debug.Log("Foward Hits " + hitDown.collider.gameObject.name);
-                }
-                if (hitDown.collider == null)
-                {
-                    TargetPosition = transform.position + (3 * transform.TransformDirection(Vector3.right));
-                }
-            }
+            //This is being cut until it is decided to have more moving parts again
+            /*
+                        if (transform.position == transform.parent.position + Vector3.one)
+                        {
+                            //    Debug.Log("Look for a route");
+                            //forward
+                            RaycastHit2D hitDown = Physics2D.Raycast(transform.position, transform.TransformDirection(-Vector3.up), 2, layerMask);
+                            // if it doesn't hit anything
+                            TurnRight();
+                            if (hitDown.collider != null)
+                            {
+                                Debug.Log("Foward Hits " + hitDown.collider.gameObject.name);
+                            }
+                            if (hitDown.collider == null)
+                            {
+                                TargetPosition = transform.position + (3 * transform.TransformDirection(Vector3.right));
+                            }
+                        }
+                        */
         }
 
         //now we actually move
