@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4660235359375403642}
   - component: {fileID: -7706896509677729464}
   m_Layer: 0
-  m_Name: 1 Roach
+  m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
