@@ -5,12 +5,15 @@ using UnityEngine;
 public class DungeonBuilder : MonoBehaviour
 {
     public GameObject Expand;
+
+    public int xMin = 0;
+    public int yMin = 0;
     public int xLimit = 100;
     public int yLimit = 100;    // Start is called before the first frame update
     void Start()
     {
-        int xSpawn = 0;
-        int ySpawn = 0;
+        int xSpawn = xMin;
+        int ySpawn = yMin;
         while (ySpawn < yLimit)
         {
             while (xSpawn < xLimit)
@@ -21,7 +24,7 @@ public class DungeonBuilder : MonoBehaviour
 
                     ySpawn += 3;
             }
-            xSpawn = 0;
+            xSpawn = xMin;
         }
     }
 }

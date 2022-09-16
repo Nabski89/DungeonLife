@@ -8,7 +8,7 @@ public class Expand : MonoBehaviour
     //GameObject RoomCenter;
 
     public bool valid = false;
-    public int cost = 5;
+    public int cost = 1;
     float TextDelay = 5;
     public GameObject Text;
     public GameObject ExpansionRoom;

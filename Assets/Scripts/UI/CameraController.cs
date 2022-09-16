@@ -27,7 +27,7 @@ public class CameraController : MonoBehaviour
             position = transform.TransformPoint(Vector3.left * .2f);
             transform.position = position;
         }
-        if (Input.GetKey("up"))
+        if (Input.GetKey("w"))
         {
             position = transform.TransformPoint(Vector3.up * .2f);
             transform.position = position;
