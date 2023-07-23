@@ -21,27 +21,33 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 mousePos = Input.mousePosition;
         Vector3 position = transform.position;
-        if (Input.GetKey("left"))
+        if (Input.GetKey("left") || mousePos.x < 20)
         {
             position = transform.TransformPoint(Vector3.left * .2f);
             transform.position = position;
         }
-        if (Input.GetKey("w"))
+        if (Input.GetKey("up") || mousePos.y > Screen.height - 20)
         {
             position = transform.TransformPoint(Vector3.up * .2f);
             transform.position = position;
         }
-        if (Input.GetKey("right"))
+        if (Input.GetKey("right") || mousePos.x > Screen.width - 20)
         {
             position = transform.TransformPoint(Vector3.right * .2f);
             transform.position = position;
         }
-        if (Input.GetKey("down"))
+        if (Input.GetKey("down") || mousePos.y < 20)
         {
             position = transform.TransformPoint(Vector3.down * .2f);
             transform.position = position;
         }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            transform.position = (Vector3.back * 10);
+        }
+
 
         //zoom
         if (Input.GetKeyDown("page up"))
